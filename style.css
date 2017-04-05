@@ -4,17 +4,27 @@ body {
     color: #F8F8F2;
     font-family: 'Inconsolata', monospace;
     padding-left: 10%;
+    padding-right: 10%;
     padding-top: 10%;
 }
+
 .pink {
     color: #F92672;
 }
+
 .green {
     color: #A6E22E;
 }
+
 .blue {
     color: #66D9EF;
 }
+
 .orange {
     color: #FD971F;
+}
+
+a {
+    color: #A6E22E;
+    text-decoration: none;
 }
