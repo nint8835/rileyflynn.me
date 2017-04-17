@@ -8,19 +8,15 @@ body {
     padding-top: 10%;
 }
 
-.pink {
+.project_name {
     color: #F92672;
 }
 
-.green {
-    color: #A6E22E;
-}
-
-.blue {
+.name {
     color: #66D9EF;
 }
 
-.orange {
+.highlight {
     color: #FD971F;
 }
 
