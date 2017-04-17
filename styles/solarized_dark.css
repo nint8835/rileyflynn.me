@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+body {
+    background-color: #002b36;
+    color: #839496;
+    font-family: 'Inconsolata', monospace;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10%;
+}
+
+.project_name {
+    color: #cb4b16;
+}
+
+.name {
+    color: #859900;
+}
+
+.highlight {
+    color: #2aa198;
+}
+
+a {
+    color: #268BD2;
+    text-decoration: none;
+}
+
+.css_links {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
