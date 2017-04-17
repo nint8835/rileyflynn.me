@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+body {
+    font-family: 'Inconsolata', monospace;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.css_links {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}

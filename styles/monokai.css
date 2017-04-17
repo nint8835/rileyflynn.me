@@ -1,11 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 body {
     background-color: #272822;
     color: #F8F8F2;
-    font-family: 'Inconsolata', monospace;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 10%;
 }
 
 .project_name {
@@ -22,11 +17,4 @@ body {
 
 a {
     color: #A6E22E;
-    text-decoration: none;
-}
-
-.css_links {
-    position: fixed;
-    bottom: 0;
-    right: 0;
 }
