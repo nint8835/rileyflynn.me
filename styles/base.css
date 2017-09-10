@@ -12,12 +12,15 @@ a {
     position: fixed;
     bottom: 15px;
     right: 15px;
+    width: 45%;
+    text-align: right;
 }
 
 .font_links {
     position: fixed;
     bottom: 15px;
     left: 15px;
+    width: 45%;
 }
 
 .hidden {
