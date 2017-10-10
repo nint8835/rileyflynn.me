@@ -23,7 +23,8 @@ a {
     width: 45%;
 }
 
-.hidden {
-    opacity: 0;
-    cursor: default;
+@media screen and (max-width: 480px) {
+    .no_mobile {
+        display:none;
+    }
 }
