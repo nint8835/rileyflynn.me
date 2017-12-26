@@ -1,0 +1,9 @@
+.title-hero {
+    background-image: url("code.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+/* .title-text {
+    mix-blend-mode: difference;
+} */

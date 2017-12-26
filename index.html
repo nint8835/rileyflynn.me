@@ -1,77 +1,263 @@
+<!DOCTYPE html>
 <html>
-
     <head>
-
-        <title>Riley Flynn</title>
-        <link rel="stylesheet" href="styles/base.css" />
-        <link rel="stylesheet" href="styles/colour_schemes/monokai.css" />
-        <link rel="stylesheet" href="styles/fonts/inconsolata.css" />
-        <script src="script.js"></script>
-
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Riley Flynn - Software Developer</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+        <link rel="stylesheet" href="static/style.css">
     </head>
-
     <body>
-        <div style="display:flex;justify-content:center;align-items:center;">
-            <div>
-                Hi! I'm <span class="name">Riley Flynn</span>!<br>
-                I'm a <span class="highlight">computer science</span> student at <span class="highlight">Memorial University</span> and <span class="highlight">software developer</span> specializing in <span class="highlight">modular systems</span>.<br>
-                Additionally, I manage <a href="https://twitter.com/muncssociety">@MUNCSSociety</a>, the Twitter account for the <a href="https://muncompsci.ca">Memorial University Computer Science Society</a><br>
-                I've worked on a variety of projects including: 
-                <ul>
-                    <li>
-                        <span class="project_name">Jigsaw:</span> A Python library allowing you to easily add plugin-based functionality to your projects.<br>
-                        <a href="https://github.com/nint8835/jigsaw">Github</a>
-                        <a href="http://jigsaw.readthedocs.io/en/latest/?badge=latest">Docs</a>
-                        <a href="https://travis-ci.org/nint8835/jigsaw">CI</a>
-                    </li>
-                    <li>
-                        <span class="project_name">Nintbot For Discord:</span> A modular bot framework for Discord. Based off of jigsaw.<br>
-                        <a href="https://github.com/nint8835/NintbotForDiscord">Github</a>
-                    </li>
-                    <li>
-                        <span class="project_name">Chainmail:</span> An extensible server wrapper bringing basic modding support to vanilla Minecraft servers.<br>
-                        <a href="https://github.com/Chainmail-Project/Chainmail">Github</a>
-                    </li>
-                    <li>
-                        <span class="project_name">SchoolTracker:</span> A framework for tracking the status of schools in the Newfoundland and Labrador English School District (NLESD)<br>
-                        <a href="https://github.com/nint8835/SchoolTracker">Github</a>
-                        <a href="https://twitter.com/nlschoolstatus">Twitter</a>
-                    </li>
-                    <li>
-                        <span class="project_name">InvitationASM:</span> An interpreter for the assembly-styled language that is used in "An Introduction to Computer Science" by G. Michael Schneider and Judith Gersting<br>
-                        <a href="https://github.com/nint8835/InvitationASM">Github</a>
-                    </li>
-                    <li>
-                        <span class="project_name">MUNStatusParser:</span> A Go library to retrieve and parse status updates from the MUN Safe app used by Memorial University<br>
-                        <a href="https://github.com/nint8835/munstatusparser">Github</a>
-                    </li>
-                    <li>
-                        <span class="project_name">iTunes Rich Presence:</span> A Windows application that shares your iTunes now-playing information via Discord Rich Presence<br>
-                        <a href="https://github.com/nint8835/iTunesRichPresence">Github</a>
-                    </li>
-                    <li>
-                        <span class="project_name">Coinbin:</span> A Go library and command-line client for the cryptocurrency information website of the same name<br>
-                        <a href="https://github.com/nint8835/coinbin">Github</a>
-                    </li>
-                </ul>
-                Links:<br>
-                Email: <a href="mailto:riley@rileyflynn.me">riley@rileyflynn.me</a><br>
-                Twitter: <a href="https://twitter.com/nint8835">@nint8835</a><br>
-                Keybase: <a href="https://keybase.io/rileyflynn">rileyflynn</a><br>
-                Github: <a href="https://github.com/nint8835">nint8835</a>
+        <section class="hero is-dark title-hero is-fullheight">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title">
+                        Hi! I'm Riley Flynn.
+                    </h1>
+                    <h2 class="subtitle">
+                        I'm a <strong>computer science</strong> student at <strong>Memorial University</strong> and a <strong>software developer</strong> specializing in <strong>modular systems</strong>.
+                        <br>
+                        Additionally, I manage <a href="https://twitter.com/MUNCSSociety">@MUNCSSociety</a>, the Twitter account for the <a href="https://muncompsci.ca">Memorial University Computer Science Society</a>
+                    </h2>
+                </div>
             </div>
-        </div>
-        <div class="font_links no_mobile">
-            [<a onclick="changeFont('inconsolata')">Inconsolata</a>,
-            <a onclick="changeFont('source_code_pro')">Source Code Pro</a>,
-            <a onclick="changeFont('share_tech_mono')">Share Tech Mono</a>]
-        </div>
-        <div class="colour_links no_mobile">
-            [<a onclick="changeColour('monokai')">Monokai</a>,
-            <a onclick="changeColour('solarized_dark')">Solarized Dark</a>,
-            <a onclick="changeColour('solarized_light')">Solarized Light</a>,
-            <a onclick="changeColour('darcula')">Darcula</a>]
-        </div>
-    </body>
+        </section>
 
+        <section class="section">
+            <div class="container">
+                <nav class="level">
+                    
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">GitHub repositories</p>
+                            <p class="title">22</p>
+                        </div>
+                    </div>
+
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Lines of code</p>
+                            <p class="title">7,546</p>
+                        </div>
+                    </div>
+
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Files</p>
+                            <p class="title">234</p>
+                        </div>
+                    </div>
+
+                </nav>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h1 class="title has-text-centered">Projects</h1>
+
+                <div class="box">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>Jigsaw</strong> <small>February 19, 2017</small>
+                                    <br>
+                                    A Python library allowing you to easily add plugin-based functionality to your projects
+                                </p>
+                            </div>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+                                    <a class="level-item" href="https://github.com/nint8835/jigsaw">
+                                        <span class="icon is-small"><i class="fa fa-github"></i></span>
+                                    </a>
+                                    <a class="level-item" href="http://jigsaw.readthedocs.io/en/latest/?badge=latest">
+                                        <span class="icon is-small"><i class="fa fa-book"></i></span>
+                                    </a>
+                                    <a class="level-item" href="https://travis-ci.org/nint8835/jigsaw">
+                                        <span class="icon is-small"><i class="fa fa-server"></i></span>
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="box">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>Nintbot for Discord</strong> <small>December 23, 2015</small>
+                                    <br>
+                                    A modular bot framework for Discord
+                                </p>
+                            </div>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+                                    <a class="level-item" href="https://github.com/nint8835/NintbotForDiscord">
+                                        <span class="icon is-small"><i class="fa fa-github"></i></span>
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="box">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>Chainmail</strong> <small>April 1, 2017</small>
+                                    <br>
+                                    An extensible server wrapper bringing basic modding support to vanilla Minecraft servers
+                                </p>
+                            </div>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+                                    <a class="level-item" href="https://github.com/Chainmail-Project/Chainmail">
+                                        <span class="icon is-small"><i class="fa fa-github"></i></span>
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="box">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>SchoolTracker</strong> <small>February 15, 2017</small>
+                                    <br>
+                                    A framework for tracking the status of schools in the Newfoundland and Labrador English School District (NLESD)
+                                </p>
+                            </div>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+                                    <a class="level-item" href="https://github.com/nint8835/SchoolTracker">
+                                        <span class="icon is-small"><i class="fa fa-github"></i></span>
+                                    </a>
+                                    <a class="level-item" href="https://twitter.com/nlschoolstatus">
+                                        <span class="icon is-small"><i class="fa fa-twitter"></i></span>
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="box">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>InvitationASM</strong> <small>October 7, 2017</small>
+                                    <br>
+                                    An interpreter for the assembly-styled language that is used in "An Introduction to Computer Science" by G. Michael Schneider and Judith Gersting
+                                </p>
+                            </div>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+                                    <a class="level-item" href="https://github.com/nint8835/InvitationASM">
+                                        <span class="icon is-small"><i class="fa fa-github"></i></span>
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="box">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>MUNStatusParser</strong> <small>September 27, 2017</small>
+                                    <br>
+                                    A Go library to retrieve and parse status updates from the MUN Safe app used by Memorial University
+                                </p>
+                            </div>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+                                    <a class="level-item" href="https://github.com/nint8835/munstatusparser">
+                                        <span class="icon is-small"><i class="fa fa-github"></i></span>
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="box">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>iTunes Rich Presence</strong> <small>November 25, 2017</small>
+                                    <br>
+                                    A Windows application that shares your iTunes now-playing information via Discord Rich Presence
+                                </p>
+                            </div>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+                                    <a class="level-item" href="https://github.com/nint8835/iTunesRichPresence">
+                                        <span class="icon is-small"><i class="fa fa-github"></i></span>
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="box">
+                    <article class="media">
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>Coinbin</strong> <small>December 14, 2017</small>
+                                    <br>
+                                    A Go library and command-line client for the cryptocurrency information website of the same name
+                                </p>
+                            </div>
+                            <nav class="level is-mobile">
+                                <div class="level-left">
+                                    <a class="level-item" href="https://github.com/nint8835/coinbin">
+                                        <span class="icon is-small"><i class="fa fa-github"></i></span>
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+        <section class="hero is-dark is-bold">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title">
+                        Links
+                    </h1>
+                    <nav class="level">
+                        <div class="level-item has-text-centered">
+                            <a href="https://github.com/nint8835/"><i class="icon fa fa-github"></i> nint8835</a>
+                        </div>
+                        <div class="level-item has-text-centered">
+                            <a href="https://twitter.com/nint8835/"><i class="icon fa fa-twitter"></i> @nint8835</a>
+                        </div>
+                        <div class="level-item has-text-centered">
+                            <a href="mailto:riley@rileyflynn.me"><i class="icon fa fa-envelope"></i> riley@rileyflynn.me</a>
+                        </div>
+                        <div class="level-item has-text-centered">
+                            <a href="https://keybase.io/rileyflynn"><i class="icon fa fa-key"></i> rileyflynn</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>
