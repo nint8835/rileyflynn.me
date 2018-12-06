@@ -10,23 +10,3 @@ disableKinds=["RSS"]
   description = 'I am a second year computer science student at <a href="https://www.mun.ca">Memorial University of Newfoundland</a><br/>and Vice President of the <a href="https://muncompsci.ca">MUN Computer Science Society</a>'
   logo = "fa-terminal"
   copyright = "Riley Flynn. Picture of St. John's provided by Jack Harrhy"
-
-[[params.social]]
-  medium = "twitter"
-  icon = "twitter"
-  link = "https://twitter.com/bootlegjohn"
-
-[[params.social]]
-  medium = "facebook"
-  icon = "facebook"
-  link = "#"
-
-[[params.social]]
-  medium = "instagram"
-  icon = "instagram"
-  link = "#"
-
-[[params.social]]
-  medium = "github"
-  icon = "github"
-  link = "#"
