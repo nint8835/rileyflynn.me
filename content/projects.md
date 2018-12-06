@@ -34,3 +34,27 @@ Scrapes the NLESD Status Central website to keep track of the status for various
 Interpreter for the assembly-styled language used to teach machine code and assembly in the course COMP1000 at Memorial University.
 
 <a class="icon fa-github" href="https://github.com/nint8835/InvitationASM"> GitHub</a>
+
+{{< figure class="image main" src="/images/projects/Jigsaw.png" >}}
+
+## Jigsaw
+
+Easy to use library for adding plugin functionality to Python projects. Used to provide plugin functionality to Chainmail and NintbotForDiscord
+
+<a class="icon fa-github" href="https://github.com/nint8835/jigsaw"> GitHub</a> <a class="icon fa-book" href="https://jigsaw.readthedocs.io/en/latest/"> Documentation</a>
+
+{{< figure class="image main" src="/images/projects/NintbotForDiscord.png" >}}
+
+## NintbotForDiscord
+
+One of the very first modular bot frameworks for Discord.
+
+<a class="icon fa-github" href="https://github.com/nint8835/NintbotForDiscord"> GitHub</a>
+
+{{< figure class="image main" src="/images/projects/WebRichPresence.png" >}}
+
+## WebRichPresence
+
+Web API for controlling the Discord Rich Presence status for clients remotely. Client is open source and on GitHub, server is not.
+
+<a class="icon fa-github" href="https://github.com/nint8835/WebRichPresence_Client"> GitHub (Client)</a>
