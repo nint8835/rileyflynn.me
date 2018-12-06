@@ -1,3 +1,4 @@
+# Configuring deployment: https://gohugo.io/hosting-and-deployment/hosting-on-github/#deployment-of-project-pages-from-your-gh-pages-branch
 hugo
 cd public
 git add --all
