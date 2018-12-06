@@ -5,6 +5,7 @@ theme = "dimension"
 defaultContentLanguage = "en"
 enableRobotsTXT = true
 disableKinds=["RSS"]
+googleAnalytics = "UA-111281238-1"
 
 [params]
   description = 'I am a second year computer science student at <a href="https://www.mun.ca">Memorial University of Newfoundland</a><br/>and Vice President of the <a href="https://muncompsci.ca">MUN Computer Science Society</a>'
