@@ -14,7 +14,9 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
         <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
         
-        {{ template "_internal/twitter_cards.html" . }}
+		{{ template "_internal/twitter_cards.html" . }}
+		{{ template "_internal/opengraph.html" . }}
+		<meta property="og:image" content="https://rileyflynn.me/images/bg.jpg">
 
 	</head>
 	<!-- Scripts -->
