@@ -1,6 +1,7 @@
 ---
 title: "Projects"
 date: 2018-12-06T16:48:11-03:30
+weight: 50
 ---
 
 {{< figure class="image main" src="/images/projects/iTunesRichPresence.png" >}}
