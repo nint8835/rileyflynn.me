@@ -12,6 +12,7 @@ Utilizes the iTunes COM interface and Discord's RPC and Rich Presence APIs to sh
 
 <a class="icon fa-github" href="https://github.com/nint8835/iTunesRichPresence"> GitHub</a>
 
+___
 {{< figure class="image main" src="/images/projects/Chainmail.png" >}}
 
 ## Chainmail
@@ -20,6 +21,7 @@ Wraps around the vanilla Minecraft server, intercepting output and injecting inp
 
 <a class="icon fa-github" href="https://github.com/Chainmail-Project/Chainmail"> GitHub</a>
 
+___
 {{< figure class="image main" src="/images/projects/SchoolTracker.png" >}}
 
 ## SchoolTracker
@@ -36,6 +38,7 @@ Interpreter for the assembly-styled language used to teach machine code and asse
 
 <a class="icon fa-github" href="https://github.com/nint8835/InvitationASM"> GitHub</a>
 
+___
 {{< figure class="image main" src="/images/projects/Jigsaw.png" >}}
 
 ## Jigsaw
@@ -44,6 +47,7 @@ Easy to use library for adding plugin functionality to Python projects. Used to 
 
 <a class="icon fa-github" href="https://github.com/nint8835/jigsaw"> GitHub</a> <a class="icon fa-book" href="https://jigsaw.readthedocs.io/en/latest/"> Documentation</a>
 
+___
 {{< figure class="image main" src="/images/projects/NintbotForDiscord.png" >}}
 
 ## NintbotForDiscord
@@ -52,6 +56,7 @@ One of the very first modular bot frameworks for Discord.
 
 <a class="icon fa-github" href="https://github.com/nint8835/NintbotForDiscord"> GitHub</a>
 
+___
 {{< figure class="image main" src="/images/projects/WebRichPresence.png" >}}
 
 ## WebRichPresence
