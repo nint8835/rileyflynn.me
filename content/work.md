@@ -8,9 +8,17 @@ weight: 50
 
 ## Memorial University of Newfoundland
 
-**Software Developer** - _December 2018_
+**Software Developer** - _December 2018 - January 2019_
 
 Worked as a contracted software developer over the Christmas break working on the backend of [ISSF](https://github.com/toobigtoignore/issf) for Too Big To Ignore.
+
+Performed a number of tasks such as:
+
+- Rewrote site's search functionality to be more reliable and to return more relevant results
+- Discovered and resolved a number of security issues
+- Cleaned and wrote documentation for all backend code to make it easier for future developers to work with it
+- Added native PDF generation to the site, so PDF reports would be more accessible to people without the software or knowledge required
+- Fixed many bugs all over the site
 
 Technologies used:
 
