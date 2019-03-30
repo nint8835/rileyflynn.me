@@ -8,6 +8,12 @@ weight: 50
 
 ## Memorial University of Newfoundland
 
+**System Administrator & Software Developer** - _January 2019 - Present_
+
+Responsible for handling the day-to-day technical management of [ISSF](https://github.com/toobigtoignore/issf) for Too Big To Ignore.
+
+___
+
 **Software Developer** - _December 2018 - January 2019_
 
 Worked as a contracted software developer over the Christmas break working on the backend of [ISSF](https://github.com/toobigtoignore/issf) for Too Big To Ignore.
