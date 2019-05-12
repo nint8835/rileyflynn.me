@@ -64,3 +64,12 @@ ___
 Web API for controlling the Discord Rich Presence status for clients remotely. Client is open source and on GitHub, server is not.
 
 <a class="icon fa-github" href="https://github.com/nint8835/WebRichPresence_Client"> GitHub (Client)</a>
+
+___
+{{< figure class="image main" src="/images/projects/Automata.png" >}}
+
+## Automata
+
+Discord bot responsible for managing the MUN Computer Science Society Discord server, providing a variety of services including identity verification.
+
+<a class="icon fa-github" href="https://github.com/MUNComputerScienceSociety/Automata"> GitHub</a>

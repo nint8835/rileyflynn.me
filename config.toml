@@ -8,7 +8,7 @@ disableKinds=["RSS"]
 googleAnalytics = "UA-111281238-1"
 
 [params]
-  description = 'I am a second year computer science student at <a href="https://www.mun.ca">Memorial University of Newfoundland</a> <br/>and Vice President of the <a href="https://muncompsci.ca">MUN Computer Science Society</a>'
+  description = 'I am a Full Stack Development Intern at <a href="https://colabsoftware.com">CoLab Software</a> <br/>and Vice President of the <a href="https://muncompsci.ca">MUN Computer Science Society</a>'
   logo = "fa-terminal"
   copyright = "Riley Flynn. Picture of St. John's provided by <a href='https://jackharrhy.com'>Jack Harrhy</a>"
   images = ["images/bg.jpg"]

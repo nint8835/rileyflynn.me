@@ -4,11 +4,21 @@ date: 2018-12-18T15:33:01-03:30
 weight: 50
 ---
 
+{{< figure class="image main" src="/images/work/colab-software.png" >}}
+
+## CoLab Software
+
+**Full Stack Development Intern** - _April 2019 - Present_
+
+Responsible for working on many aspects of Gradient, a cloud-based design review and issue tracking platform.
+
+___
+
 {{< figure class="image main" src="/images/work/memorial-university-of-newfoundland.png" >}}
 
 ## Memorial University of Newfoundland
 
-**System Administrator & Software Developer** - _January 2019 - Present_
+**System Administrator & Software Developer** - _January 2019 - April 2019_
 
 Responsible for handling the day-to-day technical management of [ISSF](https://github.com/toobigtoignore/issf) for Too Big To Ignore.
 
