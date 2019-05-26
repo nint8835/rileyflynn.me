@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    font-family: 'Segoe WPC', 'Segoe UI';
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    .page {
+        flex-direction: row;
+        flex: 1;
+    }
+}
+
