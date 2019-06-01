@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 import editorStyles from './editor.module.css'
 

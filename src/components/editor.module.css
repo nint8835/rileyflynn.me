@@ -21,9 +21,10 @@
 .editorContent {
     overflow: auto;
     flex: 1;
+    padding: 1em;
 }
 
-code {
+.editorText {
     font-family: 'Dank Mono', monospace;
     font-feature-settings: "liga" on,"calt" on;
     font-size: 0.875em;

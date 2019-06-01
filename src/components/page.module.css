@@ -19,3 +19,8 @@ body {
     }
 }
 
+a {
+    text-decoration: none;
+    color: #c792ea;
+}
+

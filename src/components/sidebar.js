@@ -22,7 +22,7 @@ export default () => (
         <div className={sidebarStyles.header}>RILEYFLYNN.ME</div>
         <div className={sidebarStyles.items}>
           {data.allSitePage.nodes.map(
-            (node) => ( node.path !== '/dev-404-page/' ? (
+            (node) => ( node.path !== '/dev-404-page/' && node.path !== '/offline-plugin-app-shell-fallback/' ? (
               <Link
                 to={node.path}
                 className={sidebarStyles.pageLink}
