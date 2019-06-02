@@ -2,7 +2,7 @@ version: '3'
 
 services:
   rileyflynnme:
-    build: .
+    image: nint8835/rileyflynn.me
     restart: always
     networks:
       - web
