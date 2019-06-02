@@ -62,6 +62,7 @@ module.exports = {
         trackingId: "UA-111281238-1",
       },
     },
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`
   ],
