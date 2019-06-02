@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  rileyflynn.me:
+    build: .
+    restart: always
+    networks:
+      - web
+    expose:
+      - 80
+    labels:
+      traefik.enable: true
+      traefik.frontend.rule: "Host: rileyflynn.me"
+      traefik.port: 80
+      traefik.frontend.entryPoints: "https"
+  
+networks:
+  web:
+    external: true
