@@ -15,6 +15,35 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/markdown`,
+        name: "markdown-pages",
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // CommonMark mode (default: true)
+        commonmark: true,
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // Pedantic mode (default: true)
+        pedantic: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              showLineNumbers: true,
+            }
+          }
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Riley Flynn - Software Developer`,
@@ -25,14 +54,12 @@ module.exports = {
         display: `standalone`,
       },
     },
-    {
-      resolve: `gatsby-plugin-offline`,
-    },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-111281238-1",
       },
-    }
+    },
   ],
 }

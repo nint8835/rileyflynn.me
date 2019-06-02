@@ -2,6 +2,6 @@ import React from 'react'
 
 import editorStyles from './editor.module.css'
 
-export default ({location}) => (
-  <div className={editorStyles.topBar}>{location}</div>
+export default ({title}) => (
+  <div className={editorStyles.topBar}>{title}</div>
 )

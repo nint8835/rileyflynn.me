@@ -5,10 +5,12 @@ import sidebarStyles from './sidebar.module.css'
 
 const pageQuery = graphql`
   query {
-    allSitePage {
+    allMarkdownRemark {
       nodes {
-        path
-        component
+        frontmatter {
+          path
+          title
+        }
       }
     }
   }
@@ -21,16 +23,16 @@ export default () => (
       <div className={sidebarStyles.sidebar}>
         <div className={sidebarStyles.header}>RILEYFLYNN.ME</div>
         <div className={sidebarStyles.items}>
-          {data.allSitePage.nodes.map(
-            (node) => ( node.path !== '/dev-404-page/' && node.path !== '/offline-plugin-app-shell-fallback/' ? (
+          {data.allMarkdownRemark.nodes.map(
+            (node) => (
               <Link
                 to={node.path}
                 className={sidebarStyles.pageLink}
                 activeClassName={sidebarStyles.selectedPageLink}>
-                  {node.component.substr(node.component.lastIndexOf('/') + 1)}
+                  {node.frontmatter.title + '.md'}
               </Link>
-            ) : null
-          ))}
+            )
+          )}
         </div>
       </div>
     )

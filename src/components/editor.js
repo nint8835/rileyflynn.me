@@ -3,13 +3,13 @@ import React from 'react'
 import EditorTopBar from './editor_top_bar'
 import editorStyles from './editor.module.css'
 
-export default ({children, location}) => (
+require('./material-palenight.css')
+
+export default ({children, title}) => (
   <div className={editorStyles.editor}>
-    <EditorTopBar location={location}/>
+    <EditorTopBar title={title}/>
     <div className={editorStyles.editorContent}>
-      <p className={editorStyles.editorText}>
-        {children}
-      </p>
+      {children}
     </div>
   </div>
 )

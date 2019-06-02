@@ -22,12 +22,8 @@
     overflow: auto;
     flex: 1;
     padding: 1em;
-}
-
-.editorText {
     font-family: 'Dank Mono', monospace;
     font-feature-settings: "liga" on,"calt" on;
     font-size: 0.875em;
-    white-space: pre-wrap;
     color: #bfc7d5;
 }

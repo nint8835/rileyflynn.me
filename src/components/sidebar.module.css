@@ -16,11 +16,10 @@
     color: #929ac9;
     text-decoration: none;
     display: block;
-    height: 1.375em;
-    line-height: 1.375em;
-    font-family: 'Segoe WPC', 'Segoe UI';
     font-size: 0.8125em;
     padding-left: 1em;
+    height: 3em;
+    line-height: 3em;
     align-content: center;
 }
 
@@ -35,10 +34,5 @@
 @media (max-width: 768px) {
     .sidebar {
         flex: 0;
-    }
-
-    .pageLink {
-        height: 3em;
-        line-height: 3em;
     }
 }

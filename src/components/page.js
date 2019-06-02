@@ -5,11 +5,11 @@ import Editor from './editor'
 import Sidebar from './sidebar'
 import pageStyles from './page.module.css'
 
-export default ({children, location, description, path}) => (
+export default ({children, title, description, path}) => (
   <div className={pageStyles.page}>
-    <Head location={location} description={description} path={path}/>
+    <Head title={title} description={description} path={path}/>
     <Sidebar/>
-    <Editor location={location}>
+    <Editor title={title}>
       {children}
     </Editor>
   </div>
