@@ -26,7 +26,8 @@ export default () => (
           {data.allMarkdownRemark.nodes.map(
             (node) => (
               <Link
-                to={node.path}
+                to={node.frontmatter.path}
+                key={node.frontmatter.path}
                 className={sidebarStyles.pageLink}
                 activeClassName={sidebarStyles.selectedPageLink}>
                   {node.frontmatter.title + '.md'}
