@@ -2,7 +2,7 @@
 
 body {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
     flex-direction: column;
     margin: 0;
     font-family: 'Noto Sans', sans-serif;
@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
+    height: 100vh;
 }
 
 @media (min-width: 768px) {
@@ -26,3 +27,6 @@ a {
     color: #c792ea;
 }
 
+img {
+    max-width: 100%;
+}

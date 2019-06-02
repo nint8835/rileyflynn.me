@@ -5,7 +5,12 @@ import sidebarStyles from './sidebar.module.css'
 
 const pageQuery = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      sort: {
+        fields: [frontmatter___weight]
+        order: ASC
+      }
+    ) {
       nodes {
         frontmatter {
           path
