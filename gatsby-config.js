@@ -9,7 +9,7 @@ module.exports = {
     title: "Riley Flynn",
     titleTemplate: "%s - rileyflynn.me",
     description: "Full-stack software developer and Vice President of the MUN Computer Science Society",
-    url: "https://rileyflynn.me",
+    siteUrl: "https://rileyflynn.me",
     image: "/images/st_johns.jpg",
     twitterUsername: "@BootlegJohn",
   },
@@ -62,5 +62,7 @@ module.exports = {
         trackingId: "UA-111281238-1",
       },
     },
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`
   ],
 }

@@ -7,9 +7,9 @@
 .header {
     height: 1.375em;
     color: rgb(238, 255, 255);
-    font-size: 11px;
+    font-size: 0.6875em;
     font-weight: 700;
-    padding-left: 4px;
+    padding-left: 0.25em;
 }
 
 .pageLink {
