@@ -13,6 +13,13 @@ services:
       traefik.frontend.rule: "Host: rileyflynn.me"
       traefik.port: 80
       traefik.frontend.entryPoints: "https"
+      traefik.frontend.headers.stsSeconds: 315360000
+      traefik.frontend.headers.stsIncludeSubdomains: true
+      traefik.frontend.headers.contentSecurityPolicy: "default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com"
+      traefik.frontend.headers.frameDeny: true
+      traefik.frontend.headers.browserXssFilter: true
+      traefik.frontend.headers.contentTypeNosniff: true
+      traefik.frontend.headers.referrerPolicy: "same-origin"
   
 networks:
   web:
