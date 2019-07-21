@@ -11,7 +11,7 @@
 
 @media (max-width: 768px) {
   .editor {
-    height: calc(100vh - 44px);
+    padding-bottom: 44px;
   }
 }
 
