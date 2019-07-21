@@ -3,6 +3,7 @@ weight: 0
 path: "/"
 title: "index"
 description: "Full-stack Software Developer and Vice President of the MUN Computer Science Society"
+hidden: false
 ---
 Hi! I'm Riley. I'm a Full-stack Software Developer for [CoLab Software](https://www.colabsoftware.com) and Vice President of the [MUN Computer Science Society](https://muncompsci.ca)
 

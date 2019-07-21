@@ -9,6 +9,11 @@ const pageQuery = graphql`
       sort: {
         fields: [frontmatter___weight]
         order: ASC
+      },
+      filter: {
+        frontmatter: {
+          hidden: {ne: true}
+        }
       }
     ) {
       nodes {
