@@ -65,6 +65,12 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-robots-txt`
+    `gatsby-plugin-robots-txt`,
+    {
+      resolve: `gatsby-plugin-env-variables`,
+      options: {
+        whitelist: ["DRONE_COMMIT", "DRONE_COMMIT_LINK"]
+      }
+    }
   ]
 };
