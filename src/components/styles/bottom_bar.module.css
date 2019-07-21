@@ -14,16 +14,35 @@
 
 .leftItems {
   flex-grow: 1;
+  height: 100%;
 }
 
 .leftItems:first-child {
-    padding-left: 7px;
+  padding-left: 7px;
 }
 
 .rightItems:last-child {
-    padding-right: 7px;
+  padding-right: 7px;
 }
 
 .rightItems {
   flex-direction: row-reverse;
+  height: 100%;
+}
+
+.link {
+  color: rgb(103, 110, 149);
+  height: 100%;
+  padding: 0 5px;
+  display: inline-block;
+}
+.link:hover {
+  background-color: #202431;
+}
+
+@media (max-width: 768px) {
+  .bottomBar {
+    height: 44px;
+    line-height: 44px;
+  }
 }
