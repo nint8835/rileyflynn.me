@@ -2,17 +2,13 @@ import React from "react";
 
 import bottomBarStyles from "./styles/bottom_bar.module.css";
 import { Link } from "gatsby";
-import Octicon, { GitCommit } from "@primer/octicons-react";
-
-const commitHash = (process.env.DRONE_COMMIT || "Unknown").substring(0, 7);
-const commitUrl =
-  process.env.DRONE_COMMIT_LINK || `https://github.com/nint8835/rileyflynn.me/`;
+import Octicon, { GitBranch } from "@primer/octicons-react";
 
 export default () => (
   <div className={bottomBarStyles.bottomBar}>
     <div className={bottomBarStyles.leftItems}>
-      <a href={commitUrl} className={bottomBarStyles.link}>
-        <Octicon icon={GitCommit} /> {commitHash}
+      <a href="https://github.com/nint8835/rileyflynn.me" className={bottomBarStyles.link}>
+        <Octicon icon={GitBranch} /> master
       </a>
     </div>
     <div className={bottomBarStyles.rightItems}>

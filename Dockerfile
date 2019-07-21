@@ -1,11 +1,7 @@
-ARG DRONE_COMMIT_ARG
-ARG DRONE_COMMIT_LINK_ARG
 FROM node:10-alpine as builder
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY . /usr/src/app
-ENV DRONE_COMMIT=$DRONE_COMMIT_ARG
-ENV DRONE_COMMIT_LINK=$DRONE_COMMIT_LINK_ARG
 RUN npm install --silent && npm run build
 
 FROM nginx:stable-alpine
