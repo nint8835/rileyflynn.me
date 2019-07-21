@@ -6,6 +6,7 @@ body {
   flex-direction: column;
   margin: 0;
   font-family: "Noto Sans", sans-serif;
+  overflow: hidden;
 }
 
 .page {

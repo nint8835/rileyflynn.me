@@ -2,10 +2,17 @@
 
 .editor {
   background-color: #292d3e;
-  height: 100vh;
+  height: calc(100vh - 22px);
   flex: 1;
   flex-direction: column;
   display: flex;
+  overflow: auto;
+}
+
+@media (max-width: 768px) {
+  .editor {
+    height: calc(100vh - 44px);
+  }
 }
 
 .topBar {
