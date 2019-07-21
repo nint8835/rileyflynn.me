@@ -1,9 +1,9 @@
 import React from 'react'
 
 import EditorTopBar from './editor_top_bar'
-import editorStyles from './editor.module.css'
+import editorStyles from './styles/editor.module.css'
 
-require('./material-palenight.css')
+require('./styles/material-palenight.css')
 
 export default ({children, title}) => (
   <div className={editorStyles.editor}>
