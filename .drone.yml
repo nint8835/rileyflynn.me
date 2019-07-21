@@ -12,8 +12,8 @@ steps:
     password:
       from_secret: docker_password
     build_args:
-      - DRONE_COMMIT=${DRONE_COMMIT}
-      - DRONE_COMMIT_LINK=${DRONE_COMMIT_LINK}
+      - DRONE_COMMIT_ARG=${DRONE_COMMIT}
+      - DRONE_COMMIT_LINK_ARG=${DRONE_COMMIT_LINK}
   when:
     branch:
       - master
