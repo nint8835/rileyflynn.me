@@ -1,29 +1,29 @@
 @import url(./dank-mono.css);
 
 .editor {
-    background-color: #292d3e;
-    height: 100vh;
-    flex: 1;
-    flex-direction: column;
-    display: flex;
+  background-color: #292d3e;
+  height: 100vh;
+  flex: 1;
+  flex-direction: column;
+  display: flex;
 }
 
 .topBar {
-    font-size: 0.8125em;
-    display: flex;
-    background-color: #32374c;
-    height: 2.625em;
-    align-items: center;
-    color: #eeffff;
-    padding-left: 2em;
+  font-size: 0.8125em;
+  display: flex;
+  background-color: #32374c;
+  height: 2.625em;
+  align-items: center;
+  color: #eeffff;
+  padding-left: 2em;
 }
 
 .editorContent {
-    overflow: auto;
-    flex: 1;
-    padding: 1em;
-    font-family: 'Dank Mono', monospace;
-    font-feature-settings: "liga" on,"calt" on;
-    font-size: 0.875em;
-    color: #bfc7d5;
+  overflow: auto;
+  flex: 1;
+  padding: 1em;
+  font-family: "Dank Mono", monospace;
+  font-feature-settings: "liga" on, "calt" on;
+  font-size: 0.875em;
+  color: #bfc7d5;
 }
