@@ -3,6 +3,7 @@ weight: 1
 path: "/projects"
 title: "projects"
 description: "Projects that I have worked on"
+hidden: false
 ---
 ![](/images/projects/iTunesRichPresence.png)
 

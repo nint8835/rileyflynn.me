@@ -2,6 +2,8 @@
 path: "/work"
 title: "work"
 weight: 3
+description: "Jobs I've had"
+hidden: false
 ---
 
 ![](/images/work/colab-software.png)

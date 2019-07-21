@@ -3,6 +3,7 @@ weight: 100
 path: "/credits"
 title: "credits"
 description: "Credits to all of the things incorporated to make this site"
+hidden: true
 ---
 # Credits
 

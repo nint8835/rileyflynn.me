@@ -1,20 +1,20 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from "react";
+import { graphql } from "gatsby";
 
-import Page from '../components/page'
+import Page from "../components/page";
 
-export default function Template({
-  data,
-}) {
-  const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
+export default function Template({ data }) {
+  const { markdownRemark } = data;
+  const { frontmatter, html } = markdownRemark;
   return (
-    <Page description={frontmatter.description} path={frontmatter.path} title={frontmatter.title + '.md'}>
-      <div
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+    <Page
+      description={frontmatter.description}
+      path={frontmatter.path}
+      title={frontmatter.title + ".md"}
+    >
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </Page>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -28,4 +28,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
