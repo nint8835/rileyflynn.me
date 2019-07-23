@@ -5,7 +5,8 @@ title: "projects"
 description: "Projects that I have worked on"
 hidden: false
 ---
-![](/images/projects/iTunesRichPresence.png)
+
+![iTunesRichPresence](/images/projects/iTunesRichPresence.png)
 
 ## iTunesRichPresence
 
@@ -13,8 +14,9 @@ Utilizes the iTunes COM interface and Discord's RPC and Rich Presence APIs to sh
 
 [GitHub](https://github.com/nint8835/iTunesRichPresence)
 
-___
-![](/images/projects/Chainmail.png)
+---
+
+![Chainmail](/images/projects/Chainmail.png)
 
 ## Chainmail
 
@@ -22,8 +24,9 @@ Wraps around the vanilla Minecraft server, intercepting output and injecting inp
 
 [GitHub](https://github.com/Chainmail-Project/Chainmail)
 
-___
-![](/images/projects/SchoolTracker.png)
+---
+
+![SchoolTracker](/images/projects/SchoolTracker.png)
 
 ## SchoolTracker
 
@@ -31,8 +34,9 @@ Scrapes the NLESD Status Central website to keep track of the status for various
 
 [GitHub](https://github.com/nint8835/SchoolTracker) [Twitter](https://twitter.com/nlschoolstatus)
 
-___
-![](/images/projects/InvitationASM.png)
+---
+
+![InvitationASM](/images/projects/InvitationASM.png)
 
 ## InvitationASM
 
@@ -40,8 +44,9 @@ Interpreter for the assembly-styled language used to teach machine code and asse
 
 [GitHub](https://github.com/nint8835/InvitationASM)
 
-___
-![](/images/projects/Jigsaw.png)
+---
+
+![Jigsaw](/images/projects/Jigsaw.png)
 
 ## Jigsaw
 
@@ -49,8 +54,9 @@ Easy to use library for adding plugin functionality to Python projects. Used to 
 
 [GitHub](https://github.com/nint8835/jigsaw) [Documentation](https://jigsaw.readthedocs.io/en/latest/)
 
-___
-![](/images/projects/NintbotForDiscord.png)
+---
+
+![NintbotForDiscord](/images/projects/NintbotForDiscord.png)
 
 ## NintbotForDiscord
 
@@ -58,8 +64,9 @@ One of the very first modular bot frameworks for Discord.
 
 [GitHub](https://github.com/nint8835/NintbotForDiscord)
 
-___
-![](/images/projects/WebRichPresence.png)
+---
+
+![WebRichPresence](/images/projects/WebRichPresence.png)
 
 ## WebRichPresence
 
@@ -67,8 +74,9 @@ Web API for controlling the Discord Rich Presence status for clients remotely. C
 
 [GitHub (Client)](https://github.com/nint8835/WebRichPresence_Client)
 
-___
-![](/images/projects/Automata.png)
+---
+
+![Automata](/images/projects/Automata.png)
 
 ## Automata
 

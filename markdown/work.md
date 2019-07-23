@@ -6,7 +6,7 @@ description: "Jobs I've had"
 hidden: false
 ---
 
-![](/images/work/colab-software.png)
+![CoLab Software](/images/work/colab-software.png)
 
 ## CoLab Software
 
@@ -14,9 +14,9 @@ hidden: false
 
 Responsible for working on many aspects of Gradient, a cloud-based design review and issue tracking platform.
 
-___
+---
 
-![](/images/work/memorial-university-of-newfoundland.png)
+![Memorial University of Newfoundland](/images/work/memorial-university-of-newfoundland.png)
 
 ## Memorial University of Newfoundland
 
@@ -24,7 +24,7 @@ ___
 
 Responsible for handling the day-to-day technical management of [ISSF](https://github.com/toobigtoignore/issf) for Too Big To Ignore.
 
-___
+---
 
 **Software Developer** - _December 2018 - January 2019_
 
@@ -44,8 +44,9 @@ Technologies used:
 - Django
 - Postgres
 
-___
-![](/images/work/hickman-chevrolet-cadillac.jpg)
+---
+
+![Hickman Chevrolet Cadillac](/images/work/hickman-chevrolet-cadillac.jpg)
 
 ## Hickman Chevrolet Cadillac
 
