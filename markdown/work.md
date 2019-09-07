@@ -10,9 +10,15 @@ hidden: false
 
 ## CoLab Software
 
-**Full Stack Development Intern** - _April 2019 - Present_
+**Full Stack Developer** - _September 2019 - Present_
 
-Responsible for working on many aspects of Gradient, a cloud-based design review and issue tracking platform.
+Responsible for working on many aspects of CoLab, a cloud-based design review and issue tracking platform.
+
+---
+
+**Full Stack Development Intern** - _April 2019 - September 2019_
+
+Responsible for working on many aspects of CoLab, a cloud-based design review and issue tracking platform.
 
 ---
 

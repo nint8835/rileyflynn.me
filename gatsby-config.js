@@ -9,7 +9,7 @@ module.exports = {
     title: "Riley Flynn",
     titleTemplate: "%s - rileyflynn.me",
     description:
-      "Full-stack software developer and Vice President of the MUN Computer Science Society",
+      "Full Stack Developer and Vice President of the MUN Computer Science Society",
     siteUrl: "https://rileyflynn.me",
     image: "/images/st_johns.jpg",
     twitterUsername: "@BootlegJohn"
