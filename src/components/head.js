@@ -11,12 +11,12 @@ export default ({ title, description, path }) => (
     <meta property="og:url" content={"https://rileyflynn.me" + path + "/"} />
     <meta property="og:title" content={title + " - rileyflynn.me"} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`screenshots/${title}.png`} />
+    <meta property="og:image" content={`/screenshots/${title}.png`} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@BootlegJohn" />
     <meta name="twitter:title" content={title + " - rileyflynn.me"} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`screenshots/${title}.png`} />
+    <meta name="twitter:image" content={`/screenshots/${title}.png`} />
   </Helmet>
 );
