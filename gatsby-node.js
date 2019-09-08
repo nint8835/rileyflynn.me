@@ -1,11 +1,12 @@
 const path = require("path");
+const downloadImageForFile = require("./src/util/carbon.js");
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
 
   const pageTemplate = path.resolve(`src/templates/pageTemplate.js`);
 
-  return graphql(`
+  const result = await graphql(`
     {
       allMarkdownRemark(
         limit: 1000
@@ -13,6 +14,7 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
+            fileAbsolutePath
             frontmatter {
               path
             }
@@ -20,17 +22,22 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors);
-    }
-
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: pageTemplate,
-        context: {} // additional data can be passed via context
-      });
-    });
+  `);
+  if (result.errors) {
+    return Promise.reject(result.errors);
+  }
+  const promises = [];
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    promises.push(
+      (async () => {
+        await downloadImageForFile(node.fileAbsolutePath);
+        createPage({
+          path: node.frontmatter.path,
+          component: pageTemplate,
+          context: {} // additional data can be passed via context
+        });
+      })()
+    );
   });
+  await Promise.all(promises);
 };
