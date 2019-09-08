@@ -9,7 +9,7 @@ async function downloadImageForFile(filePath) {
     .filter((line, index) => index <= 50)
     .join("\n");
   const escapedContents = encodeURIComponent(truncatedContents);
-  const url = `https://carbon.now.sh/?l=markdown&fm=dm&code=${escapedContents}`;
+  const url = `https://carbon.now.sh/?l=markdown&fm=dm&bg=rgba(74%2C74%2C74%2C1)&t=material&code=${escapedContents}`;
 
   // I *really* don't want to do this, but it seems I don't really have a choice
   const browser = await puppeteer.launch({ headless: true });
