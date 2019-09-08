@@ -3,6 +3,9 @@ const path = require("path");
 const puppeteer = require("puppeteer");
 
 async function downloadImageForFile(filePath) {
+  if (process.env === "production") {
+    return;
+  }
   const fileContents = await fs.readFile(filePath, { encoding: "utf8" });
   const truncatedContents = fileContents
     .split("\n")
