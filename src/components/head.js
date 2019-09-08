@@ -8,7 +8,7 @@ export default ({ title, description, path }) => (
     <meta name="image" content={`screenshots/${title}.png`} />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={"https://rileyflynn.me" + path} />
+    <meta property="og:url" content={"https://rileyflynn.me" + path + "/"} />
     <meta property="og:title" content={title + " - rileyflynn.me"} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`screenshots/${title}.png`} />
