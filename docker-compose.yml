@@ -15,7 +15,7 @@ services:
       traefik.frontend.entryPoints: "https"
       traefik.frontend.headers.STSSeconds: 315360000
       traefik.frontend.headers.STSIncludeSubdomains: true
-      traefik.frontend.headers.contentSecurityPolicy: "default-src 'self' https://www.google-analytics.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:"
+      traefik.frontend.headers.contentSecurityPolicy: "default-src 'none'; connect-src 'self'; font-src data: https://fonts.gstatic.com; img-src 'self' https://www.google-analytics.com; script-src 'self' 'unsafe-inline' https://www.google-analytics.com/analytics.js; style-src 'unsafe-inline' https://fonts.googleapis.com/; worker-src 'self'"
       traefik.frontend.headers.frameDeny: true
       traefik.frontend.headers.browserXSSFilter: true
       traefik.frontend.headers.contentTypeNosniff: true
