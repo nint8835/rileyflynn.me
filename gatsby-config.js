@@ -56,7 +56,7 @@ module.exports = {
         icon: `static/Favicon.png`
       }
     },
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
