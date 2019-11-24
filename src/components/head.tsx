@@ -1,7 +1,13 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { Helmet } from "react-helmet";
 
-export default ({ title, description, path }) => (
+type HeadProps = {
+  title: string;
+  description: string;
+  path: string;
+};
+
+const Head: FunctionComponent<HeadProps> = ({ title, description, path }) => (
   <Helmet>
     <title>{title} - rileyflynn.me</title>
     <meta name="description" content={description} />
@@ -26,3 +32,5 @@ export default ({ title, description, path }) => (
     />
   </Helmet>
 );
+
+export default Head;

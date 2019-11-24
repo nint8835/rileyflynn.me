@@ -4,7 +4,7 @@ const downloadImageForFile = require("./src/util/carbon.js");
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
 
-  const pageTemplate = path.resolve(`src/templates/pageTemplate.js`);
+  const pageTemplate = path.resolve(`src/templates/pageTemplate.tsx`);
 
   const result = await graphql(`
     {

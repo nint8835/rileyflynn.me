@@ -1,13 +1,18 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 
 import bottomBarStyles from "./styles/bottom_bar.module.css";
 import { Link } from "gatsby";
 import Octicon, { GitBranch } from "@primer/octicons-react";
 
-export default () => (
+type BottomBarProps = {};
+
+const BottomBar: FunctionComponent<BottomBarProps> = () => (
   <div className={bottomBarStyles.bottomBar}>
     <div className={bottomBarStyles.leftItems}>
-      <a href="https://github.com/nint8835/rileyflynn.me" className={bottomBarStyles.link}>
+      <a
+        href="https://github.com/nint8835/rileyflynn.me"
+        className={bottomBarStyles.link}
+      >
         <Octicon icon={GitBranch} /> master
       </a>
     </div>
@@ -18,3 +23,5 @@ export default () => (
     </div>
   </div>
 );
+
+export default BottomBar;

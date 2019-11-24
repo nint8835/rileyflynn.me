@@ -1,9 +1,22 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { graphql } from "gatsby";
 
 import Page from "../components/page";
 
-export default function Template({ data }) {
+type TemplateProps = {
+  data: {
+    markdownRemark: {
+      frontmatter: {
+        path: string;
+        title: string;
+        description: string;
+      };
+      html: string;
+    };
+  };
+};
+
+const Template: FunctionComponent<TemplateProps> = ({ data }) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
   return (
@@ -15,7 +28,9 @@ export default function Template({ data }) {
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Page>
   );
-}
+};
+
+export default Template;
 
 export const pageQuery = graphql`
   query($path: String!) {
