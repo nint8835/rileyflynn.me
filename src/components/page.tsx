@@ -3,6 +3,7 @@ import React, { FunctionComponent } from "react";
 import Head from "./head";
 import Editor from "./editor";
 import Sidebar from "./sidebar";
+// @ts-ignore
 import pageStyles from "./styles/page.module.css";
 import BottomBar from "./bottom_bar";
 

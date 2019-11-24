@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { Link, StaticQuery, graphql } from "gatsby";
 
+// @ts-ignore
 import sidebarStyles from "./styles/sidebar.module.css";
 
 const pageQuery = graphql`

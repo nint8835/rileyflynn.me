@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 
+// @ts-ignore
 import bottomBarStyles from "./styles/bottom_bar.module.css";
 import { Link } from "gatsby";
 import Octicon, { GitBranch } from "@primer/octicons-react";
