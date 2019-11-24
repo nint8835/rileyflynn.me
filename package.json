@@ -8,7 +8,8 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@primer/octicons-react": "^9.3.0",
@@ -21,6 +22,7 @@
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sitemap": "^2.2.21",
+    "gatsby-plugin-typescript": "^2.1.19",
     "gatsby-remark-prismjs": "^3.3.24",
     "gatsby-source-filesystem": "^2.1.38",
     "gatsby-transformer-remark": "^2.6.37",
@@ -35,6 +37,10 @@
     "url": "https://github.com/nint8835/rileyflynn.me"
   },
   "devDependencies": {
-    "prettier": "1.18.2"
+    "@types/node": "^12.12.12",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "prettier": "1.18.2",
+    "typescript": "^3.7.2"
   }
 }

@@ -16,6 +16,9 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-typescript`
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/markdown`,
