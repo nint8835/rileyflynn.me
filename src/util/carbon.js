@@ -3,7 +3,7 @@ const path = require("path");
 const puppeteer = require("puppeteer");
 
 async function downloadImageForFile(filePath) {
-  if (process.env.NODE_ENV === "production") {
+  if (process.env.GATSBY_CREATE_SCREENSHOTS !== "true") {
     return;
   }
   const fileContents = await fs.readFile(filePath, { encoding: "utf8" });

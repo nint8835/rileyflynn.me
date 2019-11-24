@@ -1,6 +1,7 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { Link, StaticQuery, graphql } from "gatsby";
 
+// @ts-ignore
 import sidebarStyles from "./styles/sidebar.module.css";
 
 const pageQuery = graphql`
@@ -19,10 +20,23 @@ const pageQuery = graphql`
   }
 `;
 
-export default () => (
+type SidebarProps = {};
+
+type RemarkNode = {
+  allMarkdownRemark: {
+    nodes: Array<{
+      frontmatter: {
+        path: string;
+        title: string;
+      };
+    }>;
+  };
+};
+
+const Sidebar: FunctionComponent<SidebarProps> = () => (
   <StaticQuery
     query={pageQuery}
-    render={data => (
+    render={(data: RemarkNode) => (
       <div className={sidebarStyles.sidebar}>
         <div className={sidebarStyles.header}>RILEYFLYNN.ME</div>
         <div className={sidebarStyles.items}>
@@ -41,3 +55,5 @@ export default () => (
     )}
   />
 );
+
+export default Sidebar;

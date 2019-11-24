@@ -8,26 +8,28 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@primer/octicons-react": "^9.1.1",
+    "@primer/octicons-react": "^9.3.0",
     "fs-extra": "^8.1.0",
-    "gatsby": "^2.7.1",
+    "gatsby": "^2.18.2",
     "gatsby-plugin-env-variables": "^1.0.1",
-    "gatsby-plugin-google-analytics": "^2.0.20",
-    "gatsby-plugin-manifest": "^2.1.1",
-    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-google-analytics": "^2.1.28",
+    "gatsby-plugin-manifest": "^2.2.29",
+    "gatsby-plugin-react-helmet": "^3.1.15",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
-    "gatsby-plugin-robots-txt": "^1.4.0",
-    "gatsby-plugin-sitemap": "^2.1.0",
-    "gatsby-remark-prismjs": "^3.2.9",
-    "gatsby-source-filesystem": "^2.0.38",
-    "gatsby-transformer-remark": "^2.3.12",
-    "prismjs": "^1.16.0",
-    "puppeteer": "^1.19.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "gatsby-plugin-robots-txt": "^1.5.0",
+    "gatsby-plugin-sitemap": "^2.2.21",
+    "gatsby-plugin-typescript": "^2.1.19",
+    "gatsby-remark-prismjs": "^3.3.24",
+    "gatsby-source-filesystem": "^2.1.38",
+    "gatsby-transformer-remark": "^2.6.37",
+    "prismjs": "^1.17.1",
+    "puppeteer": "^1.20.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1"
   },
   "repository": {
@@ -35,6 +37,11 @@
     "url": "https://github.com/nint8835/rileyflynn.me"
   },
   "devDependencies": {
-    "prettier": "1.18.2"
+    "@types/node": "^12.12.12",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-helmet": "^5.0.14",
+    "prettier": "1.18.2",
+    "typescript": "^3.7.2"
   }
 }
