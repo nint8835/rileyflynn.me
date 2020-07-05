@@ -5,7 +5,7 @@ COPY . /usr/src/app
 ENV NODE_ENV production
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 RUN cd terraform &&\
-wget https://github.com/nint8835/terraform-provider-gatsby/suites/878652568/artifacts/10305703 &&\
+wget https://api.github.com/repos/nint8835/terraform-provider-gatsby/actions/artifacts/10305703/zip &&\
 chmod +x terraform-provider-gatsby &&\
 apk add terraform &&\
 terraform init &&\
