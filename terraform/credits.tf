@@ -59,9 +59,9 @@ locals {
 }
 
 resource "gatsby_text_code" "credits_copyright" {
-    for_each = local.credits
+  for_each = local.credits
 
-    code = "Copyright (c) ${each.value.copyright}"
+  code = "Copyright (c) ${each.value.copyright}"
 }
 
 resource "gatsby_text_list" "credits_subitems_list" {
