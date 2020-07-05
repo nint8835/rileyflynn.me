@@ -28,7 +28,7 @@ resource "gatsby_text_list" "link_list" {
   items = [for link in gatsby_text_link.link_list_link : link.contents]
 }
 
-resource "gatsby_text_list" "index_md" {
+resource "gatsby_text_list" "index" {
   prefix = ""
   items = [
     "Hi! I'm Riley. I'm a Full Stack Developer for ${gatsby_text_link.colab_link.contents}",
@@ -39,8 +39,8 @@ resource "gatsby_text_list" "index_md" {
   ]
 }
 
-resource "gatsby_page" "demo_page" {
-  contents = gatsby_text_list.index_md.contents
+resource "gatsby_page" "index" {
+  contents = gatsby_text_list.index.contents
   frontmatter = {
     path        = "/"
     weight      = 0
