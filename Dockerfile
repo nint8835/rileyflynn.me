@@ -6,6 +6,7 @@ ENV NODE_ENV production
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 RUN cd terraform &&\
 wget https://github.com/nint8835/terraform-provider-gatsby/releases/download/refs/heads/master/terraform-provider-gatsby &&\
+chmod +x terraform-provider-gatsby &&\
 apk add terraform &&\
 terraform init &&\
 terraform apply -auto-approve &&\
