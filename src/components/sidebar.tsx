@@ -8,7 +8,7 @@ const pageQuery = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___weight], order: ASC }
-      filter: { frontmatter: { hidden: { ne: true } } }
+      filter: { frontmatter: { hidden: { ne: "true" } } }
     ) {
       nodes {
         frontmatter {
@@ -47,7 +47,7 @@ const Sidebar: FunctionComponent<SidebarProps> = () => (
               className={sidebarStyles.pageLink}
               activeClassName={sidebarStyles.selectedPageLink}
             >
-              {node.frontmatter.title + ".md"}
+              {node.frontmatter.title + ".tf"}
             </Link>
           ))}
         </div>

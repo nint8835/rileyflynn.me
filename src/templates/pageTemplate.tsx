@@ -23,7 +23,7 @@ const Template: FunctionComponent<TemplateProps> = ({ data }) => {
     <Page
       description={frontmatter.description}
       path={frontmatter.path}
-      title={frontmatter.title + ".md"}
+      title={frontmatter.title + ".tf"}
     >
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Page>

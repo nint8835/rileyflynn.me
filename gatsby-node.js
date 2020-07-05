@@ -14,7 +14,6 @@ exports.createPages = async ({ actions, graphql }) => {
       ) {
         edges {
           node {
-            fileAbsolutePath
             frontmatter {
               path
             }
@@ -30,7 +29,6 @@ exports.createPages = async ({ actions, graphql }) => {
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     promises.push(
       (async () => {
-        await downloadImageForFile(node.fileAbsolutePath);
         createPage({
           path: node.frontmatter.path,
           component: pageTemplate,

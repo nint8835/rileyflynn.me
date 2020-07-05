@@ -21,9 +21,12 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/markdown`,
-        name: "markdown-pages"
+        path: `${__dirname}/terraform`,
+        name: "terraform-pages"
       }
+    },
+    {
+      resolve: `gatsby-transformer-terraform`,
     },
     {
       resolve: `gatsby-transformer-remark`,
