@@ -79,7 +79,7 @@ resource "gatsby_page" "credits" {
   frontmatter = {
     path        = "/credits"
     weight      = 100
-    hidden      = false
+    hidden      = true
     title       = "credits"
     description = "Credits to all of the things incorporated to make this site"
   }
