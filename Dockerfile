@@ -8,7 +8,8 @@ RUN cd terraform && \
 apk add go terraform git && \
 git clone https://github.com/nint8835/terraform-provider-gatsby.git && \
 cd terraform-provider-gatsby && \
-go build -o ../terraform-provider-gatsby && \
+go build -o terraform-provider-gatsby && \
+cp terraform-provider-gatsby ../ && \
 cd .. && \
 terraform init && \
 terraform apply -auto-approve && \
