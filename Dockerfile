@@ -6,7 +6,10 @@ ENV NODE_ENV production
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 RUN cd terraform && \
 apk add go terraform && \
-go build -o terraform-provider-gatsby && \
+git clone https://github.com/nint8835/terraform-provider-gatsby.git && \
+cd terraform-provider-gatsby && \
+go build -o ../terraform-provider-gatsby && \
+cd .. && \
 terraform init && \
 terraform apply -auto-approve && \
 cd .. && \
