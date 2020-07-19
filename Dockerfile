@@ -15,8 +15,7 @@ terraform init && \
 terraform apply -auto-approve && \
 cd .. && \
 npm install && \
-npm run build && \
-ls /usr/src/app
+npm run build
 
 FROM nginx:stable-alpine
 COPY --from=builder /usr/src/app/public /usr/share/nginx/html
