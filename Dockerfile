@@ -1,4 +1,4 @@
-FROM nint8835/terraform-gatsby-provider as terraform
+FROM nint8835/terraform-provider-gatsby as terraform
 WORKDIR /terraform
 COPY ./terraform /terraform
 RUN terraform init && terraform apply -auto-approve
