@@ -10,9 +10,7 @@ COPY . /usr/src/app
 ENV NODE_ENV production
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 COPY --from=terraform /terraform/terraform.tfstate /usr/src/app/terraform/terraform.tfstate
-RUN npm install && \
-npm run build && \
-ls /usr/src/app
+RUN npm install && npm run build
 
 FROM nginx:stable-alpine
 COPY --from=builder /usr/src/app/public /usr/share/nginx/html
