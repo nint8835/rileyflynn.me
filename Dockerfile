@@ -1,20 +1,16 @@
+FROM nint8835/terraform-gatsby-provider as terraform
+WORKDIR /terraform
+COPY ./terraform /terraform
+RUN terraform init && terraform apply -auto-approve
+
 FROM node:10-alpine as builder
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY . /usr/src/app
 ENV NODE_ENV production
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
-RUN cd terraform && \
-apk add go terraform git vips vips-dev && \
-git clone https://github.com/nint8835/terraform-provider-gatsby.git provider && \
-cd provider && \
-go build -o terraform-provider-gatsby && \
-cp terraform-provider-gatsby ../ && \
-cd .. && \
-terraform init && \
-terraform apply -auto-approve && \
-cd .. && \
-npm install && \
+COPY --from=terraform /terraform/terraform.tfstate /usr/src/app/terraform/terraform.tfstate
+RUN npm install && \
 npm run build && \
 ls /usr/src/app
 
