@@ -15,18 +15,18 @@
   "dependencies": {
     "@primer/octicons-react": "^9.6.0",
     "fs-extra": "^8.1.0",
-    "gatsby": "^2.23.20",
+    "gatsby": "^2.24.11",
     "gatsby-plugin-env-variables": "^1.0.2",
-    "gatsby-plugin-google-analytics": "^2.3.10",
-    "gatsby-plugin-manifest": "^2.2.29",
-    "gatsby-plugin-react-helmet": "^3.3.9",
+    "gatsby-plugin-google-analytics": "^2.3.13",
+    "gatsby-plugin-manifest": "^2.4.21",
+    "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-robots-txt": "^1.5.1",
-    "gatsby-plugin-sitemap": "^2.4.10",
-    "gatsby-plugin-typescript": "^2.4.13",
-    "gatsby-remark-prismjs": "^3.5.9",
-    "gatsby-source-filesystem": "^2.3.18",
-    "gatsby-transformer-remark": "^2.8.23",
+    "gatsby-plugin-sitemap": "^2.4.11",
+    "gatsby-plugin-typescript": "^2.4.16",
+    "gatsby-remark-prismjs": "^3.5.10",
+    "gatsby-source-filesystem": "^2.3.23",
+    "gatsby-transformer-remark": "^2.8.27",
     "gatsby-transformer-terraform": "^1.0.1",
     "node-fetch": "^2.6.0",
     "prismjs": "^1.20.0",
@@ -39,11 +39,11 @@
     "url": "https://github.com/nint8835/rileyflynn.me"
   },
   "devDependencies": {
-    "@types/node": "^12.12.47",
-    "@types/react": "^16.9.41",
+    "@types/node": "^12.12.53",
+    "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
     "@types/react-helmet": "^5.0.16",
     "prettier": "1.18.2",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.7"
   }
 }
