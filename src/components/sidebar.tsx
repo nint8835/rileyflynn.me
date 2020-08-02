@@ -1,8 +1,8 @@
+import { graphql, Link, StaticQuery } from "gatsby";
 import React, { FunctionComponent } from "react";
-import { Link, StaticQuery, graphql } from "gatsby";
-
 // @ts-ignore
 import sidebarStyles from "./styles/sidebar.module.css";
+
 
 const pageQuery = graphql`
   query {
@@ -40,7 +40,7 @@ const Sidebar: FunctionComponent<SidebarProps> = () => (
       <div className={sidebarStyles.sidebar}>
         <div className={sidebarStyles.header}>RILEYFLYNN.ME</div>
         <div className={sidebarStyles.items}>
-          {data.allMarkdownRemark.nodes.map(node => (
+          {data.allMarkdownRemark.nodes.map((node) => (
             <Link
               to={node.frontmatter.path}
               key={node.frontmatter.path}
@@ -50,6 +50,13 @@ const Sidebar: FunctionComponent<SidebarProps> = () => (
               {node.frontmatter.title + ".tf"}
             </Link>
           ))}
+          <Link
+            to={"/playground/"}
+            className={sidebarStyles.pageLink}
+            activeClassName={sidebarStyles.selectedPageLink}
+          >
+            playground.tf
+          </Link>
         </div>
       </div>
     )}
