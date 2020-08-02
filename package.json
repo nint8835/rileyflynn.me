@@ -15,6 +15,7 @@
   "dependencies": {
     "@mapbox/rehype-prism": "^0.5.0",
     "@primer/octicons-react": "^9.6.0",
+    "@react-hook/window-size": "^3.0.7",
     "fs-extra": "^8.1.0",
     "gatsby": "^2.24.11",
     "gatsby-plugin-env-variables": "^1.0.2",

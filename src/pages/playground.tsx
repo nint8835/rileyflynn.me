@@ -1,43 +1,38 @@
 import React, { FunctionComponent, useState } from "react";
-import unified from "unified";
-import parse from "remark-parse";
-import rehypePrism from "@mapbox/rehype-prism";
-import remark2rehype from "remark-rehype";
-import rehype2react from "rehype-react";
+import { useWindowWidth } from "@react-hook/window-size";
 import Page from "../components/page";
 import MonacoEditor from "../components/monaco_editor";
 import SplitEditor from "../components/split_editor";
+import MarkdownRenderer from "../components/markdown_renderer";
+
+const mobileMessage = `### Sorry!
+The \`terraform-provider-gatsby\` playground is not available on mobile.
+Come back on a device with a larger screen to experience it and all of it's wonder.
+`
 
 type PageProps = {};
 
 const PlaygroundPage: FunctionComponent<PageProps> = ({}) => {
+  const width = useWindowWidth();
   const [editorCode, setEditorCode] = useState<string>("");
   return (
     <Page
       description={"Hello world"}
       path={"playground"}
-      title={editorCode}
-      excludeEditor
+      title={"playground.tf"}
+      excludeEditor={width > 768}
     >
-      <SplitEditor
-        titles={["playground.tf", "Preview"]}
-        rawContents={[true, false]}
-      >
-        <MonacoEditor setContents={setEditorCode} />
-        <>
-          {
-            unified()
-              .use(parse)
-              .use(remark2rehype)
-              .use(rehypePrism)
-              .use(rehype2react, {
-                createElement: React.createElement,
-              })
-              // @ts-ignore
-              .processSync(editorCode).result
-          }
-        </>
-      </SplitEditor>
+      {width <= 768 ? (
+        <MarkdownRenderer markdown={mobileMessage}/>
+      ) : (
+        <SplitEditor
+          titles={["playground.tf", "Preview"]}
+          rawContents={[true, false]}
+        >
+          <MonacoEditor setContents={setEditorCode} />
+          <MarkdownRenderer markdown={editorCode}/>
+        </SplitEditor>
+      )}
     </Page>
   );
 };
