@@ -64,6 +64,7 @@ const PlaygroundPage: FunctionComponent<PageProps> = ({}) => {
   const [editorCode, setEditorCode] = useState<string>(initialTerraform);
 
   const processTF = async () => {
+    setMarkdownOutput("*Processing...*");
     const resp = await fetch("http://localhost:9000/process", {
       method: "POST",
       body: JSON.stringify({ code: editorCode }),
@@ -100,7 +101,10 @@ const PlaygroundPage: FunctionComponent<PageProps> = ({}) => {
             rawContents
             topBarButtons={[<TopBarButton icon={Play} onClick={processTF} />]}
           >
-            <MonacoEditor setContents={setEditorCode} initialContents={initialTerraform}/>
+            <MonacoEditor
+              setContents={setEditorCode}
+              initialContents={initialTerraform}
+            />
           </Editor>
           <Editor title={"Preview"}>
             <MarkdownRenderer markdown={markdownOutput} />
