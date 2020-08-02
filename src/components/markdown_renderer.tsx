@@ -1,9 +1,9 @@
-import React from "react";
-import unified from "unified";
-import parse from "remark-parse";
 import rehypePrism from "@mapbox/rehype-prism";
-import remark2rehype from "remark-rehype";
+import React from "react";
 import rehype2react from "rehype-react";
+import parse from "remark-parse";
+import remark2rehype from "remark-rehype";
+import unified from "unified";
 
 type MarkdownRendererProps = {
   markdown: string;

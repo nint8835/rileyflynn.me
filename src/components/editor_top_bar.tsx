@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from "react";
-
 // @ts-ignore
 import editorStyles from "./styles/editor.module.css";
 

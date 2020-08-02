@@ -1,11 +1,10 @@
 import React, { FunctionComponent } from "react";
-
-import Head from "./head";
+import BottomBar from "./bottom_bar";
 import Editor from "./editor";
+import Head from "./head";
 import Sidebar from "./sidebar";
 // @ts-ignore
 import pageStyles from "./styles/page.module.css";
-import BottomBar from "./bottom_bar";
 
 type PageProps = {
   title: string;

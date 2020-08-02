@@ -1,5 +1,5 @@
-import React, { FunctionComponent, useRef, useEffect, useState } from "react";
-import type { editor } from "monaco-editor/esm/vs/editor/editor.api"
+import type { editor } from "monaco-editor/esm/vs/editor/editor.api";
+import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 // @ts-ignore
 import monacoEditorStyles from "./styles/monaco_editor.module.css";
 

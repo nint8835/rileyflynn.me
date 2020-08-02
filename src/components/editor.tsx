@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from "react";
-
 import EditorTopBar from "./editor_top_bar";
 // @ts-ignore
 import editorStyles from "./styles/editor.module.css";

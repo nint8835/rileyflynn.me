@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from "react";
-
 import Editor from "./editor";
 // @ts-ignore
 import editorStyles from "./styles/editor.module.css";
@@ -13,11 +12,13 @@ type SplitEditorProps = {
 const SplitEditor: FunctionComponent<SplitEditorProps> = ({
   children,
   titles,
-  rawContents
+  rawContents,
 }) => (
   <div className={editorStyles.splitEditor}>
     {children.map((child, index) => (
-      <Editor title={titles[index]} rawContents={rawContents[index]}>{child}</Editor>
+      <Editor title={titles[index]} rawContents={rawContents[index]}>
+        {child}
+      </Editor>
     ))}
   </div>
 );

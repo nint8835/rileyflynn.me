@@ -3,7 +3,6 @@ import React, { FunctionComponent } from "react";
 // @ts-ignore
 import sidebarStyles from "./styles/sidebar.module.css";
 
-
 const pageQuery = graphql`
   query {
     allMarkdownRemark(
