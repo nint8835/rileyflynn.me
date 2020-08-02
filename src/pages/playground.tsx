@@ -1,4 +1,9 @@
 import React, { FunctionComponent, useState } from "react";
+import unified from "unified";
+import parse from "remark-parse";
+import rehypePrism from "@mapbox/rehype-prism";
+import remark2rehype from "remark-rehype";
+import rehype2react from "rehype-react";
 import Page from "../components/page";
 import MonacoEditor from "../components/monaco_editor";
 import SplitEditor from "../components/split_editor";
@@ -19,7 +24,19 @@ const PlaygroundPage: FunctionComponent<PageProps> = ({}) => {
         rawContents={[true, false]}
       >
         <MonacoEditor setContents={setEditorCode} />
-        <div>{editorCode}</div>
+        <>
+          {
+            unified()
+              .use(parse)
+              .use(remark2rehype)
+              .use(rehypePrism)
+              .use(rehype2react, {
+                createElement: React.createElement,
+              })
+              // @ts-ignore
+              .processSync(editorCode).result
+          }
+        </>
       </SplitEditor>
     </Page>
   );
