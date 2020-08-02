@@ -29,7 +29,9 @@ resource "gatsby_text_list" "contents" {
     "Welcome to the \${gatsby_text_link.terraform_provider_gatsby.contents} playground!",
     "",
     "The contents of this site are written in \${gatsby_text_link.terraform.contents} using a custom Terraform provider, terraform-provider-gatsby.",
-    "This playground provides an easy way to play around with this provider. Just edit the code in the left pane, and press the run button in the top bar. The value of the output 'contents' will be rendered in the preview pane."
+    "This playground provides an easy way to play around with this provider.",
+    "Just edit the code in the left pane, and press the run button in the top bar.",
+    "The value of the output 'contents' will be rendered in the preview pane."
   ]
 }
 
