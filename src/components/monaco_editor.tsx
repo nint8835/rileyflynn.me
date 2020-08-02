@@ -3,9 +3,11 @@ import type { editor } from "monaco-editor/esm/vs/editor/editor.api"
 // @ts-ignore
 import monacoEditorStyles from "./styles/monaco_editor.module.css";
 
-type PageProps = {};
+type MonacoEditorProps = {
+  setContents: React.Dispatch<React.SetStateAction<string>>;
+};
 
-const MonacoEditor: FunctionComponent<PageProps> = ({ children }) => {
+const MonacoEditor: FunctionComponent<MonacoEditorProps> = ({ setContents }) => {
   const [
     monacoEditor,
     setMonacoEditor,
@@ -22,18 +24,18 @@ const MonacoEditor: FunctionComponent<PageProps> = ({ children }) => {
       createdEditor = monaco.editor.create(editorRef.current, {
         theme: "vs-dark",
         automaticLayout: true,
+      });
+      createdEditor.onDidChangeModelContent((event) => {
+        setContents(createdEditor!.getValue());
       })
-      setMonacoEditor(
-        createdEditor
-      );
+      setMonacoEditor(createdEditor);
     })();
     return () => {
-        if (createdEditor !== undefined) {
-            createdEditor.dispose();
-        }
-    }
+      if (createdEditor !== undefined) {
+        createdEditor.dispose();
+      }
+    };
   }, [editorRef]);
-
 
   return <div ref={editorRef} className={monacoEditorStyles.monacoEditor} />;
 };

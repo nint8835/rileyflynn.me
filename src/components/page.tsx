@@ -11,18 +11,20 @@ type PageProps = {
   title: string;
   description: string;
   path: string;
+  excludeEditor?: boolean;
 };
 
 const Page: FunctionComponent<PageProps> = ({
   children,
   title,
   description,
-  path
+  path,
+  excludeEditor = false,
 }) => (
   <div className={pageStyles.page}>
     <Head title={title} description={description} path={path} />
     <Sidebar />
-    <Editor title={title}>{children}</Editor>
+    {excludeEditor ? children : <Editor title={title}>{children}</Editor>}
     <BottomBar />
   </div>
 );
