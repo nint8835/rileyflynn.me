@@ -1,9 +1,12 @@
+import { Play } from "@primer/octicons-react";
 import { useWindowWidth } from "@react-hook/window-size";
 import React, { FunctionComponent, useState } from "react";
+import Editor from "../components/editor";
 import MarkdownRenderer from "../components/markdown_renderer";
 import MonacoEditor from "../components/monaco_editor";
 import Page from "../components/page";
 import SplitEditor from "../components/split_editor";
+import TopBarButton from "../components/top_bar_button";
 
 const mobileMessage = `### Sorry!
 The \`terraform-provider-gatsby\` playground is not available on mobile.
@@ -25,12 +28,17 @@ const PlaygroundPage: FunctionComponent<PageProps> = ({}) => {
       {width <= 768 ? (
         <MarkdownRenderer markdown={mobileMessage} />
       ) : (
-        <SplitEditor
-          titles={["playground.tf", "Preview"]}
-          rawContents={[true, false]}
-        >
-          <MonacoEditor setContents={setEditorCode} />
-          <MarkdownRenderer markdown={editorCode} />
+        <SplitEditor>
+          <Editor
+            title={"playground.tf"}
+            rawContents
+            topBarButtons={[<TopBarButton icon={Play} onClick={() => {}} />]}
+          >
+            <MonacoEditor setContents={setEditorCode} />
+          </Editor>
+          <Editor title={"Preview"}>
+            <MarkdownRenderer markdown={editorCode} />
+          </Editor>
         </SplitEditor>
       )}
     </Page>

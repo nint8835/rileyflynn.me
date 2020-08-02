@@ -8,15 +8,17 @@ require("./styles/material-palenight.css");
 type EditorProps = {
   title: string;
   rawContents?: boolean;
+  topBarButtons?: React.ReactNode[];
 };
 
 const Editor: FunctionComponent<EditorProps> = ({
   children,
   title,
   rawContents = false,
+  topBarButtons = [],
 }) => (
   <div className={editorStyles.editor}>
-    <EditorTopBar title={title} />
+    <EditorTopBar title={title} buttons={topBarButtons} />
     <div
       className={(rawContents
         ? [editorStyles.editorContent, editorStyles.rawContent]
