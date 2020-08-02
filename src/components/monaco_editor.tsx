@@ -4,10 +4,11 @@ import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import monacoEditorStyles from "./styles/monaco_editor.module.css";
 
 type MonacoEditorProps = {
+  initialContents?: string;
   setContents: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const MonacoEditor: FunctionComponent<MonacoEditorProps> = ({ setContents }) => {
+const MonacoEditor: FunctionComponent<MonacoEditorProps> = ({ setContents, initialContents = "" }) => {
   const [
     monacoEditor,
     setMonacoEditor,
@@ -24,6 +25,7 @@ const MonacoEditor: FunctionComponent<MonacoEditorProps> = ({ setContents }) => 
       createdEditor = monaco.editor.create(editorRef.current, {
         theme: "vs-dark",
         automaticLayout: true,
+        value: initialContents
       });
       createdEditor.onDidChangeModelContent((event) => {
         setContents(createdEditor!.getValue());

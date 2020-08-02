@@ -13,6 +13,36 @@ The \`terraform-provider-gatsby\` playground is not available on mobile.
 Come back on a device with a larger screen to experience it and all of it's wonder.
 `;
 
+const initialTerraform = `resource "gatsby_text_link" "terraform_provider_gatsby" {
+  url = "https://github.com/nint8835/terraform-provider-gatsby"
+  label = "terraform-provider-gatsby"
+}
+
+resource "gatsby_text_link" "terraform" {
+  url = "https://terraform.io"
+  label = "Terraform"
+}
+
+resource "gatsby_text_list" "contents" {
+  prefix = ""
+  items = [
+    "Welcome to the \${gatsby_text_link.terraform_provider_gatsby.contents} playground!",
+    "",
+    "The contents of this site are written in \${gatsby_text_link.terraform.contents} using a custom Terraform provider, terraform-provider-gatsby.",
+    "This playground provides an easy way to play around with this provider. Just edit the code in the left pane, and press the run button in the top bar. The value of the output 'contents' will be rendered in the preview pane."
+  ]
+}
+
+output "contents" {
+  value = gatsby_text_list.contents.contents
+}
+`;
+const initialMarkdown = `Welcome to the [terraform-provider-gatsby](https://github.com/nint8835/terraform-provider-gatsby) playground!
+
+The contents of this site are written in [Terraform](https://terraform.io) using a custom Terraform provider, terraform-provider-gatsby.
+This playground provides an easy way to play around with this provider. Just edit the code in the left pane, and press the run button in the top bar. The value of the output 'contents' will be rendered in the preview pane.
+`;
+
 type PageProps = {};
 
 type ErrorResponse = {
@@ -30,8 +60,8 @@ type APIResponse = {
 
 const PlaygroundPage: FunctionComponent<PageProps> = ({}) => {
   const width = useWindowWidth();
-  const [markdownOutput, setMarkdownOutput] = useState<string>("");
-  const [editorCode, setEditorCode] = useState<string>("");
+  const [markdownOutput, setMarkdownOutput] = useState<string>(initialMarkdown);
+  const [editorCode, setEditorCode] = useState<string>(initialTerraform);
 
   const processTF = async () => {
     const resp = await fetch("http://localhost:9000/process", {
@@ -70,7 +100,7 @@ const PlaygroundPage: FunctionComponent<PageProps> = ({}) => {
             rawContents
             topBarButtons={[<TopBarButton icon={Play} onClick={processTF} />]}
           >
-            <MonacoEditor setContents={setEditorCode} />
+            <MonacoEditor setContents={setEditorCode} initialContents={initialTerraform}/>
           </Editor>
           <Editor title={"Preview"}>
             <MarkdownRenderer markdown={markdownOutput} />
