@@ -15,9 +15,45 @@ Come back on a device with a larger screen to experience it and all of it's wond
 
 type PageProps = {};
 
+type ErrorResponse = {
+  error: string;
+};
+type APIResponse = {
+  container: {
+    Id: string;
+    Warnings: string[];
+  };
+  status: number;
+  stderr: string;
+  stdout: string;
+};
+
 const PlaygroundPage: FunctionComponent<PageProps> = ({}) => {
   const width = useWindowWidth();
+  const [markdownOutput, setMarkdownOutput] = useState<string>("");
   const [editorCode, setEditorCode] = useState<string>("");
+
+  const processTF = async () => {
+    const resp = await fetch("http://localhost:9000/process", {
+      method: "POST",
+      body: JSON.stringify({ code: editorCode }),
+      headers: { "Content-Type": "application/json" },
+    });
+    const json: ErrorResponse | APIResponse = await resp.json();
+
+    let error;
+    if ("error" in json) {
+      error = json.error;
+    } else if (json.stderr !== "") {
+      error = json.stderr;
+    }
+    if (error !== undefined) {
+      setMarkdownOutput(`\`\`\`markdown\n${error}\n\`\`\``);
+    } else {
+      setMarkdownOutput((json as APIResponse).stdout);
+    }
+  };
+
   return (
     <Page
       description={"Hello world"}
@@ -32,12 +68,12 @@ const PlaygroundPage: FunctionComponent<PageProps> = ({}) => {
           <Editor
             title={"playground.tf"}
             rawContents
-            topBarButtons={[<TopBarButton icon={Play} onClick={() => {}} />]}
+            topBarButtons={[<TopBarButton icon={Play} onClick={processTF} />]}
           >
             <MonacoEditor setContents={setEditorCode} />
           </Editor>
           <Editor title={"Preview"}>
-            <MarkdownRenderer markdown={editorCode} />
+            <MarkdownRenderer markdown={markdownOutput} />
           </Editor>
         </SplitEditor>
       )}
