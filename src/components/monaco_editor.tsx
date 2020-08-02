@@ -2,13 +2,17 @@ import type { editor } from "monaco-editor/esm/vs/editor/editor.api";
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 // @ts-ignore
 import monacoEditorStyles from "./styles/monaco_editor.module.css";
+import PalenightTheme from "../util/palenight";
 
 type MonacoEditorProps = {
   initialContents?: string;
   setContents: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const MonacoEditor: FunctionComponent<MonacoEditorProps> = ({ setContents, initialContents = "" }) => {
+const MonacoEditor: FunctionComponent<MonacoEditorProps> = ({
+  setContents,
+  initialContents = "",
+}) => {
   const [
     monacoEditor,
     setMonacoEditor,
@@ -22,14 +26,18 @@ const MonacoEditor: FunctionComponent<MonacoEditorProps> = ({ setContents, initi
         return;
       }
       const monaco = await import("monaco-editor");
+      monaco.editor.defineTheme("palenight", PalenightTheme);
       createdEditor = monaco.editor.create(editorRef.current, {
-        theme: "vs-dark",
+        theme: "palenight",
         automaticLayout: true,
-        value: initialContents
+        value: initialContents,
+        minimap: {
+          enabled: false,
+        },
       });
       createdEditor.onDidChangeModelContent((event) => {
         setContents(createdEditor!.getValue());
-      })
+      });
       setMonacoEditor(createdEditor);
     })();
     return () => {
