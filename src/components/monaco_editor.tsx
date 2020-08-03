@@ -2,7 +2,7 @@ import type { editor } from "monaco-editor/esm/vs/editor/editor.api";
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import PalenightTheme from "../util/palenight";
 // @ts-ignore
-import monacoEditorStyles from "./styles/monaco_editor.module.css";
+import editorStyles from "./styles/editor.module.css";
 
 type MonacoEditorProps = {
   initialContents?: string;
@@ -47,7 +47,7 @@ const MonacoEditor: FunctionComponent<MonacoEditorProps> = ({
     };
   }, [editorRef]);
 
-  return <div ref={editorRef} className={monacoEditorStyles.monacoEditor} />;
+  return <div ref={editorRef} className={editorStyles.monacoEditor} />;
 };
 
 export default MonacoEditor;

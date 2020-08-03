@@ -61,3 +61,7 @@
   padding: 0;
   overflow: hidden;
 }
+
+.monacoEditor {
+  height: 100%;
+}
