@@ -19,6 +19,18 @@ services:
       traefik.frontend.headers.browserXSSFilter: true
       traefik.frontend.headers.contentTypeNosniff: true
       traefik.frontend.headers.referrerPolicy: "same-origin"
+  terraform_gatsby_service:
+    image: nint8835/terraform-gatsby-service
+    restart: always
+    expose:
+      - 9000
+    labels:
+      traefik.enable: true
+      traefik.port: 9000
+      traefik.frontend.rule: "Host: rileyflynn.me; Path: /process"
+      traefik.frontend.entryPoints: "https"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
   
 networks:
   web:
