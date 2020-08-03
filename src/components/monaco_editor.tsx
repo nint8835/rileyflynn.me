@@ -1,8 +1,8 @@
 import type { editor } from "monaco-editor/esm/vs/editor/editor.api";
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
+import PalenightTheme from "../util/palenight";
 // @ts-ignore
 import monacoEditorStyles from "./styles/monaco_editor.module.css";
-import PalenightTheme from "../util/palenight";
 
 type MonacoEditorProps = {
   initialContents?: string;

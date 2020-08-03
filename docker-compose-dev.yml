@@ -1,0 +1,35 @@
+version: '3.4'
+
+services:
+  rileyflynnme:
+    image: rileyflynn-dev
+    restart: always
+    expose:
+      - 80
+    labels:
+      traefik.enable: true
+      traefik.frontend.rule: "Host: localhost"
+      traefik.port: 80
+      traefik.frontend.entryPoints: "http"
+  terraform_gatsby_service:
+    image: nint8835/terraform-gatsby-service
+    restart: always
+    expose:
+      - 9000
+    labels:
+      traefik.enable: true
+      traefik.frontend.rule: "Host: localhost; Path: /process"
+      traefik.frontend.entryPoints: "http"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+  traefik:
+    image: traefik:1.7
+    command: --api --docker
+    ports:
+      - "80:80"
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data/traefik/traefik.toml:/traefik.toml
+      - ./data/traefik:/traefik_data/
+    

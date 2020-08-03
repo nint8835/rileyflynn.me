@@ -67,7 +67,7 @@ const PlaygroundPage: FunctionComponent<PageProps> = ({}) => {
 
   const processTF = async () => {
     setMarkdownOutput("*Processing...*");
-    const resp = await fetch("http://localhost:9000/process", {
+    const resp = await fetch("/process", {
       method: "POST",
       body: JSON.stringify({ code: editorCode }),
       headers: { "Content-Type": "application/json" },
