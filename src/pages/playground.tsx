@@ -67,23 +67,29 @@ const PlaygroundPage: FunctionComponent<PageProps> = ({}) => {
 
   const processTF = async () => {
     setMarkdownOutput("*Processing...*");
-    const resp = await fetch("/process", {
-      method: "POST",
-      body: JSON.stringify({ code: editorCode }),
-      headers: { "Content-Type": "application/json" },
-    });
-    const json: ErrorResponse | APIResponse = await resp.json();
+    try {
+      const resp = await fetch("/process", {
+        method: "POST",
+        body: JSON.stringify({ code: editorCode }),
+        headers: { "Content-Type": "application/json" },
+      });
+      const json: ErrorResponse | APIResponse = await resp.json();
 
-    let error;
-    if ("error" in json) {
-      error = json.error;
-    } else if (json.stderr !== "") {
-      error = json.stderr;
-    }
-    if (error !== undefined) {
-      setMarkdownOutput(`\`\`\`markdown\n${error}\n\`\`\``);
-    } else {
-      setMarkdownOutput((json as APIResponse).stdout);
+      let error;
+      if ("error" in json) {
+        error = json.error;
+      } else if (json.stderr !== "") {
+        error = json.stderr;
+      }
+      if (error !== undefined) {
+        setMarkdownOutput(`\`\`\`markdown\n${error}\n\`\`\``);
+      } else {
+        setMarkdownOutput((json as APIResponse).stdout);
+      }
+    } catch {
+      setMarkdownOutput(
+        "A network error occurred while attempting to communicate with the terraform-gatsby-service backend."
+      );
     }
   };
 
