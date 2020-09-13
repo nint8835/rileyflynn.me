@@ -18,6 +18,21 @@ resource "gatsby_text_link" "material_palenight_license" {
   label = "here"
 }
 
+resource "gatsby_text_link" "palenight_tmtheme" {
+  url   = "https://github.com/equinusocio/material-theme"
+  label = "Material Theme for Sublime Text"
+}
+
+resource "gatsby_text_link" "tmtheme_converter" {
+  url   = "https://bitwiser.in/monaco-themes/"
+  label = "this tmTheme to Monaco converter"
+}
+
+resource "gatsby_text_link" "palenight_tmtheme_license" {
+  url   = "https://github.com/equinusocio/material-theme/blob/master/LICENSE.md"
+  label = "here"
+}
+
 resource "gatsby_text_link" "prismjs" {
   url   = "https://github.com/PrismJS/prism/"
   label = "PrismJS"
@@ -45,6 +60,11 @@ locals {
       copyright    = "2017-present Olaolu Olawuyi"
       license_link = gatsby_text_link.material_palenight_license.contents
     },
+    monaco_theme = {
+      description  = "Theme for Monaco Editor was taken from ${gatsby_text_link.palenight_tmtheme.contents} and converted using ${gatsby_text_link.tmtheme_converter.contents}"
+      copyright    = "2016 Mattia Astorino"
+      license_link = gatsby_text_link.palenight_tmtheme_license.contents
+    }
     prismjs = {
       description  = "Syntax highlighting scheme base was taken from ${gatsby_text_link.prismjs.contents}"
       copyright    = "2012 Lea Verou"

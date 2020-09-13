@@ -9,6 +9,16 @@
   overflow: auto;
 }
 
+.splitEditor {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.splitEditor > :not(:last-child) {
+  border-right: 2px solid #2e3245;
+}
+
 @media (max-width: 768px) {
   .editor {
     padding-bottom: 44px;
@@ -23,6 +33,18 @@
   align-items: center;
   color: #eeffff;
   padding-left: 2em;
+  padding-right: 1em;
+  justify-content: space-between;
+}
+
+.topBarButton {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  color:  rgb(103, 110, 149);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .editorContent {
@@ -33,4 +55,13 @@
   font-feature-settings: "liga" on, "calt" on;
   font-size: 0.875em;
   color: #bfc7d5;
+}
+
+.rawContent {
+  padding: 0;
+  overflow: hidden;
+}
+
+.monacoEditor {
+  height: 100%;
 }

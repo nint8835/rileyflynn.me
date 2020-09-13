@@ -1,28 +1,29 @@
 import React, { FunctionComponent } from "react";
-
-import Head from "./head";
+import BottomBar from "./bottom_bar";
 import Editor from "./editor";
+import Head from "./head";
 import Sidebar from "./sidebar";
 // @ts-ignore
 import pageStyles from "./styles/page.module.css";
-import BottomBar from "./bottom_bar";
 
 type PageProps = {
   title: string;
   description: string;
   path: string;
+  excludeEditor?: boolean;
 };
 
 const Page: FunctionComponent<PageProps> = ({
   children,
   title,
   description,
-  path
+  path,
+  excludeEditor = false,
 }) => (
   <div className={pageStyles.page}>
     <Head title={title} description={description} path={path} />
     <Sidebar />
-    <Editor title={title}>{children}</Editor>
+    {excludeEditor ? children : <Editor title={title}>{children}</Editor>}
     <BottomBar />
   </div>
 );

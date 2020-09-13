@@ -1,6 +1,5 @@
-import React, { FunctionComponent } from "react";
 import { graphql } from "gatsby";
-
+import React, { FunctionComponent } from "react";
 import Page from "../components/page";
 
 type TemplateProps = {
