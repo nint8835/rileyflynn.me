@@ -22,6 +22,8 @@ services:
   terraform_gatsby_service:
     image: nint8835/terraform-gatsby-service
     restart: always
+    networks:
+      - web
     expose:
       - 9000
     labels:
