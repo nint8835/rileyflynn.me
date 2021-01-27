@@ -112,6 +112,7 @@ const PlaygroundPage: FunctionComponent<PageProps> = ({}) => {
             <MonacoEditor
               setContents={setEditorCode}
               initialContents={initialTerraform}
+              language={"hcl"}
             />
           </Editor>
           <Editor title={"Preview"}>
