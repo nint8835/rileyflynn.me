@@ -7,10 +7,12 @@ import editorStyles from "./styles/editor.module.css";
 type MonacoEditorProps = {
   initialContents?: string;
   setContents: React.Dispatch<React.SetStateAction<string>>;
+  language: string;
 };
 
 const MonacoEditor: FunctionComponent<MonacoEditorProps> = ({
   setContents,
+  language,
   initialContents = "",
 }) => {
   const [
@@ -34,6 +36,7 @@ const MonacoEditor: FunctionComponent<MonacoEditorProps> = ({
         minimap: {
           enabled: false,
         },
+        language,
       });
       createdEditor.onDidChangeModelContent((event) => {
         setContents(createdEditor!.getValue());
