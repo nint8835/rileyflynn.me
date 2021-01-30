@@ -1,7 +1,7 @@
 @import url(./dank-mono.css);
 
 .editor {
-  background-color: #292d3e;
+  background-color: #222222;
   height: calc(100vh - 22px);
   flex: 1;
   flex-direction: column;
@@ -16,7 +16,7 @@
 }
 
 .splitEditor > :not(:last-child) {
-  border-right: 2px solid #2e3245;
+  border-right: 2px solid #191919;
 }
 
 @media (max-width: 768px) {
@@ -28,10 +28,10 @@
 .topBar {
   font-size: 0.8125em;
   display: flex;
-  background-color: #32374c;
+  background-color: #222222;
   height: 2.625em;
   align-items: center;
-  color: #eeffff;
+  color: #fce566;
   padding-left: 2em;
   padding-right: 1em;
   justify-content: space-between;
@@ -41,7 +41,7 @@
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
-  color:  rgb(103, 110, 149);
+  color:  #69676c;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,7 +54,7 @@
   font-family: "Dank Mono", monospace;
   font-feature-settings: "liga" on, "calt" on;
   font-size: 0.875em;
-  color: #bfc7d5;
+  color: #f7f1ff;
 }
 
 .rawContent {

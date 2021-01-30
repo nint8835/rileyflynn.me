@@ -1,19 +1,19 @@
 .sidebar {
   flex: 0 0 18em;
-  background-color: #292d3e;
-  border-right: 1px solid rgb(40, 43, 60);
+  background-color: #191919;
+  border-right: 1px solid #222222;
 }
 
 .header {
   height: 1.375em;
-  color: rgb(238, 255, 255);
+  color: #525053;
   font-size: 0.6875em;
   font-weight: 700;
   padding-left: 0.25em;
 }
 
 .pageLink {
-  color: #929ac9;
+  color: #8b888f;
   text-decoration: none;
   display: block;
   font-size: 0.8125em;
@@ -24,11 +24,13 @@
 }
 
 .pageLink:hover {
-  background-color: #2e3245;
+  color: #f7f1ff;
+  background-color: #f7f1ff0c;
 }
 
 .selectedPageLink {
-  background-color: rgba(146, 154, 201, 0.05);
+  color: #fce566;
+  background-color: #f7f1ff0c;
 }
 
 @media (max-width: 768px) {

@@ -8,29 +8,19 @@ resource "gatsby_text_link" "vs_code_license" {
   label = "here"
 }
 
-resource "gatsby_text_link" "material_palenight" {
-  url   = "https://github.com/whizkydee/vscode-material-palenight-theme"
-  label = "vscode-material-palenight-theme"
+resource "gatsby_text_link" "monokai_pro" {
+  url   = "https://monokai.pro/"
+  label = "Monokai Pro"
 }
 
-resource "gatsby_text_link" "material_palenight_license" {
-  url   = "https://github.com/whizkydee/vscode-material-palenight-theme/blob/master/license.md"
-  label = "here"
-}
-
-resource "gatsby_text_link" "palenight_tmtheme" {
-  url   = "https://github.com/equinusocio/material-theme"
-  label = "Material Theme for Sublime Text"
+resource "gatsby_text_link" "monokai_tmtheme" {
+  url   = "https://tmtheme-editor.herokuapp.com/#!/editor/theme/Monokai"
+  label = "The tmTheme editor Monokai example"
 }
 
 resource "gatsby_text_link" "tmtheme_converter" {
   url   = "https://bitwiser.in/monaco-themes/"
   label = "this tmTheme to Monaco converter"
-}
-
-resource "gatsby_text_link" "palenight_tmtheme_license" {
-  url   = "https://github.com/equinusocio/material-theme/blob/master/LICENSE.md"
-  label = "here"
 }
 
 resource "gatsby_text_link" "prismjs" {
@@ -55,15 +45,15 @@ locals {
       copyright    = "2015 - present Microsoft Corporation"
       license_link = gatsby_text_link.vs_code_license.contents
     },
-    palenight = {
-      description  = "Colour scheme for this website was taken from ${gatsby_text_link.material_palenight.contents}"
-      copyright    = "2017-present Olaolu Olawuyi"
-      license_link = gatsby_text_link.material_palenight_license.contents
+    monokai = {
+      description  = "Colour scheme for this website was taken from ${gatsby_text_link.monokai_pro.contents}. It's a fantastic theme, go give them your money if you use VS Code or Sublime Text"
+      copyright    = "2017 – 2021 Monokai"
+      license_link = null
     },
     monaco_theme = {
-      description  = "Theme for Monaco Editor was taken from ${gatsby_text_link.palenight_tmtheme.contents} and converted using ${gatsby_text_link.tmtheme_converter.contents}"
-      copyright    = "2016 Mattia Astorino"
-      license_link = gatsby_text_link.palenight_tmtheme_license.contents
+      description  = "Theme for Monaco Editor was based off ${gatsby_text_link.monokai_tmtheme.contents}, updated with Monokai Pro's colours, and converted using ${gatsby_text_link.tmtheme_converter.contents}"
+      copyright    = null
+      license_link = null
     }
     prismjs = {
       description  = "Syntax highlighting scheme base was taken from ${gatsby_text_link.prismjs.contents}"
@@ -81,7 +71,7 @@ locals {
 resource "gatsby_text_code" "credits_copyright" {
   for_each = local.credits
 
-  code = "Copyright (c) ${each.value.copyright}"
+  code = each.value.copyright != null ? "Copyright (c) ${ each.value.copyright }" : ""
 }
 
 resource "gatsby_text_list" "credits_subitems_list" {
@@ -89,7 +79,7 @@ resource "gatsby_text_list" "credits_subitems_list" {
 
   prefix = "  - "
   items = concat(
-    [gatsby_text_code.credits_copyright[each.key].contents],
+    each.value.copyright != null ? [gatsby_text_code.credits_copyright[each.key].contents] : [],
     each.value.license_link != null ? ["License available ${each.value.license_link}"] : []
   )
 

@@ -6,9 +6,9 @@
   width: 100%;
   height: 22px;
   line-height: 22px;
-  background-color: rgb(40, 44, 61);
-  color: rgb(103, 110, 149);
-  border-top: 1px solid rgb(38, 42, 57);
+  background-color: #131313;
+  color: #69676C;
+  border-top: 1px solid #131313;
   font-size: 12px;
 }
 
@@ -31,13 +31,13 @@
 }
 
 .link {
-  color: rgb(103, 110, 149);
+  color: #69676C;
   height: 100%;
   padding: 0 5px;
   display: inline-block;
 }
 .link:hover {
-  background-color: #202431;
+  background-color: #f7f1ff0c;
 }
 
 @media (max-width: 768px) {
