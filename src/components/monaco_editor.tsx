@@ -1,6 +1,6 @@
 import type { editor } from "monaco-editor/esm/vs/editor/editor.api";
 import React, { FunctionComponent, useEffect, useRef, useState } from "react";
-import PalenightTheme from "../util/palenight";
+import MonokaiProTheme from "../util/monokai_pro";
 // @ts-ignore
 import editorStyles from "./styles/editor.module.css";
 
@@ -28,9 +28,9 @@ const MonacoEditor: FunctionComponent<MonacoEditorProps> = ({
         return;
       }
       const monaco = await import("monaco-editor");
-      monaco.editor.defineTheme("palenight", PalenightTheme);
+      monaco.editor.defineTheme("monokaipro", MonokaiProTheme);
       createdEditor = monaco.editor.create(editorRef.current, {
-        theme: "vs-dark",
+        theme: "monokaipro",
         automaticLayout: true,
         value: initialContents,
         minimap: {
