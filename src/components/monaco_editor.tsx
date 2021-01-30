@@ -30,7 +30,7 @@ const MonacoEditor: FunctionComponent<MonacoEditorProps> = ({
       const monaco = await import("monaco-editor");
       monaco.editor.defineTheme("palenight", PalenightTheme);
       createdEditor = monaco.editor.create(editorRef.current, {
-        theme: "palenight",
+        theme: "vs-dark",
         automaticLayout: true,
         value: initialContents,
         minimap: {
