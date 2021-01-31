@@ -2,7 +2,7 @@ version: '3'
 
 services:
   rileyflynnme:
-    image: nint8835/rileyflynn.me
+    image: ghcr.io/nint8835/rileyflynn.me
     restart: always
     networks:
       - web
@@ -20,7 +20,7 @@ services:
       traefik.frontend.headers.contentTypeNosniff: true
       traefik.frontend.headers.referrerPolicy: "same-origin"
   terraform_gatsby_service:
-    image: nint8835/terraform-gatsby-service
+    image: ghcr.io/nint8835/terraform-gatsby-service
     restart: always
     networks:
       - web
