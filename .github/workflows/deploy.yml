@@ -15,6 +15,6 @@ jobs:
       with:
         repository: nint8835/rileyflynn.me
         username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+        password: ${{ secrets.GITHUB_TOKEN }}
         registry: ghcr.io
         tags: latest
