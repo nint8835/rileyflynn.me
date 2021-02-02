@@ -21,16 +21,6 @@ resource "gatsby_text_list" "mun_contract_tech" {
   ]
 }
 
-resource "gatsby_text_list" "hickmans_tasks" {
-  items = [
-    "Handled the check-in process for incoming customers",
-    "Performed a number of simple maintenance tasks for customers (topping up windshield wash, retorquing lug nuts, refilling air in tires, etc.)",
-    "Acted as tech support for customers, assisting them with tasks such as programming favourites into their radios, pairing their phones with their infotainment system, etc.",
-    "Managed the fleet of service loaners in the absence of the main service cashier",
-    "Assisted service staff with the migration to a new iPad-based check-in system",
-  ]
-}
-
 locals {
   roles = {
     colab_fulltime = {
@@ -63,15 +53,6 @@ Technologies used:
 ${gatsby_text_list.mun_contract_tech.contents}
       EOL
     },
-    hickmans = {
-      role        = "Service Valet",
-      duration    = "May 2017 - August 2017, April 2018 - August 2018"
-      description = <<EOL
-Worked as a summer employee to perform a variety of tasks, such as:
-
-${gatsby_text_list.hickmans_tasks.contents}
-        EOL
-    }
   }
 }
 
@@ -109,11 +90,6 @@ resource "gatsby_text_image" "mun" {
   path     = "/images/work/memorial-university-of-newfoundland.png"
 }
 
-resource "gatsby_text_image" "hickmans" {
-  alt_text = "Hickman Chevrolet Cadillac"
-  path     = "/images/work/hickman-chevrolet-cadillac.jpg"
-}
-
 resource "gatsby_text_heading" "colab" {
   level = 2
   text  = "CoLab Software"
@@ -122,11 +98,6 @@ resource "gatsby_text_heading" "colab" {
 resource "gatsby_text_heading" "mun" {
   level = 2
   text  = "Memorial University of Newfoundland"
-}
-
-resource "gatsby_text_heading" "hickmans" {
-  level = 2
-  text  = "Hickman Chevrolet Cadillac"
 }
 
 resource "gatsby_text_list" "work_contents" {
@@ -148,11 +119,6 @@ resource "gatsby_text_list" "work_contents" {
     gatsby_text_horizontal_rule.horizontal_rule.contents,
     gatsby_text_list.role_subtitle["mun_contract"].contents,
     local.roles.mun_contract.description,
-    gatsby_text_horizontal_rule.horizontal_rule.contents,
-    gatsby_text_image.hickmans.contents,
-    gatsby_text_heading.hickmans.contents,
-    gatsby_text_list.role_subtitle["hickmans"].contents,
-    local.roles.hickmans.description
   ]
 }
 

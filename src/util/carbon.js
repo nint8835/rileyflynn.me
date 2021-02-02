@@ -15,8 +15,8 @@ async function downloadImageForFile(filePath) {
       code: truncatedContents,
       language: "rust", // HCL / TF isn't a supported language, but this gets a reasonable looking output
       fontFamily: "dm",
-      backgroundColor: "rgba(74, 74, 74, 1)",
-      theme: "material",
+      backgroundColor: "rgba(149, 117, 205, 1)",
+      theme: "monokai",
     }),
     headers: { "Content-Type": "application/json" },
   });
