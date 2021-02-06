@@ -13,11 +13,6 @@ resource "gatsby_text_link" "schooltracker" {
   url   = "https://github.com/nint8835/SchoolTracker"
 }
 
-resource "gatsby_text_link" "invitationasm" {
-  label = "GitHub"
-  url   = "https://github.com/nint8835/InvitationASM"
-}
-
 resource "gatsby_text_link" "jigsaw" {
   label = "GitHub"
   url   = "https://github.com/nint8835/jigsaw"
@@ -28,14 +23,34 @@ resource "gatsby_text_link" "jigsaw_docs" {
   url   = "https://jigsaw.readthedocs.io/en/latest/"
 }
 
+resource "gatsby_text_link" "parsley" {
+  label = "GitHub"
+  url   = "https://github.com/nint8835/parsley"
+}
+
+resource "gatsby_text_link" "parsley_docs" {
+  label = "Docs"
+  url   = "https://pkg.go.dev/github.com/nint8835/parsley"
+}
+
+resource "gatsby_text_link" "borik" {
+  label = "GitHub"
+  url   = "https://github.com/fogo-sh/borik"
+}
+
+resource "gatsby_text_link" "terraform_provider_gatsby" {
+  label = "GitHub (terraform-provider-gatsby)"
+  url   = "https://github.com/nint8835/terraform-provider-gatsby"
+}
+
+resource "gatsby_text_link" "gatsby_transformer_terraform" {
+  label = "GitHub (gatsby-transformer-terraform)"
+  url   = "https://github.com/nint8835/gatsby-transformer-terraform"
+}
+
 resource "gatsby_text_link" "nintbotfordiscord" {
   label = "GitHub"
   url   = "https://github.com/nint8835/NintbotForDiscord"
-}
-
-resource "gatsby_text_link" "webrichpresence" {
-  label = "GitHub (Client)"
-  url   = "https://github.com/nint8835/WebRichPresence_Client"
 }
 
 resource "gatsby_text_link" "automata" {
@@ -60,25 +75,31 @@ locals {
       description = "Scrapes the NLESD Status Central website to keep track of the status for various schools, tweeting out whenever one updates."
       links       = gatsby_text_link.schooltracker.contents
     }
-    invitationasm = {
-      name        = "InvitationASM"
-      description = "Interpreter for the assembly-styled language used to teach machine code and assembly in the course COMP1000 at Memorial University."
-      links       = gatsby_text_link.invitationasm.contents
-    }
     jigsaw = {
       name        = "Jigsaw"
       description = "Easy to use library for adding plugin functionality to Python projects. Used to provide plugin functionality to Chainmail and NintbotForDiscord."
       links       = "${gatsby_text_link.jigsaw.contents} ${gatsby_text_link.jigsaw_docs.contents}"
     }
+    parsley = {
+      name        = "Parsley"
+      description = "Command parsing library for discordgo."
+      links       = "${gatsby_text_link.parsley.contents} ${gatsby_text_link.parsley_docs.contents}"
+    }
+    borik = {
+      name        = "Borik"
+      description = "Image manipulation-focused Discord bot based on ImageMagick."
+      links       = gatsby_text_link.borik.contents
+    }
+    terraform_gatsby = {
+      name        = "terraform-provider-gatsby & gatsby-transformer-terraform"
+      description = "Terraform provider and Gatsby plugin to allow writing content for Gatsby-based sites using Terraform."
+      links       = "${gatsby_text_link.terraform_provider_gatsby.contents} ${gatsby_text_link.gatsby_transformer_terraform.contents}"
+
+    }
     nintbotfordiscord = {
       name        = "NintbotForDiscord"
       description = "One of the very first modular bot frameworks for Discord."
       links       = gatsby_text_link.nintbotfordiscord.contents
-    }
-    webrichpresence = {
-      name        = "WebRichPresence"
-      description = "Web API for controlling the Discord Rich Presence status for clients remotely. Client is open source and on GitHub, server is not."
-      links       = gatsby_text_link.webrichpresence.contents
     }
     automata = {
       name        = "Automata"
