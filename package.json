@@ -32,7 +32,7 @@
     "gatsby-transformer-terraform": "^1.0.1",
     "monaco-editor": "^0.21.0",
     "node-fetch": "^2.6.1",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.24.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
