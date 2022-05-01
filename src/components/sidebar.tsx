@@ -23,7 +23,7 @@ const Sidebar = ({ path }: SidebarProps) => {
 
             work: allMdx(
                 filter: { fileAbsolutePath: { glob: "**/work/*.mdx" } }
-                sort: { fields: frontmatter___startMonth, order: DESC }
+                sort: { fields: frontmatter___positions___startMonth, order: DESC }
             ) {
                 nodes {
                     frontmatter {
