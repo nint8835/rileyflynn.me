@@ -3,7 +3,7 @@ import Header from '@awsui/components-react/header';
 import { graphql, PageProps } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
-import Page from '../../components/page';
+import Page from '../components/page';
 
 const MDXPage = (props: PageProps) => {
     return (

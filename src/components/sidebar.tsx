@@ -7,9 +7,9 @@ type SidebarProps = {
 };
 
 const Sidebar = ({ path }: SidebarProps) => {
-    const projectData = useStaticQuery(graphql`
-        query GetProjects {
-            allMdx(filter: { fileAbsolutePath: { glob: "**/projects/*.mdx" } }) {
+    const data = useStaticQuery(graphql`
+        query GetProjectsAndWork {
+            projects: allMdx(filter: { fileAbsolutePath: { glob: "**/projects/*.mdx" } }) {
                 nodes {
                     frontmatter {
                         title
@@ -17,13 +17,28 @@ const Sidebar = ({ path }: SidebarProps) => {
                     slug
                 }
             }
+
+            work: allMdx(filter: { fileAbsolutePath: { glob: "**/work/*.mdx" } }) {
+                nodes {
+                    frontmatter {
+                        company
+                    }
+                    slug
+                }
+            }
         }
     `);
 
-    const projects: SideNavigationProps.Item[] = projectData.allMdx.nodes.map((project) => ({
+    const projects: SideNavigationProps.Item[] = data.projects.nodes.map((project) => ({
         type: 'link',
         text: project.frontmatter.title,
-        href: `/projects/${project.slug}/`,
+        href: `/${project.slug}`,
+    }));
+
+    const companies: SideNavigationProps.Item[] = data.work.nodes.map((company) => ({
+        type: 'link',
+        text: company.frontmatter.company,
+        href: `/${company.slug}`,
     }));
 
     return (
@@ -42,9 +57,10 @@ const Sidebar = ({ path }: SidebarProps) => {
                     items: projects,
                 },
                 {
-                    type: 'link',
+                    type: 'expandable-link-group',
                     text: 'Work',
                     href: '/work/',
+                    items: companies,
                 },
             ]}
             onFollow={(e) => {

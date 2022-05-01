@@ -14,14 +14,13 @@ const config: GatsbyConfig = {
                 icon: 'src/images/icon.png',
             },
         },
-
         {
             resolve: 'gatsby-source-filesystem',
             options: {
-                name: 'projects',
-                path: './projects/',
+                name: 'content',
+                path: './src/content/',
             },
-            __key: 'projects',
+            __key: 'work',
         },
         {
             resolve: 'gatsby-source-filesystem',
