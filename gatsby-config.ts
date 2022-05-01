@@ -19,7 +19,7 @@ const config: GatsbyConfig = {
             resolve: 'gatsby-source-filesystem',
             options: {
                 name: 'projects',
-                path: './projects',
+                path: './projects/',
             },
             __key: 'projects',
         },
