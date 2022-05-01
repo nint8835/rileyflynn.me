@@ -5,12 +5,12 @@ import { PageProps } from 'gatsby';
 import * as React from 'react';
 import Page from '../components/page';
 
-const IndexPage = (props: PageProps) => {
+const WorkPage = (props: PageProps) => {
     return (
         <Page gatsbyProps={props}>
-            <Container header={<Header>Test</Header>}>Hello world</Container>
+            <Container header={<Header>Work</Header>}>This is a placeholder - jobs should go here</Container>
         </Page>
     );
 };
 
-export default IndexPage;
+export default WorkPage;
