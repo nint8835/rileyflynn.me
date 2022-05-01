@@ -9,7 +9,10 @@ type SidebarProps = {
 const Sidebar = ({ path }: SidebarProps) => {
     const data = useStaticQuery(graphql`
         query GetProjectsAndWork {
-            projects: allMdx(filter: { fileAbsolutePath: { glob: "**/projects/*.mdx" } }) {
+            projects: allMdx(
+                filter: { fileAbsolutePath: { glob: "**/projects/*.mdx" } }
+                sort: { fields: frontmatter___title, order: ASC }
+            ) {
                 nodes {
                     frontmatter {
                         title
@@ -18,7 +21,10 @@ const Sidebar = ({ path }: SidebarProps) => {
                 }
             }
 
-            work: allMdx(filter: { fileAbsolutePath: { glob: "**/work/*.mdx" } }) {
+            work: allMdx(
+                filter: { fileAbsolutePath: { glob: "**/work/*.mdx" } }
+                sort: { fields: frontmatter___startMonth, order: DESC }
+            ) {
                 nodes {
                     frontmatter {
                         company
