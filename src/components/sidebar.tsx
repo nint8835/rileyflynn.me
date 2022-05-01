@@ -28,7 +28,7 @@ const Sidebar = ({ path }: SidebarProps) => {
                         {
                             type: 'link',
                             text: 'Borik',
-                            href: '/projects/borik',
+                            href: '/projects/borik/',
                         },
                     ],
                 },
