@@ -15,7 +15,7 @@ type Position = {
 const MDXPage = (props: PageProps) => {
     return (
         <Page gatsbyProps={props}>
-            <Container header={<Header>{props.data.mdx.frontmatter.company}</Header>}>
+            <Container header={<Header>{props.data.mdx.frontmatter.job.company}</Header>}>
                 <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
             </Container>
 
@@ -34,7 +34,7 @@ const MDXPage = (props: PageProps) => {
                     },
                 ]}
                 visibleColumns={['position', 'dates']}
-                items={props.data.mdx.frontmatter.positions}
+                items={props.data.mdx.frontmatter.job.positions}
             />
             {/* </Container> */}
         </Page>
@@ -45,11 +45,13 @@ export const query = graphql`
     query ($id: String) {
         mdx(id: { eq: $id }) {
             frontmatter {
-                company
-                positions {
-                    title
-                    endMonth(formatString: "MMMM YYYY")
-                    startMonth(formatString: "MMMM YYYY")
+                job {
+                    company
+                    positions {
+                        title
+                        endMonth(formatString: "MMMM YYYY")
+                        startMonth(formatString: "MMMM YYYY")
+                    }
                 }
             }
             body

@@ -10,24 +10,28 @@ const Sidebar = ({ path }: SidebarProps) => {
     const data = useStaticQuery(graphql`
         query GetProjectsAndWork {
             projects: allMdx(
-                filter: { fileAbsolutePath: { glob: "**/projects/*.mdx" } }
-                sort: { fields: frontmatter___title, order: ASC }
+                sort: { fields: frontmatter___project___title, order: ASC }
+                filter: { frontmatter: { type: { eq: "project" } } }
             ) {
                 nodes {
                     frontmatter {
-                        title
+                        project {
+                            title
+                        }
                     }
                     slug
                 }
             }
 
             work: allMdx(
-                filter: { fileAbsolutePath: { glob: "**/work/*.mdx" } }
-                sort: { fields: frontmatter___positions___startMonth, order: DESC }
+                sort: { fields: frontmatter___job___positions___startMonth, order: DESC }
+                filter: { frontmatter: { type: { eq: "job" } } }
             ) {
                 nodes {
                     frontmatter {
-                        company
+                        job {
+                            company
+                        }
                     }
                     slug
                 }
@@ -37,13 +41,13 @@ const Sidebar = ({ path }: SidebarProps) => {
 
     const projects: SideNavigationProps.Item[] = data.projects.nodes.map((project) => ({
         type: 'link',
-        text: project.frontmatter.title,
+        text: project.frontmatter.project.title,
         href: `/${project.slug}`,
     }));
 
     const companies: SideNavigationProps.Item[] = data.work.nodes.map((company) => ({
         type: 'link',
-        text: company.frontmatter.company,
+        text: company.frontmatter.job.company,
         href: `/${company.slug}`,
     }));
 

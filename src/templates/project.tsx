@@ -8,7 +8,7 @@ import Page from '../components/page';
 const MDXPage = (props: PageProps) => {
     return (
         <Page gatsbyProps={props}>
-            <Container header={<Header>{props.data.mdx.frontmatter.title}</Header>}>
+            <Container header={<Header>{props.data.mdx.frontmatter.project.title}</Header>}>
                 <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
             </Container>
         </Page>
@@ -19,7 +19,9 @@ export const query = graphql`
     query ($id: String) {
         mdx(id: { eq: $id }) {
             frontmatter {
-                title
+                project {
+                    title
+                }
             }
             body
         }
