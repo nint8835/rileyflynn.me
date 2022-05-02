@@ -20,7 +20,7 @@ const ProjectsPage = (props: PageProps) => {
                             summary
                             previewImage {
                                 childImageSharp {
-                                    gatsbyImageData(width: 500, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+                                    gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
                                 }
                             }
                             positions {
