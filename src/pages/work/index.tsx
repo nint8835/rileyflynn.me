@@ -71,7 +71,6 @@ const ProjectsPage = (props: PageProps) => {
                                     alt={node.frontmatter.job.company}
                                 />
                             ),
-                            width: 500,
                         },
                     ],
                 }}
