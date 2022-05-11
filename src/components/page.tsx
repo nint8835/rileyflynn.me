@@ -14,7 +14,7 @@ const Page = ({ children, gatsbyProps }: PageProps) => {
         <>
             <TopBar />
             <AppLayout
-                headerSelector=".awsui-context-top-navigation"
+                headerSelector="#top-navigation"
                 toolsHide={true}
                 navigation={<Sidebar path={gatsbyProps.path} />}
                 content={children}

@@ -86,7 +86,6 @@ const ProjectsPage = (props: PageProps) => {
                 ]}
                 variant="full-page"
             />
-            {/* {props.data.allMdx.nodes.map(job => ())} */}
         </Page>
     );
 };
