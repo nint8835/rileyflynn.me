@@ -24,6 +24,7 @@ const ProjectsPage = (props: PageProps) => {
                                 }
                             }
                             positions {
+                                title
                                 endMonth(formatString: "MMMM YYYY")
                                 startMonth(formatString: "MMMM YYYY")
                             }
@@ -63,6 +64,12 @@ const ProjectsPage = (props: PageProps) => {
                         },
                         {
                             content: (node) => node.frontmatter.job.summary || 'No summary provided.',
+                        },
+                        {
+                            header: 'Roles',
+                            content: (node) => (
+                                <i>{node.frontmatter.job.positions.map((position) => position.title).join(', ')}</i>
+                            ),
                         },
                         {
                             content: (node) => (
