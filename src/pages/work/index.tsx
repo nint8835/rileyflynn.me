@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import Page from '../../components/page';
 
-const ProjectsPage = (props: PageProps) => {
+const WorkPage = (props: PageProps) => {
     const jobs = useStaticQuery(graphql`
         query {
             allMdx(
@@ -97,4 +97,4 @@ const ProjectsPage = (props: PageProps) => {
     );
 };
 
-export default ProjectsPage;
+export default WorkPage;
