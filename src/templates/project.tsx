@@ -1,5 +1,4 @@
-import Container from '@awsui/components-react/container';
-import Header from '@awsui/components-react/header';
+import Container from '@cloudscape-design/components/container';
 import { graphql, PageProps } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
@@ -7,10 +6,28 @@ import Page from '../components/page';
 
 const MDXPage = (props: PageProps) => {
     return (
-        <Page gatsbyProps={props}>
-            <Container header={<Header>{props.data.mdx.frontmatter.project.title}</Header>}>
-                <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
-            </Container>
+        <Page
+            gatsbyProps={props}
+            title={props.data.mdx.frontmatter.project.title}
+            description={props.data.mdx.frontmatter.project.summary}
+            breadcrumbs={[
+                {
+                    text: 'Projects',
+                    href: '/projects/',
+                },
+                {
+                    text: props.data.mdx.frontmatter.project.title,
+                    href: '#',
+                },
+            ]}
+        >
+            {props.data.mdx.wordCount.words ? (
+                <Container>
+                    <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
+                </Container>
+            ) : (
+                []
+            )}
         </Page>
     );
 };
@@ -21,7 +38,11 @@ export const query = graphql`
             frontmatter {
                 project {
                     title
+                    summary
                 }
+            }
+            wordCount {
+                words
             }
             body
         }

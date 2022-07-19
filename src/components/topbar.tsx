@@ -1,5 +1,5 @@
-import Input from '@awsui/components-react/input';
-import TopNavigation from '@awsui/components-react/top-navigation';
+import Input from '@cloudscape-design/components/input';
+import TopNavigation from '@cloudscape-design/components/top-navigation';
 import React, { useState } from 'react';
 
 const TopBar = () => {

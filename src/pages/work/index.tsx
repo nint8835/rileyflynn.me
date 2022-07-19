@@ -1,5 +1,5 @@
-import Card from '@awsui/components-react/cards';
-import Link from '@awsui/components-react/link';
+import Card from '@cloudscape-design/components/cards';
+import Link from '@cloudscape-design/components/link';
 import { graphql, navigate, PageProps, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
@@ -35,7 +35,7 @@ const WorkPage = (props: PageProps) => {
         }
     `);
     return (
-        <Page gatsbyProps={props}>
+        <Page gatsbyProps={props} title={'Work'}>
             <Card
                 cardDefinition={{
                     header: (node) => (
