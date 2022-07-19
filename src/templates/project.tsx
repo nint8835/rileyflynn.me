@@ -9,6 +9,7 @@ const MDXPage = (props: PageProps) => {
         <Page
             gatsbyProps={props}
             title={props.data.mdx.frontmatter.project.title}
+            description={props.data.mdx.frontmatter.project.summary}
             breadcrumbs={[
                 {
                     text: 'Projects',
@@ -20,9 +21,13 @@ const MDXPage = (props: PageProps) => {
                 },
             ]}
         >
-            <Container>
-                <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
-            </Container>
+            {props.data.mdx.wordCount.words ? (
+                <Container>
+                    <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
+                </Container>
+            ) : (
+                []
+            )}
         </Page>
     );
 };
@@ -33,7 +38,11 @@ export const query = graphql`
             frontmatter {
                 project {
                     title
+                    summary
                 }
+            }
+            wordCount {
+                words
             }
             body
         }

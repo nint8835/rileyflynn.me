@@ -18,6 +18,7 @@ const MDXPage = (props: PageProps) => {
         <Page
             gatsbyProps={props}
             title={props.data.mdx.frontmatter.job.company}
+            description={props.data.mdx.frontmatter.job.summary}
             breadcrumbs={[
                 {
                     text: 'Work',
@@ -35,9 +36,13 @@ const MDXPage = (props: PageProps) => {
             ]}
         >
             <SpaceBetween size={'m'}>
-                <Container>
-                    <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
-                </Container>
+                {props.data.mdx.wordCount.words ? (
+                    <Container>
+                        <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
+                    </Container>
+                ) : (
+                    []
+                )}
 
                 <Container header={<Header>Roles</Header>} disableContentPaddings>
                     <Table
@@ -69,6 +74,7 @@ export const query = graphql`
             frontmatter {
                 job {
                     company
+                    summary
                     positions {
                         title
                         endMonth(formatString: "MMMM YYYY")
@@ -76,6 +82,9 @@ export const query = graphql`
                     }
                     site
                 }
+            }
+            wordCount {
+                words
             }
             body
         }

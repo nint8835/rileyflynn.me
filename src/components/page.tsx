@@ -12,11 +12,12 @@ type PageProps = {
     gatsbyProps: GatsbyPageProps;
     children: ReactNode;
     title: string;
+    description?: string;
     breadcrumbs?: BreadcrumbGroupProps.Item[];
     headerActions?: ReactNode[];
 };
 
-const Page = ({ children, gatsbyProps, title, breadcrumbs, headerActions }: PageProps) => {
+const Page = ({ children, gatsbyProps, title, description, breadcrumbs, headerActions }: PageProps) => {
     return (
         <>
             <TopBar />
@@ -24,7 +25,7 @@ const Page = ({ children, gatsbyProps, title, breadcrumbs, headerActions }: Page
                 headerSelector="#top-navigation"
                 toolsHide={true}
                 contentHeader={
-                    <Header variant="h1" actions={headerActions}>
+                    <Header variant="h1" actions={headerActions} description={description}>
                         {title}
                     </Header>
                 }
