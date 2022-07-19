@@ -1,7 +1,7 @@
-import Badge from '@awsui/components-react/badge';
-import Card from '@awsui/components-react/cards';
-import Link from '@awsui/components-react/link';
-import SpaceBetween from '@awsui/components-react/space-between';
+import Badge from '@cloudscape-design/components/badge';
+import Card from '@cloudscape-design/components/cards';
+import Link from '@cloudscape-design/components/link';
+import SpaceBetween from '@cloudscape-design/components/space-between';
 import { graphql, navigate, PageProps, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';

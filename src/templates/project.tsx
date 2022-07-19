@@ -1,5 +1,5 @@
-import Container from '@awsui/components-react/container';
-import Header from '@awsui/components-react/header';
+import Container from '@cloudscape-design/components/container';
+import Header from '@cloudscape-design/components/header';
 import { graphql, PageProps } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';

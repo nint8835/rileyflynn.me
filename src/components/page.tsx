@@ -1,4 +1,5 @@
-import AppLayout from '@awsui/components-react/app-layout';
+import AppLayout from '@cloudscape-design/components/app-layout';
+import '@cloudscape-design/global-styles/index.css';
 import type { PageProps as GatsbyPageProps } from 'gatsby';
 import React, { ReactNode } from 'react';
 import Sidebar from './sidebar';

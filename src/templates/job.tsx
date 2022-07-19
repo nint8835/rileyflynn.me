@@ -1,8 +1,8 @@
-import Button from '@awsui/components-react/button';
-import Container from '@awsui/components-react/container';
-import Header from '@awsui/components-react/header';
-import SpaceBetween from '@awsui/components-react/space-between';
-import Table from '@awsui/components-react/table';
+import Button from '@cloudscape-design/components/button';
+import Container from '@cloudscape-design/components/container';
+import Header from '@cloudscape-design/components/header';
+import SpaceBetween from '@cloudscape-design/components/space-between';
+import Table from '@cloudscape-design/components/table';
 import { graphql, PageProps } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';

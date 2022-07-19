@@ -1,4 +1,4 @@
-import SideNavigation, { SideNavigationProps } from '@awsui/components-react/side-navigation';
+import SideNavigation, { SideNavigationProps } from '@cloudscape-design/components/side-navigation';
 import { graphql, navigate, useStaticQuery } from 'gatsby';
 import React from 'react';
 
