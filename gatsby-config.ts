@@ -35,6 +35,7 @@ const config: GatsbyConfig = {
         'gatsby-transformer-sharp',
         'gatsby-plugin-mdx',
     ],
+    graphqlTypegen: true,
 };
 
 export default config;

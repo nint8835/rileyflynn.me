@@ -8,8 +8,8 @@ import React from 'react';
 import Page from '../../components/page';
 
 const ProjectsPage = (props: PageProps) => {
-    const projects = useStaticQuery(graphql`
-        query {
+    const projects: Queries.ProjectsListPageQuery = useStaticQuery(graphql`
+        query ProjectsListPage {
             allMdx(
                 sort: { fields: frontmatter___job___positions___startMonth, order: DESC }
                 filter: { frontmatter: { type: { eq: "project" } } }

@@ -13,7 +13,7 @@ type Position = {
     endMonth: string | null;
 };
 
-const MDXPage = (props: PageProps) => {
+const MDXPage = (props: PageProps<Queries.JobPageQuery>) => {
     return (
         <Page
             gatsbyProps={props}
@@ -69,7 +69,7 @@ const MDXPage = (props: PageProps) => {
 };
 
 export const query = graphql`
-    query ($id: String) {
+    query JobPage($id: String) {
         mdx(id: { eq: $id }) {
             frontmatter {
                 job {

@@ -4,7 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
 import Page from '../components/page';
 
-const MDXPage = (props: PageProps) => {
+const MDXPage = (props: PageProps<Queries.ProjectPageQuery>) => {
     return (
         <Page
             gatsbyProps={props}
@@ -33,7 +33,7 @@ const MDXPage = (props: PageProps) => {
 };
 
 export const query = graphql`
-    query ($id: String) {
+    query ProjectPage($id: String) {
         mdx(id: { eq: $id }) {
             frontmatter {
                 project {

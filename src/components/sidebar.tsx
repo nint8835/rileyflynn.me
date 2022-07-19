@@ -7,7 +7,7 @@ type SidebarProps = {
 };
 
 const Sidebar = ({ path }: SidebarProps) => {
-    const data = useStaticQuery(graphql`
+    const data: Queries.GetProjectsAndWorkQuery = useStaticQuery(graphql`
         query GetProjectsAndWork {
             projects: allMdx(
                 sort: { fields: frontmatter___project___title, order: ASC }
