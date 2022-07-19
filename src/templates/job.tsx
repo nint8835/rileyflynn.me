@@ -49,7 +49,7 @@ const MDXPage = (props: PageProps) => {
                         ]}
                         visibleColumns={['title', 'dates']}
                         items={props.data.mdx.frontmatter.job.positions}
-                        variant="container"
+                        variant="embedded"
                     />
                 </Container>
             </SpaceBetween>
