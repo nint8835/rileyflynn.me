@@ -15,21 +15,27 @@ type Position = {
 
 const MDXPage = (props: PageProps) => {
     return (
-        <Page gatsbyProps={props}>
+        <Page
+            gatsbyProps={props}
+            title={props.data.mdx.frontmatter.job.company}
+            breadcrumbs={[
+                {
+                    text: 'Work',
+                    href: '/work/',
+                },
+                {
+                    text: props.data.mdx.frontmatter.job.company,
+                    href: '#',
+                },
+            ]}
+            headerActions={[
+                <Button variant="primary" href={props.data.mdx.frontmatter.job.site}>
+                    Site
+                </Button>,
+            ]}
+        >
             <SpaceBetween size={'m'}>
-                <Container
-                    header={
-                        <Header
-                            actions={
-                                <Button variant="primary" href={props.data.mdx.frontmatter.job.site}>
-                                    Site
-                                </Button>
-                            }
-                        >
-                            {props.data.mdx.frontmatter.job.company}
-                        </Header>
-                    }
-                >
+                <Container>
                     <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
                 </Container>
 

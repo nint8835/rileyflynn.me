@@ -35,7 +35,7 @@ const WorkPage = (props: PageProps) => {
         }
     `);
     return (
-        <Page gatsbyProps={props}>
+        <Page gatsbyProps={props} title={'Work'}>
             <Card
                 cardDefinition={{
                     header: (node) => (

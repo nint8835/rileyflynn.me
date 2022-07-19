@@ -33,7 +33,7 @@ const ProjectsPage = (props: PageProps) => {
         }
     `);
     return (
-        <Page gatsbyProps={props}>
+        <Page gatsbyProps={props} title={'Projects'}>
             <Card
                 cardDefinition={{
                     header: (node) => (
