@@ -5,6 +5,7 @@ import '@cloudscape-design/global-styles/index.css';
 import type { PageProps as GatsbyPageProps } from 'gatsby';
 import { navigate } from 'gatsby';
 import React, { ReactNode } from 'react';
+import Meta from './meta';
 import Sidebar from './sidebar';
 import TopBar from './topbar';
 
@@ -12,14 +13,16 @@ type PageProps = {
     gatsbyProps: GatsbyPageProps;
     children: ReactNode;
     title: string;
+    categoryTitle?: string;
     description?: string;
     breadcrumbs?: BreadcrumbGroupProps.Item[];
     headerActions?: ReactNode[];
 };
 
-const Page = ({ children, gatsbyProps, title, description, breadcrumbs, headerActions }: PageProps) => {
+const Page = ({ children, gatsbyProps, title, categoryTitle, description, breadcrumbs, headerActions }: PageProps) => {
     return (
         <>
+            <Meta title={title} categoryTitle={categoryTitle} description={description} />
             <TopBar />
             <AppLayout
                 headerSelector="#top-navigation"

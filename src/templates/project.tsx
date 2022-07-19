@@ -9,6 +9,7 @@ const MDXPage = (props: PageProps<Queries.ProjectPageQuery>) => {
         <Page
             gatsbyProps={props}
             title={props.data.mdx.frontmatter.project.title}
+            categoryTitle={'Project'}
             description={props.data.mdx.frontmatter.project.summary}
             breadcrumbs={[
                 {

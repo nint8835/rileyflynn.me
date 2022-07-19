@@ -2,11 +2,18 @@ import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
     siteMetadata: {
-        title: `rileyflynn.me`,
+        title: `Riley Flynn`,
+        description: 'Cloud Architect and Software Developer',
         siteUrl: `https://rileyflynn.me`,
     },
     plugins: [
         'gatsby-plugin-react-helmet',
+        {
+            resolve: `gatsby-plugin-canonical-urls`,
+            options: {
+                siteUrl: `https://rileyflynn.me`,
+            },
+        },
         'gatsby-plugin-sitemap',
         {
             resolve: 'gatsby-plugin-manifest',

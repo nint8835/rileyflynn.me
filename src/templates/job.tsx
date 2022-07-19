@@ -18,6 +18,7 @@ const MDXPage = (props: PageProps<Queries.JobPageQuery>) => {
         <Page
             gatsbyProps={props}
             title={props.data.mdx.frontmatter.job.company}
+            categoryTitle={'Work'}
             description={props.data.mdx.frontmatter.job.summary}
             breadcrumbs={[
                 {
