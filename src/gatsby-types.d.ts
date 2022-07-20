@@ -3592,7 +3592,7 @@ type ProjectPageQueryVariables = Exact<{
 }>;
 
 
-type ProjectPageQuery = { readonly mdx: { readonly body: string, readonly frontmatter: { readonly project: { readonly title: string | null, readonly summary: string | null } | null } | null, readonly wordCount: { readonly words: number | null } | null } | null };
+type ProjectPageQuery = { readonly mdx: { readonly body: string, readonly frontmatter: { readonly project: { readonly title: string | null, readonly summary: string | null, readonly tags: ReadonlyArray<string | null> | null } | null } | null, readonly wordCount: { readonly words: number | null } | null } | null };
 
 type ProjectsListPageQueryVariables = Exact<{ [key: string]: never; }>;
 

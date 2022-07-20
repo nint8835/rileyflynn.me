@@ -21,6 +21,7 @@ const MDXPage = (props: PageProps<Queries.ProjectPageQuery>) => {
                     href: '#',
                 },
             ]}
+            tags={props.data.mdx?.frontmatter?.project.tags}
         >
             {props.data.mdx.wordCount.words ? (
                 <Container>
@@ -40,6 +41,7 @@ export const query = graphql`
                 project {
                     title
                     summary
+                    tags
                 }
             }
             wordCount {
