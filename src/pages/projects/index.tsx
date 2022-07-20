@@ -11,7 +11,7 @@ const ProjectsPage = (props: PageProps) => {
     const projects: Queries.ProjectsListPageQuery = useStaticQuery(graphql`
         query ProjectsListPage {
             allMdx(
-                sort: { fields: frontmatter___job___positions___startMonth, order: DESC }
+                sort: { fields: frontmatter___project___title, order: ASC }
                 filter: { frontmatter: { type: { eq: "project" } } }
             ) {
                 nodes {
