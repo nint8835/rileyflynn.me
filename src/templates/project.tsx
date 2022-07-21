@@ -8,16 +8,16 @@ const MDXPage = (props: PageProps<Queries.ProjectPageQuery>) => {
     return (
         <Page
             gatsbyProps={props}
-            title={props.data.mdx.frontmatter.project.title}
+            title={props.data.mdx.frontmatter.title}
             categoryTitle={'Project'}
-            description={props.data.mdx.frontmatter.project.summary}
+            description={props.data.mdx.frontmatter.summary}
             breadcrumbs={[
                 {
                     text: 'Projects',
                     href: '/projects/',
                 },
                 {
-                    text: props.data.mdx.frontmatter.project.title,
+                    text: props.data.mdx.frontmatter.title,
                     href: '#',
                 },
             ]}
@@ -38,9 +38,9 @@ export const query = graphql`
     query ProjectPage($id: String) {
         mdx(id: { eq: $id }) {
             frontmatter {
+                title
+                summary
                 project {
-                    title
-                    summary
                     tags
                 }
             }

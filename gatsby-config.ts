@@ -27,14 +27,12 @@ const config: GatsbyConfig = {
                             slug
                             frontmatter {
                                 type
+                                title
+                                summary
                                 project {
-                                    title
-                                    summary
                                     tags
                                 }
                                 job {
-                                    company
-                                    summary
                                     positions {
                                         title
                                     }
@@ -48,11 +46,8 @@ const config: GatsbyConfig = {
                     data.allMdx.nodes.map((node) => ({
                         id: node.id,
                         path: `/${node.slug}/`,
-                        title:
-                            node.frontmatter.type === 'project'
-                                ? node.frontmatter.project.title
-                                : node.frontmatter.job.company,
-                        summary: node.frontmatter[node.frontmatter.type].summary,
+                        title: node.frontmatter.title,
+                        summary: node.frontmatter.summary,
                         tags:
                             node.frontmatter.type === 'project'
                                 ? node.frontmatter.project.tags

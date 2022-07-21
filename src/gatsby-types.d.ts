@@ -662,13 +662,48 @@ type FileFieldsEnum =
   | 'childMdx.children.parent.id'
   | 'childMdx.excerpt'
   | 'childMdx.fileAbsolutePath'
-  | 'childMdx.frontmatter.job.company'
   | 'childMdx.frontmatter.job.positions'
   | 'childMdx.frontmatter.job.site'
-  | 'childMdx.frontmatter.job.summary'
-  | 'childMdx.frontmatter.project.summary'
+  | 'childMdx.frontmatter.previewImage.absolutePath'
+  | 'childMdx.frontmatter.previewImage.accessTime'
+  | 'childMdx.frontmatter.previewImage.atime'
+  | 'childMdx.frontmatter.previewImage.atimeMs'
+  | 'childMdx.frontmatter.previewImage.base'
+  | 'childMdx.frontmatter.previewImage.birthTime'
+  | 'childMdx.frontmatter.previewImage.birthtime'
+  | 'childMdx.frontmatter.previewImage.birthtimeMs'
+  | 'childMdx.frontmatter.previewImage.blksize'
+  | 'childMdx.frontmatter.previewImage.blocks'
+  | 'childMdx.frontmatter.previewImage.changeTime'
+  | 'childMdx.frontmatter.previewImage.children'
+  | 'childMdx.frontmatter.previewImage.childrenImageSharp'
+  | 'childMdx.frontmatter.previewImage.childrenMdx'
+  | 'childMdx.frontmatter.previewImage.ctime'
+  | 'childMdx.frontmatter.previewImage.ctimeMs'
+  | 'childMdx.frontmatter.previewImage.dev'
+  | 'childMdx.frontmatter.previewImage.dir'
+  | 'childMdx.frontmatter.previewImage.ext'
+  | 'childMdx.frontmatter.previewImage.extension'
+  | 'childMdx.frontmatter.previewImage.gid'
+  | 'childMdx.frontmatter.previewImage.id'
+  | 'childMdx.frontmatter.previewImage.ino'
+  | 'childMdx.frontmatter.previewImage.mode'
+  | 'childMdx.frontmatter.previewImage.modifiedTime'
+  | 'childMdx.frontmatter.previewImage.mtime'
+  | 'childMdx.frontmatter.previewImage.mtimeMs'
+  | 'childMdx.frontmatter.previewImage.name'
+  | 'childMdx.frontmatter.previewImage.nlink'
+  | 'childMdx.frontmatter.previewImage.prettySize'
+  | 'childMdx.frontmatter.previewImage.publicURL'
+  | 'childMdx.frontmatter.previewImage.rdev'
+  | 'childMdx.frontmatter.previewImage.relativeDirectory'
+  | 'childMdx.frontmatter.previewImage.relativePath'
+  | 'childMdx.frontmatter.previewImage.root'
+  | 'childMdx.frontmatter.previewImage.size'
+  | 'childMdx.frontmatter.previewImage.sourceInstanceName'
+  | 'childMdx.frontmatter.previewImage.uid'
   | 'childMdx.frontmatter.project.tags'
-  | 'childMdx.frontmatter.project.title'
+  | 'childMdx.frontmatter.summary'
   | 'childMdx.frontmatter.title'
   | 'childMdx.frontmatter.type'
   | 'childMdx.headings'
@@ -797,13 +832,48 @@ type FileFieldsEnum =
   | 'childrenMdx.children.parent.id'
   | 'childrenMdx.excerpt'
   | 'childrenMdx.fileAbsolutePath'
-  | 'childrenMdx.frontmatter.job.company'
   | 'childrenMdx.frontmatter.job.positions'
   | 'childrenMdx.frontmatter.job.site'
-  | 'childrenMdx.frontmatter.job.summary'
-  | 'childrenMdx.frontmatter.project.summary'
+  | 'childrenMdx.frontmatter.previewImage.absolutePath'
+  | 'childrenMdx.frontmatter.previewImage.accessTime'
+  | 'childrenMdx.frontmatter.previewImage.atime'
+  | 'childrenMdx.frontmatter.previewImage.atimeMs'
+  | 'childrenMdx.frontmatter.previewImage.base'
+  | 'childrenMdx.frontmatter.previewImage.birthTime'
+  | 'childrenMdx.frontmatter.previewImage.birthtime'
+  | 'childrenMdx.frontmatter.previewImage.birthtimeMs'
+  | 'childrenMdx.frontmatter.previewImage.blksize'
+  | 'childrenMdx.frontmatter.previewImage.blocks'
+  | 'childrenMdx.frontmatter.previewImage.changeTime'
+  | 'childrenMdx.frontmatter.previewImage.children'
+  | 'childrenMdx.frontmatter.previewImage.childrenImageSharp'
+  | 'childrenMdx.frontmatter.previewImage.childrenMdx'
+  | 'childrenMdx.frontmatter.previewImage.ctime'
+  | 'childrenMdx.frontmatter.previewImage.ctimeMs'
+  | 'childrenMdx.frontmatter.previewImage.dev'
+  | 'childrenMdx.frontmatter.previewImage.dir'
+  | 'childrenMdx.frontmatter.previewImage.ext'
+  | 'childrenMdx.frontmatter.previewImage.extension'
+  | 'childrenMdx.frontmatter.previewImage.gid'
+  | 'childrenMdx.frontmatter.previewImage.id'
+  | 'childrenMdx.frontmatter.previewImage.ino'
+  | 'childrenMdx.frontmatter.previewImage.mode'
+  | 'childrenMdx.frontmatter.previewImage.modifiedTime'
+  | 'childrenMdx.frontmatter.previewImage.mtime'
+  | 'childrenMdx.frontmatter.previewImage.mtimeMs'
+  | 'childrenMdx.frontmatter.previewImage.name'
+  | 'childrenMdx.frontmatter.previewImage.nlink'
+  | 'childrenMdx.frontmatter.previewImage.prettySize'
+  | 'childrenMdx.frontmatter.previewImage.publicURL'
+  | 'childrenMdx.frontmatter.previewImage.rdev'
+  | 'childrenMdx.frontmatter.previewImage.relativeDirectory'
+  | 'childrenMdx.frontmatter.previewImage.relativePath'
+  | 'childrenMdx.frontmatter.previewImage.root'
+  | 'childrenMdx.frontmatter.previewImage.size'
+  | 'childrenMdx.frontmatter.previewImage.sourceInstanceName'
+  | 'childrenMdx.frontmatter.previewImage.uid'
   | 'childrenMdx.frontmatter.project.tags'
-  | 'childrenMdx.frontmatter.project.title'
+  | 'childrenMdx.frontmatter.summary'
   | 'childrenMdx.frontmatter.title'
   | 'childrenMdx.frontmatter.type'
   | 'childrenMdx.headings'
@@ -1930,92 +2000,93 @@ type MdxFieldsEnum =
   | 'children.parent.parent.id'
   | 'excerpt'
   | 'fileAbsolutePath'
-  | 'frontmatter.job.company'
   | 'frontmatter.job.positions'
   | 'frontmatter.job.positions.endMonth'
   | 'frontmatter.job.positions.startMonth'
   | 'frontmatter.job.positions.title'
-  | 'frontmatter.job.previewImage.absolutePath'
-  | 'frontmatter.job.previewImage.accessTime'
-  | 'frontmatter.job.previewImage.atime'
-  | 'frontmatter.job.previewImage.atimeMs'
-  | 'frontmatter.job.previewImage.base'
-  | 'frontmatter.job.previewImage.birthTime'
-  | 'frontmatter.job.previewImage.birthtime'
-  | 'frontmatter.job.previewImage.birthtimeMs'
-  | 'frontmatter.job.previewImage.blksize'
-  | 'frontmatter.job.previewImage.blocks'
-  | 'frontmatter.job.previewImage.changeTime'
-  | 'frontmatter.job.previewImage.children'
-  | 'frontmatter.job.previewImage.childrenImageSharp'
-  | 'frontmatter.job.previewImage.childrenMdx'
-  | 'frontmatter.job.previewImage.ctime'
-  | 'frontmatter.job.previewImage.ctimeMs'
-  | 'frontmatter.job.previewImage.dev'
-  | 'frontmatter.job.previewImage.dir'
-  | 'frontmatter.job.previewImage.ext'
-  | 'frontmatter.job.previewImage.extension'
-  | 'frontmatter.job.previewImage.gid'
-  | 'frontmatter.job.previewImage.id'
-  | 'frontmatter.job.previewImage.ino'
-  | 'frontmatter.job.previewImage.mode'
-  | 'frontmatter.job.previewImage.modifiedTime'
-  | 'frontmatter.job.previewImage.mtime'
-  | 'frontmatter.job.previewImage.mtimeMs'
-  | 'frontmatter.job.previewImage.name'
-  | 'frontmatter.job.previewImage.nlink'
-  | 'frontmatter.job.previewImage.prettySize'
-  | 'frontmatter.job.previewImage.publicURL'
-  | 'frontmatter.job.previewImage.rdev'
-  | 'frontmatter.job.previewImage.relativeDirectory'
-  | 'frontmatter.job.previewImage.relativePath'
-  | 'frontmatter.job.previewImage.root'
-  | 'frontmatter.job.previewImage.size'
-  | 'frontmatter.job.previewImage.sourceInstanceName'
-  | 'frontmatter.job.previewImage.uid'
   | 'frontmatter.job.site'
-  | 'frontmatter.job.summary'
-  | 'frontmatter.project.previewImage.absolutePath'
-  | 'frontmatter.project.previewImage.accessTime'
-  | 'frontmatter.project.previewImage.atime'
-  | 'frontmatter.project.previewImage.atimeMs'
-  | 'frontmatter.project.previewImage.base'
-  | 'frontmatter.project.previewImage.birthTime'
-  | 'frontmatter.project.previewImage.birthtime'
-  | 'frontmatter.project.previewImage.birthtimeMs'
-  | 'frontmatter.project.previewImage.blksize'
-  | 'frontmatter.project.previewImage.blocks'
-  | 'frontmatter.project.previewImage.changeTime'
-  | 'frontmatter.project.previewImage.children'
-  | 'frontmatter.project.previewImage.childrenImageSharp'
-  | 'frontmatter.project.previewImage.childrenMdx'
-  | 'frontmatter.project.previewImage.ctime'
-  | 'frontmatter.project.previewImage.ctimeMs'
-  | 'frontmatter.project.previewImage.dev'
-  | 'frontmatter.project.previewImage.dir'
-  | 'frontmatter.project.previewImage.ext'
-  | 'frontmatter.project.previewImage.extension'
-  | 'frontmatter.project.previewImage.gid'
-  | 'frontmatter.project.previewImage.id'
-  | 'frontmatter.project.previewImage.ino'
-  | 'frontmatter.project.previewImage.mode'
-  | 'frontmatter.project.previewImage.modifiedTime'
-  | 'frontmatter.project.previewImage.mtime'
-  | 'frontmatter.project.previewImage.mtimeMs'
-  | 'frontmatter.project.previewImage.name'
-  | 'frontmatter.project.previewImage.nlink'
-  | 'frontmatter.project.previewImage.prettySize'
-  | 'frontmatter.project.previewImage.publicURL'
-  | 'frontmatter.project.previewImage.rdev'
-  | 'frontmatter.project.previewImage.relativeDirectory'
-  | 'frontmatter.project.previewImage.relativePath'
-  | 'frontmatter.project.previewImage.root'
-  | 'frontmatter.project.previewImage.size'
-  | 'frontmatter.project.previewImage.sourceInstanceName'
-  | 'frontmatter.project.previewImage.uid'
-  | 'frontmatter.project.summary'
+  | 'frontmatter.previewImage.absolutePath'
+  | 'frontmatter.previewImage.accessTime'
+  | 'frontmatter.previewImage.atime'
+  | 'frontmatter.previewImage.atimeMs'
+  | 'frontmatter.previewImage.base'
+  | 'frontmatter.previewImage.birthTime'
+  | 'frontmatter.previewImage.birthtime'
+  | 'frontmatter.previewImage.birthtimeMs'
+  | 'frontmatter.previewImage.blksize'
+  | 'frontmatter.previewImage.blocks'
+  | 'frontmatter.previewImage.changeTime'
+  | 'frontmatter.previewImage.childImageSharp.children'
+  | 'frontmatter.previewImage.childImageSharp.gatsbyImageData'
+  | 'frontmatter.previewImage.childImageSharp.id'
+  | 'frontmatter.previewImage.childMdx.body'
+  | 'frontmatter.previewImage.childMdx.children'
+  | 'frontmatter.previewImage.childMdx.excerpt'
+  | 'frontmatter.previewImage.childMdx.fileAbsolutePath'
+  | 'frontmatter.previewImage.childMdx.headings'
+  | 'frontmatter.previewImage.childMdx.html'
+  | 'frontmatter.previewImage.childMdx.id'
+  | 'frontmatter.previewImage.childMdx.mdxAST'
+  | 'frontmatter.previewImage.childMdx.rawBody'
+  | 'frontmatter.previewImage.childMdx.slug'
+  | 'frontmatter.previewImage.childMdx.tableOfContents'
+  | 'frontmatter.previewImage.childMdx.timeToRead'
+  | 'frontmatter.previewImage.children'
+  | 'frontmatter.previewImage.childrenImageSharp'
+  | 'frontmatter.previewImage.childrenImageSharp.children'
+  | 'frontmatter.previewImage.childrenImageSharp.gatsbyImageData'
+  | 'frontmatter.previewImage.childrenImageSharp.id'
+  | 'frontmatter.previewImage.childrenMdx'
+  | 'frontmatter.previewImage.childrenMdx.body'
+  | 'frontmatter.previewImage.childrenMdx.children'
+  | 'frontmatter.previewImage.childrenMdx.excerpt'
+  | 'frontmatter.previewImage.childrenMdx.fileAbsolutePath'
+  | 'frontmatter.previewImage.childrenMdx.headings'
+  | 'frontmatter.previewImage.childrenMdx.html'
+  | 'frontmatter.previewImage.childrenMdx.id'
+  | 'frontmatter.previewImage.childrenMdx.mdxAST'
+  | 'frontmatter.previewImage.childrenMdx.rawBody'
+  | 'frontmatter.previewImage.childrenMdx.slug'
+  | 'frontmatter.previewImage.childrenMdx.tableOfContents'
+  | 'frontmatter.previewImage.childrenMdx.timeToRead'
+  | 'frontmatter.previewImage.children.children'
+  | 'frontmatter.previewImage.children.id'
+  | 'frontmatter.previewImage.ctime'
+  | 'frontmatter.previewImage.ctimeMs'
+  | 'frontmatter.previewImage.dev'
+  | 'frontmatter.previewImage.dir'
+  | 'frontmatter.previewImage.ext'
+  | 'frontmatter.previewImage.extension'
+  | 'frontmatter.previewImage.gid'
+  | 'frontmatter.previewImage.id'
+  | 'frontmatter.previewImage.ino'
+  | 'frontmatter.previewImage.internal.content'
+  | 'frontmatter.previewImage.internal.contentDigest'
+  | 'frontmatter.previewImage.internal.description'
+  | 'frontmatter.previewImage.internal.fieldOwners'
+  | 'frontmatter.previewImage.internal.ignoreType'
+  | 'frontmatter.previewImage.internal.mediaType'
+  | 'frontmatter.previewImage.internal.owner'
+  | 'frontmatter.previewImage.internal.type'
+  | 'frontmatter.previewImage.mode'
+  | 'frontmatter.previewImage.modifiedTime'
+  | 'frontmatter.previewImage.mtime'
+  | 'frontmatter.previewImage.mtimeMs'
+  | 'frontmatter.previewImage.name'
+  | 'frontmatter.previewImage.nlink'
+  | 'frontmatter.previewImage.parent.children'
+  | 'frontmatter.previewImage.parent.id'
+  | 'frontmatter.previewImage.prettySize'
+  | 'frontmatter.previewImage.publicURL'
+  | 'frontmatter.previewImage.rdev'
+  | 'frontmatter.previewImage.relativeDirectory'
+  | 'frontmatter.previewImage.relativePath'
+  | 'frontmatter.previewImage.root'
+  | 'frontmatter.previewImage.size'
+  | 'frontmatter.previewImage.sourceInstanceName'
+  | 'frontmatter.previewImage.uid'
   | 'frontmatter.project.tags'
-  | 'frontmatter.project.title'
+  | 'frontmatter.summary'
   | 'frontmatter.title'
   | 'frontmatter.type'
   | 'headings'
@@ -2103,32 +2174,30 @@ type MdxFilterListInput = {
 
 type MdxFrontmatter = {
   readonly job: Maybe<MdxFrontmatterJob>;
+  readonly previewImage: Maybe<File>;
   readonly project: Maybe<MdxFrontmatterProject>;
+  readonly summary: Maybe<Scalars['String']>;
   readonly title: Scalars['String'];
   readonly type: Maybe<Scalars['String']>;
 };
 
 type MdxFrontmatterFilterInput = {
   readonly job: InputMaybe<MdxFrontmatterJobFilterInput>;
+  readonly previewImage: InputMaybe<FileFilterInput>;
   readonly project: InputMaybe<MdxFrontmatterProjectFilterInput>;
+  readonly summary: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
   readonly type: InputMaybe<StringQueryOperatorInput>;
 };
 
 type MdxFrontmatterJob = {
-  readonly company: Maybe<Scalars['String']>;
   readonly positions: Maybe<ReadonlyArray<Maybe<MdxFrontmatterJobPositions>>>;
-  readonly previewImage: Maybe<File>;
   readonly site: Maybe<Scalars['String']>;
-  readonly summary: Maybe<Scalars['String']>;
 };
 
 type MdxFrontmatterJobFilterInput = {
-  readonly company: InputMaybe<StringQueryOperatorInput>;
   readonly positions: InputMaybe<MdxFrontmatterJobPositionsFilterListInput>;
-  readonly previewImage: InputMaybe<FileFilterInput>;
   readonly site: InputMaybe<StringQueryOperatorInput>;
-  readonly summary: InputMaybe<StringQueryOperatorInput>;
 };
 
 type MdxFrontmatterJobPositions = {
@@ -2164,17 +2233,11 @@ type MdxFrontmatterJobPositionsFilterListInput = {
 };
 
 type MdxFrontmatterProject = {
-  readonly previewImage: Maybe<File>;
-  readonly summary: Maybe<Scalars['String']>;
   readonly tags: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-  readonly title: Maybe<Scalars['String']>;
 };
 
 type MdxFrontmatterProjectFilterInput = {
-  readonly previewImage: InputMaybe<FileFilterInput>;
-  readonly summary: InputMaybe<StringQueryOperatorInput>;
   readonly tags: InputMaybe<StringQueryOperatorInput>;
-  readonly title: InputMaybe<StringQueryOperatorInput>;
 };
 
 type MdxGroupConnection = {
@@ -3814,31 +3877,31 @@ type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: 
 type GetProjectsAndWorkQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type GetProjectsAndWorkQuery = { readonly projects: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly frontmatter: { readonly project: { readonly title: string | null } | null } | null }> }, readonly work: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly frontmatter: { readonly job: { readonly company: string | null } | null } | null }> } };
+type GetProjectsAndWorkQuery = { readonly projects: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly frontmatter: { readonly title: string } | null }> }, readonly work: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly frontmatter: { readonly title: string } | null }> } };
 
 type JobPageQueryVariables = Exact<{
   id: InputMaybe<Scalars['String']>;
 }>;
 
 
-type JobPageQuery = { readonly mdx: { readonly body: string, readonly frontmatter: { readonly job: { readonly company: string | null, readonly summary: string | null, readonly site: string | null, readonly positions: ReadonlyArray<{ readonly title: string | null, readonly endMonth: string | null, readonly startMonth: string | null } | null> | null } | null } | null, readonly wordCount: { readonly words: number | null } | null } | null };
+type JobPageQuery = { readonly mdx: { readonly body: string, readonly frontmatter: { readonly title: string, readonly summary: string | null, readonly job: { readonly site: string | null, readonly positions: ReadonlyArray<{ readonly title: string | null, readonly endMonth: string | null, readonly startMonth: string | null } | null> | null } | null } | null, readonly wordCount: { readonly words: number | null } | null } | null };
 
 type JobsListPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type JobsListPageQuery = { readonly allMdx: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly frontmatter: { readonly job: { readonly company: string | null, readonly summary: string | null, readonly previewImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly positions: ReadonlyArray<{ readonly title: string | null, readonly endMonth: string | null, readonly startMonth: string | null } | null> | null } | null } | null }> } };
+type JobsListPageQuery = { readonly allMdx: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly frontmatter: { readonly title: string, readonly summary: string | null, readonly previewImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly job: { readonly positions: ReadonlyArray<{ readonly title: string | null, readonly endMonth: string | null, readonly startMonth: string | null } | null> | null } | null } | null }> } };
 
 type ProjectPageQueryVariables = Exact<{
   id: InputMaybe<Scalars['String']>;
 }>;
 
 
-type ProjectPageQuery = { readonly mdx: { readonly body: string, readonly frontmatter: { readonly project: { readonly title: string | null, readonly summary: string | null, readonly tags: ReadonlyArray<string | null> | null } | null } | null, readonly wordCount: { readonly words: number | null } | null } | null };
+type ProjectPageQuery = { readonly mdx: { readonly body: string, readonly frontmatter: { readonly title: string, readonly summary: string | null, readonly project: { readonly tags: ReadonlyArray<string | null> | null } | null } | null, readonly wordCount: { readonly words: number | null } | null } | null };
 
 type ProjectsListPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type ProjectsListPageQuery = { readonly allMdx: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly frontmatter: { readonly project: { readonly title: string | null, readonly summary: string | null, readonly tags: ReadonlyArray<string | null> | null, readonly previewImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null }> } };
+type ProjectsListPageQuery = { readonly allMdx: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly frontmatter: { readonly title: string, readonly summary: string | null, readonly previewImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly project: { readonly tags: ReadonlyArray<string | null> | null } | null } | null }> } };
 
 type SearchDataQueryVariables = Exact<{ [key: string]: never; }>;
 

@@ -15,14 +15,14 @@ const WorkPage = (props: PageProps) => {
                 nodes {
                     slug
                     frontmatter {
-                        job {
-                            company
-                            summary
-                            previewImage {
-                                childImageSharp {
-                                    gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-                                }
+                        title
+                        summary
+                        previewImage {
+                            childImageSharp {
+                                gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
                             }
+                        }
+                        job {
                             positions {
                                 title
                                 endMonth(formatString: "MMMM YYYY")
@@ -47,7 +47,7 @@ const WorkPage = (props: PageProps) => {
                                 navigate(`/${node.slug}`);
                             }}
                         >
-                            {node.frontmatter.job.company}
+                            {node.frontmatter.title}
                         </Link>
                     ),
                     sections: [
@@ -63,7 +63,7 @@ const WorkPage = (props: PageProps) => {
                             ),
                         },
                         {
-                            content: (node) => node.frontmatter.job.summary || 'No summary provided.',
+                            content: (node) => node.frontmatter.summary || 'No summary provided.',
                         },
                         {
                             header: 'Roles',
@@ -74,8 +74,8 @@ const WorkPage = (props: PageProps) => {
                         {
                             content: (node) => (
                                 <GatsbyImage
-                                    image={getImage(node.frontmatter.job.previewImage)!}
-                                    alt={node.frontmatter.job.company}
+                                    image={getImage(node.frontmatter.previewImage)!}
+                                    alt={node.frontmatter.title}
                                 />
                             ),
                         },

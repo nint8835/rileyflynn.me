@@ -10,14 +10,12 @@ const Sidebar = ({ path }: SidebarProps) => {
     const data: Queries.GetProjectsAndWorkQuery = useStaticQuery(graphql`
         query GetProjectsAndWork {
             projects: allMdx(
-                sort: { fields: frontmatter___project___title, order: ASC }
+                sort: { fields: frontmatter___title, order: ASC }
                 filter: { frontmatter: { type: { eq: "project" } } }
             ) {
                 nodes {
                     frontmatter {
-                        project {
-                            title
-                        }
+                        title
                     }
                     slug
                 }
@@ -29,9 +27,7 @@ const Sidebar = ({ path }: SidebarProps) => {
             ) {
                 nodes {
                     frontmatter {
-                        job {
-                            company
-                        }
+                        title
                     }
                     slug
                 }
@@ -41,13 +37,13 @@ const Sidebar = ({ path }: SidebarProps) => {
 
     const projects: SideNavigationProps.Item[] = data.projects.nodes.map((project) => ({
         type: 'link',
-        text: project.frontmatter.project.title,
+        text: project.frontmatter.title,
         href: `/${project.slug}`,
     }));
 
     const companies: SideNavigationProps.Item[] = data.work.nodes.map((company) => ({
         type: 'link',
-        text: company.frontmatter.job.company,
+        text: company.frontmatter.title,
         href: `/${company.slug}`,
     }));
 

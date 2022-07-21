@@ -17,16 +17,16 @@ const MDXPage = (props: PageProps<Queries.JobPageQuery>) => {
     return (
         <Page
             gatsbyProps={props}
-            title={props.data.mdx.frontmatter.job.company}
+            title={props.data.mdx.frontmatter.title}
             categoryTitle={'Work'}
-            description={props.data.mdx.frontmatter.job.summary}
+            description={props.data.mdx.frontmatter.summary}
             breadcrumbs={[
                 {
                     text: 'Work',
                     href: '/work/',
                 },
                 {
-                    text: props.data.mdx.frontmatter.job.company,
+                    text: props.data.mdx.frontmatter.title,
                     href: '#',
                 },
             ]}
@@ -73,9 +73,9 @@ export const query = graphql`
     query JobPage($id: String) {
         mdx(id: { eq: $id }) {
             frontmatter {
+                title
+                summary
                 job {
-                    company
-                    summary
                     positions {
                         title
                         endMonth(formatString: "MMMM YYYY")

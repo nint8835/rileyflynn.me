@@ -11,21 +11,21 @@ const ProjectsPage = (props: PageProps) => {
     const projects: Queries.ProjectsListPageQuery = useStaticQuery(graphql`
         query ProjectsListPage {
             allMdx(
-                sort: { fields: frontmatter___project___title, order: ASC }
+                sort: { fields: frontmatter___title, order: ASC }
                 filter: { frontmatter: { type: { eq: "project" } } }
             ) {
                 nodes {
                     slug
                     frontmatter {
-                        project {
-                            title
-                            summary
-                            tags
-                            previewImage {
-                                childImageSharp {
-                                    gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-                                }
+                        title
+                        summary
+                        previewImage {
+                            childImageSharp {
+                                gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
                             }
+                        }
+                        project {
+                            tags
                         }
                     }
                 }
@@ -45,7 +45,7 @@ const ProjectsPage = (props: PageProps) => {
                                 navigate(`/${node.slug}`);
                             }}
                         >
-                            {node.frontmatter.project.title}
+                            {node.frontmatter.title}
                         </Link>
                     ),
                     sections: [
@@ -59,13 +59,13 @@ const ProjectsPage = (props: PageProps) => {
                             ),
                         },
                         {
-                            content: (node) => node.frontmatter.project.summary || 'No summary provided.',
+                            content: (node) => node.frontmatter.summary || 'No summary provided.',
                         },
                         {
                             content: (node) => (
                                 <GatsbyImage
-                                    image={getImage(node.frontmatter.project.previewImage)!}
-                                    alt={node.frontmatter.project.title}
+                                    image={getImage(node.frontmatter.previewImage)!}
+                                    alt={node.frontmatter.title}
                                 />
                             ),
                         },
