@@ -19,7 +19,7 @@ const Meta = ({ title, categoryTitle, description }: MetaProps) => {
             <meta name="og:type" content="website" />
             <meta name="og:site_name" content="Riley Flynn" />
             <meta name="og:url" content={`https://rileyflynn.com${location.pathname}`} />
-            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:card" content="summary" />
             <meta name="twitter:creator" content="@bootlegjohn" />
 
             <title>{titleString}</title>
