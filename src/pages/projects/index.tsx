@@ -45,27 +45,27 @@ const ProjectsPage = (props: PageProps) => {
                                 navigate(`/${node.slug}`);
                             }}
                         >
-                            {node.frontmatter.title}
+                            {node.frontmatter?.title}
                         </Link>
                     ),
                     sections: [
                         {
                             content: (node) => (
                                 <SpaceBetween size="xs" direction="horizontal">
-                                    {(node.frontmatter.project.tags || []).map((label) => (
+                                    {(node.frontmatter?.project?.tags || []).map((label) => (
                                         <Badge>{label}</Badge>
                                     ))}
                                 </SpaceBetween>
                             ),
                         },
                         {
-                            content: (node) => node.frontmatter.summary || 'No summary provided.',
+                            content: (node) => node.frontmatter?.summary || 'No summary provided.',
                         },
                         {
                             content: (node) => (
                                 <GatsbyImage
-                                    image={getImage(node.frontmatter.previewImage)!}
-                                    alt={node.frontmatter.title}
+                                    image={getImage(node.frontmatter?.previewImage)!}
+                                    alt={node.frontmatter?.title!}
                                 />
                             ),
                         },

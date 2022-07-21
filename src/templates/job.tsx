@@ -1,4 +1,4 @@
-import Button from '@cloudscape-design/components/button';
+import Button, { ButtonProps } from '@cloudscape-design/components/button';
 import Container from '@cloudscape-design/components/container';
 import Header from '@cloudscape-design/components/header';
 import SpaceBetween from '@cloudscape-design/components/space-between';
@@ -17,27 +17,31 @@ const MDXPage = (props: PageProps<Queries.JobPageQuery>) => {
     return (
         <Page
             gatsbyProps={props}
-            title={props.data.mdx.frontmatter.title}
+            title={props.data.mdx?.frontmatter?.title!}
             categoryTitle={'Work'}
-            description={props.data.mdx.frontmatter.summary}
+            description={props.data.mdx?.frontmatter?.summary!}
             breadcrumbs={[
                 {
                     text: 'Work',
                     href: '/work/',
                 },
                 {
-                    text: props.data.mdx.frontmatter.title,
+                    text: props.data.mdx?.frontmatter?.title!,
                     href: '#',
                 },
             ]}
             headerActions={[
-                <Button variant="primary" href={props.data.mdx.frontmatter.job.site}>
-                    Site
-                </Button>,
+                <SpaceBetween direction="horizontal" size="xs">
+                    {props.data.mdx?.frontmatter?.links?.map((link) => (
+                        <Button key={link?.url} href={link?.url!} variant={link?.variant! as ButtonProps.Variant}>
+                            {link?.label}
+                        </Button>
+                    ))}
+                </SpaceBetween>,
             ]}
         >
             <SpaceBetween size={'m'}>
-                {props.data.mdx.wordCount.words ? (
+                {props.data.mdx?.wordCount?.words ? (
                     <Container>
                         <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
                     </Container>
@@ -60,7 +64,7 @@ const MDXPage = (props: PageProps<Queries.JobPageQuery>) => {
                             },
                         ]}
                         visibleColumns={['title', 'dates']}
-                        items={props.data.mdx.frontmatter.job.positions}
+                        items={props.data.mdx?.frontmatter?.job?.positions!}
                         variant="embedded"
                     />
                 </Container>
@@ -75,13 +79,17 @@ export const query = graphql`
             frontmatter {
                 title
                 summary
+                links {
+                    label
+                    variant
+                    url
+                }
                 job {
                     positions {
                         title
                         endMonth(formatString: "MMMM YYYY")
                         startMonth(formatString: "MMMM YYYY")
                     }
-                    site
                 }
             }
             wordCount {

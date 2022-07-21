@@ -13,7 +13,7 @@ const Search = () => {
         }
     `);
     const [query, setQuery] = useState('');
-    const results = useFlexSearch(query, searchData.localSearchPages.index, searchData.localSearchPages.store);
+    const results = useFlexSearch(query, searchData.localSearchPages?.index, searchData.localSearchPages?.store);
     const projectSuggestions = results
         .filter((result) => result.type === 'project')
         .map(

@@ -47,7 +47,7 @@ const WorkPage = (props: PageProps) => {
                                 navigate(`/${node.slug}`);
                             }}
                         >
-                            {node.frontmatter.title}
+                            {node.frontmatter?.title}
                         </Link>
                     ),
                     sections: [
@@ -63,19 +63,19 @@ const WorkPage = (props: PageProps) => {
                             ),
                         },
                         {
-                            content: (node) => node.frontmatter.summary || 'No summary provided.',
+                            content: (node) => node.frontmatter?.summary || 'No summary provided.',
                         },
                         {
                             header: 'Roles',
                             content: (node) => (
-                                <i>{node.frontmatter.job.positions.map((position) => position.title).join(', ')}</i>
+                                <i>{node.frontmatter?.job?.positions?.map((position) => position!.title).join(', ')}</i>
                             ),
                         },
                         {
                             content: (node) => (
                                 <GatsbyImage
                                     image={getImage(node.frontmatter.previewImage)!}
-                                    alt={node.frontmatter.title}
+                                    alt={node.frontmatter?.title!}
                                 />
                             ),
                         },

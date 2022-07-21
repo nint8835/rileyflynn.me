@@ -37,13 +37,13 @@ const Sidebar = ({ path }: SidebarProps) => {
 
     const projects: SideNavigationProps.Item[] = data.projects.nodes.map((project) => ({
         type: 'link',
-        text: project.frontmatter.title,
+        text: project.frontmatter?.title!,
         href: `/${project.slug}`,
     }));
 
     const companies: SideNavigationProps.Item[] = data.work.nodes.map((company) => ({
         type: 'link',
-        text: company.frontmatter.title,
+        text: company.frontmatter?.title!,
         href: `/${company.slug}`,
     }));
 

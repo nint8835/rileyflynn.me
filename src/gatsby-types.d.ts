@@ -663,7 +663,10 @@ type FileFieldsEnum =
   | 'childMdx.excerpt'
   | 'childMdx.fileAbsolutePath'
   | 'childMdx.frontmatter.job.positions'
-  | 'childMdx.frontmatter.job.site'
+  | 'childMdx.frontmatter.links'
+  | 'childMdx.frontmatter.links.label'
+  | 'childMdx.frontmatter.links.url'
+  | 'childMdx.frontmatter.links.variant'
   | 'childMdx.frontmatter.previewImage.absolutePath'
   | 'childMdx.frontmatter.previewImage.accessTime'
   | 'childMdx.frontmatter.previewImage.atime'
@@ -833,7 +836,10 @@ type FileFieldsEnum =
   | 'childrenMdx.excerpt'
   | 'childrenMdx.fileAbsolutePath'
   | 'childrenMdx.frontmatter.job.positions'
-  | 'childrenMdx.frontmatter.job.site'
+  | 'childrenMdx.frontmatter.links'
+  | 'childrenMdx.frontmatter.links.label'
+  | 'childrenMdx.frontmatter.links.url'
+  | 'childrenMdx.frontmatter.links.variant'
   | 'childrenMdx.frontmatter.previewImage.absolutePath'
   | 'childrenMdx.frontmatter.previewImage.accessTime'
   | 'childrenMdx.frontmatter.previewImage.atime'
@@ -2004,7 +2010,10 @@ type MdxFieldsEnum =
   | 'frontmatter.job.positions.endMonth'
   | 'frontmatter.job.positions.startMonth'
   | 'frontmatter.job.positions.title'
-  | 'frontmatter.job.site'
+  | 'frontmatter.links'
+  | 'frontmatter.links.label'
+  | 'frontmatter.links.url'
+  | 'frontmatter.links.variant'
   | 'frontmatter.previewImage.absolutePath'
   | 'frontmatter.previewImage.accessTime'
   | 'frontmatter.previewImage.atime'
@@ -2174,6 +2183,7 @@ type MdxFilterListInput = {
 
 type MdxFrontmatter = {
   readonly job: Maybe<MdxFrontmatterJob>;
+  readonly links: Maybe<ReadonlyArray<Maybe<MdxFrontmatterLinks>>>;
   readonly previewImage: Maybe<File>;
   readonly project: Maybe<MdxFrontmatterProject>;
   readonly summary: Maybe<Scalars['String']>;
@@ -2183,6 +2193,7 @@ type MdxFrontmatter = {
 
 type MdxFrontmatterFilterInput = {
   readonly job: InputMaybe<MdxFrontmatterJobFilterInput>;
+  readonly links: InputMaybe<MdxFrontmatterLinksFilterListInput>;
   readonly previewImage: InputMaybe<FileFilterInput>;
   readonly project: InputMaybe<MdxFrontmatterProjectFilterInput>;
   readonly summary: InputMaybe<StringQueryOperatorInput>;
@@ -2192,12 +2203,10 @@ type MdxFrontmatterFilterInput = {
 
 type MdxFrontmatterJob = {
   readonly positions: Maybe<ReadonlyArray<Maybe<MdxFrontmatterJobPositions>>>;
-  readonly site: Maybe<Scalars['String']>;
 };
 
 type MdxFrontmatterJobFilterInput = {
   readonly positions: InputMaybe<MdxFrontmatterJobPositionsFilterListInput>;
-  readonly site: InputMaybe<StringQueryOperatorInput>;
 };
 
 type MdxFrontmatterJobPositions = {
@@ -2230,6 +2239,22 @@ type MdxFrontmatterJobPositionsFilterInput = {
 
 type MdxFrontmatterJobPositionsFilterListInput = {
   readonly elemMatch: InputMaybe<MdxFrontmatterJobPositionsFilterInput>;
+};
+
+type MdxFrontmatterLinks = {
+  readonly label: Maybe<Scalars['String']>;
+  readonly url: Maybe<Scalars['String']>;
+  readonly variant: Maybe<Scalars['String']>;
+};
+
+type MdxFrontmatterLinksFilterInput = {
+  readonly label: InputMaybe<StringQueryOperatorInput>;
+  readonly url: InputMaybe<StringQueryOperatorInput>;
+  readonly variant: InputMaybe<StringQueryOperatorInput>;
+};
+
+type MdxFrontmatterLinksFilterListInput = {
+  readonly elemMatch: InputMaybe<MdxFrontmatterLinksFilterInput>;
 };
 
 type MdxFrontmatterProject = {
@@ -3884,7 +3909,7 @@ type JobPageQueryVariables = Exact<{
 }>;
 
 
-type JobPageQuery = { readonly mdx: { readonly body: string, readonly frontmatter: { readonly title: string, readonly summary: string | null, readonly job: { readonly site: string | null, readonly positions: ReadonlyArray<{ readonly title: string | null, readonly endMonth: string | null, readonly startMonth: string | null } | null> | null } | null } | null, readonly wordCount: { readonly words: number | null } | null } | null };
+type JobPageQuery = { readonly mdx: { readonly body: string, readonly frontmatter: { readonly title: string, readonly summary: string | null, readonly links: ReadonlyArray<{ readonly label: string | null, readonly variant: string | null, readonly url: string | null } | null> | null, readonly job: { readonly positions: ReadonlyArray<{ readonly title: string | null, readonly endMonth: string | null, readonly startMonth: string | null } | null> | null } | null } | null, readonly wordCount: { readonly words: number | null } | null } | null };
 
 type JobsListPageQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3896,7 +3921,7 @@ type ProjectPageQueryVariables = Exact<{
 }>;
 
 
-type ProjectPageQuery = { readonly mdx: { readonly body: string, readonly frontmatter: { readonly title: string, readonly summary: string | null, readonly project: { readonly tags: ReadonlyArray<string | null> | null } | null } | null, readonly wordCount: { readonly words: number | null } | null } | null };
+type ProjectPageQuery = { readonly mdx: { readonly body: string, readonly frontmatter: { readonly title: string, readonly summary: string | null, readonly links: ReadonlyArray<{ readonly label: string | null, readonly variant: string | null, readonly url: string | null } | null> | null, readonly project: { readonly tags: ReadonlyArray<string | null> | null } | null } | null, readonly wordCount: { readonly words: number | null } | null } | null };
 
 type ProjectsListPageQueryVariables = Exact<{ [key: string]: never; }>;
 
