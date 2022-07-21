@@ -15,6 +15,16 @@ const config: GatsbyConfig = {
             },
         },
         {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: `Riley Flynn - Cloud Architect and Software Developer`,
+                short_name: `Riley Flynn`,
+                start_url: `/`,
+                display: `standalone`,
+                icon: `src/images/favicon.png`,
+            },
+        },
+        {
             resolve: 'gatsby-plugin-local-search',
             options: {
                 name: 'pages',
@@ -57,12 +67,6 @@ const config: GatsbyConfig = {
             },
         },
         'gatsby-plugin-sitemap',
-        {
-            resolve: 'gatsby-plugin-manifest',
-            options: {
-                icon: 'src/images/icon.png',
-            },
-        },
         {
             resolve: 'gatsby-source-filesystem',
             options: {
