@@ -1,10 +1,8 @@
-import Input from '@cloudscape-design/components/input';
 import TopNavigation from '@cloudscape-design/components/top-navigation';
-import React, { useState } from 'react';
+import React from 'react';
+import Search from './search';
 
 const TopBar = () => {
-    const [searchText, setSearchText] = useState('');
-
     return (
         <div id="top-navigation" style={{ position: 'sticky', top: 0, zIndex: 1002 }}>
             <TopNavigation
@@ -13,17 +11,7 @@ const TopBar = () => {
                     href: '/',
                 }}
                 i18nStrings={{ overflowMenuTitleText: '', overflowMenuTriggerText: '' }}
-                search={
-                    <Input
-                        type="search"
-                        inputMode="search"
-                        placeholder="Search for projects, work, and more"
-                        value={searchText}
-                        onChange={(e) => {
-                            setSearchText(e.detail.value);
-                        }}
-                    />
-                }
+                search={<Search />}
                 utilities={[
                     {
                         type: 'menu-dropdown',

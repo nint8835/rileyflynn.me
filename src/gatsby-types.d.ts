@@ -1590,6 +1590,223 @@ type JSONQueryOperatorInput = {
   readonly regex: InputMaybe<Scalars['JSON']>;
 };
 
+type LocalSearchPages = Node & {
+  readonly children: ReadonlyArray<Node>;
+  /** The search engine used to create the index. */
+  readonly engine: Scalars['String'];
+  readonly id: Scalars['ID'];
+  /** The search index created using the selected engine. */
+  readonly index: Scalars['String'];
+  readonly internal: Internal;
+  /** The name of the index. */
+  readonly name: Scalars['String'];
+  readonly parent: Maybe<Node>;
+  /** Save the index to the site's static directory and return a public URL to it. */
+  readonly publicIndexURL: Scalars['String'];
+  /** Save the store to the site's static directory and return a public URL to it. */
+  readonly publicStoreURL: Scalars['String'];
+  /** A JSON object used to map search results to their data. */
+  readonly store: Scalars['JSON'];
+};
+
+type LocalSearchPagesConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<LocalSearchPagesEdge>;
+  readonly group: ReadonlyArray<LocalSearchPagesGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<LocalSearchPages>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type LocalSearchPagesConnection_distinctArgs = {
+  field: LocalSearchPagesFieldsEnum;
+};
+
+
+type LocalSearchPagesConnection_groupArgs = {
+  field: LocalSearchPagesFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type LocalSearchPagesConnection_maxArgs = {
+  field: LocalSearchPagesFieldsEnum;
+};
+
+
+type LocalSearchPagesConnection_minArgs = {
+  field: LocalSearchPagesFieldsEnum;
+};
+
+
+type LocalSearchPagesConnection_sumArgs = {
+  field: LocalSearchPagesFieldsEnum;
+};
+
+type LocalSearchPagesEdge = {
+  readonly next: Maybe<LocalSearchPages>;
+  readonly node: LocalSearchPages;
+  readonly previous: Maybe<LocalSearchPages>;
+};
+
+type LocalSearchPagesFieldsEnum =
+  | 'children'
+  | 'children.children'
+  | 'children.children.children'
+  | 'children.children.children.children'
+  | 'children.children.children.id'
+  | 'children.children.id'
+  | 'children.children.internal.content'
+  | 'children.children.internal.contentDigest'
+  | 'children.children.internal.description'
+  | 'children.children.internal.fieldOwners'
+  | 'children.children.internal.ignoreType'
+  | 'children.children.internal.mediaType'
+  | 'children.children.internal.owner'
+  | 'children.children.internal.type'
+  | 'children.children.parent.children'
+  | 'children.children.parent.id'
+  | 'children.id'
+  | 'children.internal.content'
+  | 'children.internal.contentDigest'
+  | 'children.internal.description'
+  | 'children.internal.fieldOwners'
+  | 'children.internal.ignoreType'
+  | 'children.internal.mediaType'
+  | 'children.internal.owner'
+  | 'children.internal.type'
+  | 'children.parent.children'
+  | 'children.parent.children.children'
+  | 'children.parent.children.id'
+  | 'children.parent.id'
+  | 'children.parent.internal.content'
+  | 'children.parent.internal.contentDigest'
+  | 'children.parent.internal.description'
+  | 'children.parent.internal.fieldOwners'
+  | 'children.parent.internal.ignoreType'
+  | 'children.parent.internal.mediaType'
+  | 'children.parent.internal.owner'
+  | 'children.parent.internal.type'
+  | 'children.parent.parent.children'
+  | 'children.parent.parent.id'
+  | 'engine'
+  | 'id'
+  | 'index'
+  | 'internal.content'
+  | 'internal.contentDigest'
+  | 'internal.description'
+  | 'internal.fieldOwners'
+  | 'internal.ignoreType'
+  | 'internal.mediaType'
+  | 'internal.owner'
+  | 'internal.type'
+  | 'name'
+  | 'parent.children'
+  | 'parent.children.children'
+  | 'parent.children.children.children'
+  | 'parent.children.children.id'
+  | 'parent.children.id'
+  | 'parent.children.internal.content'
+  | 'parent.children.internal.contentDigest'
+  | 'parent.children.internal.description'
+  | 'parent.children.internal.fieldOwners'
+  | 'parent.children.internal.ignoreType'
+  | 'parent.children.internal.mediaType'
+  | 'parent.children.internal.owner'
+  | 'parent.children.internal.type'
+  | 'parent.children.parent.children'
+  | 'parent.children.parent.id'
+  | 'parent.id'
+  | 'parent.internal.content'
+  | 'parent.internal.contentDigest'
+  | 'parent.internal.description'
+  | 'parent.internal.fieldOwners'
+  | 'parent.internal.ignoreType'
+  | 'parent.internal.mediaType'
+  | 'parent.internal.owner'
+  | 'parent.internal.type'
+  | 'parent.parent.children'
+  | 'parent.parent.children.children'
+  | 'parent.parent.children.id'
+  | 'parent.parent.id'
+  | 'parent.parent.internal.content'
+  | 'parent.parent.internal.contentDigest'
+  | 'parent.parent.internal.description'
+  | 'parent.parent.internal.fieldOwners'
+  | 'parent.parent.internal.ignoreType'
+  | 'parent.parent.internal.mediaType'
+  | 'parent.parent.internal.owner'
+  | 'parent.parent.internal.type'
+  | 'parent.parent.parent.children'
+  | 'parent.parent.parent.id'
+  | 'publicIndexURL'
+  | 'publicStoreURL'
+  | 'store';
+
+type LocalSearchPagesFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly engine: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly index: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly publicIndexURL: InputMaybe<StringQueryOperatorInput>;
+  readonly publicStoreURL: InputMaybe<StringQueryOperatorInput>;
+  readonly store: InputMaybe<JSONQueryOperatorInput>;
+};
+
+type LocalSearchPagesGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<LocalSearchPagesEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<LocalSearchPagesGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<LocalSearchPages>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type LocalSearchPagesGroupConnection_distinctArgs = {
+  field: LocalSearchPagesFieldsEnum;
+};
+
+
+type LocalSearchPagesGroupConnection_groupArgs = {
+  field: LocalSearchPagesFieldsEnum;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type LocalSearchPagesGroupConnection_maxArgs = {
+  field: LocalSearchPagesFieldsEnum;
+};
+
+
+type LocalSearchPagesGroupConnection_minArgs = {
+  field: LocalSearchPagesFieldsEnum;
+};
+
+
+type LocalSearchPagesGroupConnection_sumArgs = {
+  field: LocalSearchPagesFieldsEnum;
+};
+
+type LocalSearchPagesSortInput = {
+  readonly fields: InputMaybe<ReadonlyArray<InputMaybe<LocalSearchPagesFieldsEnum>>>;
+  readonly order: InputMaybe<ReadonlyArray<InputMaybe<SortOrderEnum>>>;
+};
+
 type Mdx = Node & {
   readonly body: Scalars['String'];
   readonly children: ReadonlyArray<Node>;
@@ -2090,6 +2307,7 @@ type Query = {
   readonly allDirectory: DirectoryConnection;
   readonly allFile: FileConnection;
   readonly allImageSharp: ImageSharpConnection;
+  readonly allLocalSearchPages: LocalSearchPagesConnection;
   readonly allMdx: MdxConnection;
   readonly allSite: SiteConnection;
   readonly allSiteBuildMetadata: SiteBuildMetadataConnection;
@@ -2099,6 +2317,7 @@ type Query = {
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
   readonly imageSharp: Maybe<ImageSharp>;
+  readonly localSearchPages: Maybe<LocalSearchPages>;
   readonly mdx: Maybe<Mdx>;
   readonly site: Maybe<Site>;
   readonly siteBuildMetadata: Maybe<SiteBuildMetadata>;
@@ -2129,6 +2348,14 @@ type Query_allImageSharpArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ImageSharpSortInput>;
+};
+
+
+type Query_allLocalSearchPagesArgs = {
+  filter: InputMaybe<LocalSearchPagesFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<LocalSearchPagesSortInput>;
 };
 
 
@@ -2275,6 +2502,20 @@ type Query_imageSharpArgs = {
   original: InputMaybe<ImageSharpOriginalFilterInput>;
   parent: InputMaybe<NodeFilterInput>;
   resize: InputMaybe<ImageSharpResizeFilterInput>;
+};
+
+
+type Query_localSearchPagesArgs = {
+  children: InputMaybe<NodeFilterListInput>;
+  engine: InputMaybe<StringQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  index: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  name: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  publicIndexURL: InputMaybe<StringQueryOperatorInput>;
+  publicStoreURL: InputMaybe<StringQueryOperatorInput>;
+  store: InputMaybe<JSONQueryOperatorInput>;
 };
 
 
@@ -3598,6 +3839,11 @@ type ProjectsListPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type ProjectsListPageQuery = { readonly allMdx: { readonly nodes: ReadonlyArray<{ readonly slug: string | null, readonly frontmatter: { readonly project: { readonly title: string | null, readonly summary: string | null, readonly tags: ReadonlyArray<string | null> | null, readonly previewImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null }> } };
+
+type SearchDataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SearchDataQuery = { readonly localSearchPages: { readonly index: string, readonly store: Record<string, unknown> } | null };
 
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 

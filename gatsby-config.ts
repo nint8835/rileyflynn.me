@@ -14,6 +14,53 @@ const config: GatsbyConfig = {
                 siteUrl: `https://rileyflynn.me`,
             },
         },
+        {
+            resolve: 'gatsby-plugin-local-search',
+            options: {
+                name: 'pages',
+                engine: 'flexsearch',
+                query: `
+                {
+                    allMdx {
+                        nodes {
+                            id
+                            slug
+                            frontmatter {
+                                type
+                                project {
+                                    title
+                                    summary
+                                    tags
+                                }
+                                job {
+                                    company
+                                    summary
+                                    positions {
+                                        title
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                `,
+                normalizer: ({ data }) =>
+                    data.allMdx.nodes.map((node) => ({
+                        id: node.id,
+                        path: `/${node.slug}/`,
+                        title:
+                            node.frontmatter.type === 'project'
+                                ? node.frontmatter.project.title
+                                : node.frontmatter.job.company,
+                        summary: node.frontmatter[node.frontmatter.type].summary,
+                        tags:
+                            node.frontmatter.type === 'project'
+                                ? node.frontmatter.project.tags
+                                : node.frontmatter.job.positions.map((position) => position.title),
+                        type: node.frontmatter.type,
+                    })),
+            },
+        },
         'gatsby-plugin-sitemap',
         {
             resolve: 'gatsby-plugin-manifest',
