@@ -1,7 +1,0 @@
-node_modules
-.git
-public
-.cache
-terraform/terraform.tfstate
-terraform/terraform.tfstate.backup
-terraform/terraform-provider-gatsby
