@@ -1,3 +1,4 @@
+import Button from '@cloudscape-design/components/button';
 import Card from '@cloudscape-design/components/cards';
 import Link from '@cloudscape-design/components/link';
 import { graphql, navigate, PageProps, useStaticQuery } from 'gatsby';
@@ -35,7 +36,15 @@ const WorkPage = (props: PageProps) => {
         }
     `);
     return (
-        <Page gatsbyProps={props} title={'Work'}>
+        <Page
+            gatsbyProps={props}
+            title={'Work'}
+            headerActions={[
+                <Button href="https://linkedin.com/in/nint8835" variant="primary">
+                    LinkedIn
+                </Button>,
+            ]}
+        >
             <Card
                 cardDefinition={{
                     header: (node) => (

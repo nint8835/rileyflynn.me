@@ -1,4 +1,5 @@
 import Badge from '@cloudscape-design/components/badge';
+import Button from '@cloudscape-design/components/button';
 import Card from '@cloudscape-design/components/cards';
 import Link from '@cloudscape-design/components/link';
 import SpaceBetween from '@cloudscape-design/components/space-between';
@@ -33,7 +34,15 @@ const ProjectsPage = (props: PageProps) => {
         }
     `);
     return (
-        <Page gatsbyProps={props} title={'Projects'}>
+        <Page
+            gatsbyProps={props}
+            title={'Projects'}
+            headerActions={[
+                <Button href="https://github.com/nint8835" variant="primary">
+                    GitHub
+                </Button>,
+            ]}
+        >
             <Card
                 cardDefinition={{
                     header: (node) => (
