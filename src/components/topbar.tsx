@@ -33,16 +33,22 @@ const TopBar = () => {
                                 text: 'Links',
                                 items: [
                                     {
-                                        id: 'twitter',
-                                        text: 'Twitter',
-                                        href: 'https://twitter.com/bootlegjohn',
-                                        iconName: 'user-profile',
-                                    },
-                                    {
                                         id: 'github',
                                         text: 'GitHub',
                                         href: 'https://github.com/nint8835',
                                         iconName: 'edit',
+                                    },
+                                    {
+                                        id: 'linkedin',
+                                        text: 'LinkedIn',
+                                        href: 'https://www.linkedin.com/in/nint8835/',
+                                        iconName: 'user-profile',
+                                    },
+                                    {
+                                        id: 'twitter',
+                                        text: 'Twitter',
+                                        href: 'https://twitter.com/bootlegjohn',
+                                        iconName: 'user-profile',
                                     },
                                 ],
                             },
