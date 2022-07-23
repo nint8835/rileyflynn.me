@@ -4,12 +4,19 @@ import Helmet from 'react-helmet';
 
 type MetaProps = {
     title: string;
+    metaIncludesTitle?: boolean;
     categoryTitle?: string;
     description?: string;
 };
 
-const Meta = ({ title, categoryTitle, description }: MetaProps) => {
-    const titleString = categoryTitle ? `Riley Flynn - ${categoryTitle} - ${title}` : `Riley Flynn - ${title}`;
+const Meta = ({ title, metaIncludesTitle, categoryTitle, description }: MetaProps) => {
+    let titleString = 'Riley Flynn';
+    if (metaIncludesTitle) {
+        if (categoryTitle) {
+            titleString = `${titleString} - ${categoryTitle}`;
+        }
+        titleString = `${titleString} - ${title}`;
+    }
     const location = useLocation();
     return (
         <Helmet>

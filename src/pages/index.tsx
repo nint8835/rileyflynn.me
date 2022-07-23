@@ -39,6 +39,7 @@ const IndexPage = (props: PageProps) => {
         <Page
             gatsbyProps={props}
             title={"Hi, I'm Riley!"}
+            metaIncludesTitle={false}
             description={"I'm a Cloud Architect and Software Developer from St. John's, Newfoundland."}
         >
             <Container header={<Header>Other places you can find me on the internet:</Header>}>

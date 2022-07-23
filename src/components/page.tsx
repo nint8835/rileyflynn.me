@@ -15,6 +15,7 @@ type PageProps = {
     gatsbyProps: GatsbyPageProps;
     children: ReactNode;
     title: string;
+    metaIncludesTitle?: boolean;
     categoryTitle?: string;
     description?: string;
     breadcrumbs?: BreadcrumbGroupProps.Item[];
@@ -26,6 +27,7 @@ const Page = ({
     children,
     gatsbyProps,
     title,
+    metaIncludesTitle = true,
     categoryTitle,
     description,
     breadcrumbs,
@@ -34,7 +36,12 @@ const Page = ({
 }: PageProps) => {
     return (
         <>
-            <Meta title={title} categoryTitle={categoryTitle} description={description} />
+            <Meta
+                title={title}
+                metaIncludesTitle={metaIncludesTitle}
+                categoryTitle={categoryTitle}
+                description={description}
+            />
             <TopBar />
             <AppLayout
                 headerSelector="#top-navigation"
