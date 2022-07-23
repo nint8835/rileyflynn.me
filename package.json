@@ -22,6 +22,7 @@
         "@mdx-js/react": "^1.6.22",
         "gatsby": "^4.19.0",
         "gatsby-plugin-canonical-urls": "^4.19.0",
+        "gatsby-plugin-catch-links": "^4.19.0",
         "gatsby-plugin-image": "^2.13.0",
         "gatsby-plugin-local-search": "^2.0.1",
         "gatsby-plugin-manifest": "^4.19.0",
