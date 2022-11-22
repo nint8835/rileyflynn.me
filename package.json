@@ -18,7 +18,7 @@
     "dependencies": {
         "@cloudscape-design/components": "^3.0.1",
         "@cloudscape-design/global-styles": "^1.0.1",
-        "@mdx-js/mdx": "^1.6.22",
+        "@mdx-js/mdx": "^2.1.5",
         "@mdx-js/react": "^1.6.22",
         "gatsby": "^4.19.0",
         "gatsby-plugin-canonical-urls": "^4.19.0",
@@ -26,7 +26,7 @@
         "gatsby-plugin-image": "^2.13.0",
         "gatsby-plugin-local-search": "^2.0.1",
         "gatsby-plugin-manifest": "^4.19.0",
-        "gatsby-plugin-mdx": "^3.13.0",
+        "gatsby-plugin-mdx": "^5.1.0",
         "gatsby-plugin-react-helmet": "^5.19.0",
         "gatsby-plugin-sharp": "^4.13.0",
         "gatsby-plugin-sitemap": "^5.13.0",
