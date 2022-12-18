@@ -50,6 +50,12 @@ const TopBar = () => {
                                         href: 'https://twitter.com/bootlegjohn',
                                         iconName: 'user-profile',
                                     },
+                                    {
+                                        id: 'mastodon',
+                                        text: 'Mastodon',
+                                        href: 'https://hachyderm.io/@nit',
+                                        iconName: 'user-profile',
+                                    },
                                 ],
                             },
                         ],

@@ -1,7 +1,7 @@
 import Container from '@cloudscape-design/components/container';
 import Header from '@cloudscape-design/components/header';
 import '@cloudscape-design/global-styles/index.css';
-import { Link, PageProps } from 'gatsby';
+import { PageProps } from 'gatsby';
 import * as React from 'react';
 import Page from '../components/page';
 
@@ -19,8 +19,8 @@ const internetLinks: {
         url: 'https://www.linkedin.com/in/nint8835/',
     },
     {
-        linkText: 'Twitter',
-        url: 'https://twitter.com/bootlegjohn',
+        linkText: 'Mastodon',
+        url: 'https://hachyderm.io/@nit',
     },
     {
         textBefore: 'Working on projects with friends at ',
@@ -47,7 +47,9 @@ const IndexPage = (props: PageProps) => {
                     {internetLinks.map((link) => (
                         <li>
                             {link.textBefore}
-                            <Link to={link.url}>{link.linkText}</Link>
+                            <a href={link.url} rel="me">
+                                {link.linkText}
+                            </a>
                         </li>
                     ))}
                 </ul>
