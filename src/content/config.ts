@@ -15,6 +15,7 @@ const jobsCollection = defineCollection({
         positions: z.array(
             z.object({
                 title: z.string(),
+                // TODO: How to handle these dates?
                 startMonth: z.string(),
                 endMonth: z.string().nullable(),
             }),
@@ -22,6 +23,23 @@ const jobsCollection = defineCollection({
     }),
 });
 
+const projectsCollection = defineCollection({
+    schema: z.object({
+        title: z.string(),
+        summary: z.string(),
+        // TODO: How to handle this?
+        previewImage: z.string().optional(),
+        links: z.array(
+            z.object({
+                label: z.string(),
+                url: z.string(),
+            }),
+        ),
+        tags: z.array(z.string()),
+    }),
+});
+
 export const collections = {
     jobs: jobsCollection,
+    projects: projectsCollection,
 };
