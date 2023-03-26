@@ -15,9 +15,8 @@ const jobsCollection = defineCollection({
         positions: z.array(
             z.object({
                 title: z.string(),
-                // TODO: How to handle these dates?
-                startMonth: z.string(),
-                endMonth: z.string().nullable(),
+                startMonth: z.date(),
+                endMonth: z.date().nullable(),
             }),
         ),
     }),
