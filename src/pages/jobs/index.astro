@@ -1,0 +1,15 @@
+---
+import { getCollection } from 'astro:content';
+const jobs = await getCollection('jobs');
+---
+
+<h1>Jobs</h1>
+<ul>
+    {
+        jobs.map((job) => (
+            <li>
+                <a href={`/jobs/${job.slug}`}>{job.data.title}</a>
+            </li>
+        ))
+    }
+</ul>
