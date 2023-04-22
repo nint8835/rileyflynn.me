@@ -1,5 +1,8 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
+import Command from '../../components/command.astro';
+import Base from '../../layouts/base.astro';
 
 export async function getStaticPaths() {
     const jobEntries = await getCollection('jobs');
@@ -9,12 +12,23 @@ export async function getStaticPaths() {
     }));
 }
 
+interface Props {
+    entry: CollectionEntry<'jobs'>;
+}
+
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<h1>{entry.data.title}</h1>
-<h2>Frontmatter</h2>
-<pre>{JSON.stringify(entry.data, null, 2)}</pre>
-<h2>Content</h2>
-<Content />
+<Base title={`${entry.data.title} - rileyflynn.me`}>
+    <Command command={`kubectl describe job ${entry.slug}`} />
+    <pre class="text-[#FF00FF]">TODO: ADD CONTENT</pre>
+
+    <br />
+
+    <Command command={`kubectl get job ${entry.slug} --output=markdown`} />
+    <pre class="text-[#FF00FF]">TODO: Make greys consistent</pre>
+    <div class="prose prose-invert">
+        <Content />
+    </div>
+</Base>
