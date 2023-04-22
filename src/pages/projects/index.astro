@@ -1,15 +1,21 @@
 ---
 import { getCollection } from 'astro:content';
 const projects = await getCollection('projects');
+
+import Command from '../../components/command.astro';
+import Table from '../../components/table.astro';
+import Base from '../../layouts/base.astro';
 ---
 
-<h1>Projects</h1>
-<ul>
-    {
-        projects.map((project) => (
-            <li>
-                <a href={`/projects/${project.slug}`}>{project.data.title}</a>
-            </li>
-        ))
-    }
-</ul>
+<Base title="Projects - rileyflynn.me">
+    <Command command="kubectl get projects" />
+    <Table
+        lines={[
+            [{ text: 'PROJECT' }, { text: 'DESCRIPTION' }],
+            ...projects.map((project) => [
+                { text: project.data.title, link: `/projects/${project.slug}` },
+                { text: project.data.summary },
+            ]),
+        ]}
+    />
+</Base>

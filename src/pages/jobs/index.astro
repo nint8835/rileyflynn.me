@@ -1,15 +1,29 @@
 ---
 import { getCollection } from 'astro:content';
 const jobs = await getCollection('jobs');
+
+import Command from '../../components/command.astro';
+import Table from '../../components/table.astro';
+import Base from '../../layouts/base.astro';
+import { MonthYearDateFormat } from '../../utils/date_formats';
 ---
 
-<h1>Jobs</h1>
-<ul>
-    {
-        jobs.map((job) => (
-            <li>
-                <a href={`/jobs/${job.slug}`}>{job.data.title}</a>
-            </li>
-        ))
-    }
-</ul>
+<Base title="Jobs - rileyflynn.me">
+    <Command command="kubectl get jobs" />
+    <Table
+        lines={[
+            [{ text: 'COMPANY' }, { text: 'START DATE' }, { text: 'END DATE' }],
+            ...jobs.map((job) => [
+                { text: job.data.title, link: `/jobs/${job.slug}` },
+                {
+                    text: MonthYearDateFormat.format(job.data.positions[job.data.positions.length - 1].startMonth),
+                },
+                {
+                    text: job.data.positions[0].endMonth
+                        ? MonthYearDateFormat.format(job.data.positions[0].endMonth)
+                        : '',
+                },
+            ]),
+        ]}
+    />
+</Base>
