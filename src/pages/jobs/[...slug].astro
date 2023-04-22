@@ -26,9 +26,13 @@ const { Content } = await entry.render();
 
     <br />
 
-    <Command command={`kubectl get job ${entry.slug} --output=markdown`} />
-    <pre class="text-[#FF00FF]">TODO: Make greys consistent</pre>
-    <div class="prose prose-invert">
-        <Content />
-    </div>
+    {entry.body && (
+        <Command command={`kubectl get job ${entry.slug} --output=markdown`} />
+        <pre class="text-[#FF00FF]">TODO: Make greys consistent</pre>
+        <div class="prose prose-invert">
+            <Content />
+        </div>
+    )}
+
+    
 </Base>

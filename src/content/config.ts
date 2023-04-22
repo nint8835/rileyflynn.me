@@ -4,8 +4,6 @@ const jobsCollection = defineCollection({
     schema: z.object({
         title: z.string(),
         summary: z.string(),
-        // TODO: How to handle this?
-        previewImage: z.string().optional(),
         links: z.array(
             z.object({
                 label: z.string(),
@@ -26,8 +24,6 @@ const projectsCollection = defineCollection({
     schema: z.object({
         title: z.string(),
         summary: z.string(),
-        // TODO: How to handle this?
-        previewImage: z.string().optional(),
         links: z.array(
             z.object({
                 label: z.string(),
