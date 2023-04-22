@@ -16,22 +16,24 @@ const columnWidths = lines.reduce((acc, line) => {
 }, [] as number[]);
 ---
 
-{
-    lines.map((line, i) => (
-        <>
-            {line.map((column, j) => (
-                <>
-                    {column.link ? (
-                        // Prettier wants to split this into multiple lines, but the addition of extra lines in this code results in an extra two spaces appearing in the output
-                        // prettier-ignore
-                        <a class="text-white underline hover:text-blue-300 transition-colors" href={column.link}>{column.text}</a>
-                    ) : (
-                        column.text
-                    )}
-                    <pre class="inline">{' '.repeat(columnWidths[j] - column.text.length)}</pre>
-                </>
-            ))}
-            <br />
-        </>
-    ))
-}
+<div class="w-full whitespace-nowrap overflow-auto">
+    {
+        lines.map((line, i) => (
+            <>
+                {line.map((column, j) => (
+                    <>
+                        {column.link ? (
+                            // Prettier wants to split this into multiple lines, but the addition of extra lines in this code results in an extra two spaces appearing in the output
+                            // prettier-ignore
+                            <a class="text-white underline hover:text-blue-300 transition-colors" href={column.link}>{column.text}</a>
+                        ) : (
+                            column.text
+                        )}
+                        <pre class="inline">{' '.repeat(columnWidths[j] - column.text.length)}</pre>
+                    </>
+                ))}
+                <br />
+            </>
+        ))
+    }
+</div>
