@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import Command from '../../components/command.astro';
+import Prose from '../../components/prose.astro';
 import Base from '../../layouts/base.astro';
 
 export async function getStaticPaths() {
@@ -26,13 +27,14 @@ const { Content } = await entry.render();
 
     <br />
 
-    {entry.body && (
-        <Command command={`kubectl get job ${entry.slug} --output=markdown`} />
-        <pre class="text-[#FF00FF]">TODO: Make greys consistent</pre>
-        <div class="prose prose-invert">
-            <Content />
-        </div>
-    )}
-
-    
+    {
+        entry.body && (
+            <>
+                <Command command={`kubectl get job ${entry.slug} --output=markdown`} />
+                <Prose>
+                    <Content />
+                </Prose>
+            </>
+        )
+    }
 </Base>
