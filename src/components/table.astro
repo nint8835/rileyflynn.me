@@ -6,9 +6,10 @@ interface Props {
         text: string;
         link?: string;
     }[][];
+    includeHeadingLine?: boolean;
 }
 
-const { lines } = Astro.props;
+const { lines, includeHeadingLine = false } = Astro.props;
 
 const columnWidths = lines.reduce((acc, line) => {
     line.forEach((column, i) => {
@@ -29,6 +30,9 @@ const columnWidths = lines.reduce((acc, line) => {
                     </>
                 ))}
                 <br />
+                {includeHeadingLine && i == 0 ? (
+                    <pre class="inline">{line.map((column, j) => '-'.repeat(column.text.length) + ' '.repeat(columnWidths[j] - column.text.length + 1)).join('')}</pre><br/>
+                ) : null}
             </>
         ))
     }
