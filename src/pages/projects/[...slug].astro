@@ -21,7 +21,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Base title={`${entry.data.title} - rileyflynn.me`}>
+<Base title={`${entry.data.title} - rileyflynn.me`} description={entry.data.summary}>
     <Command command={`kubectl describe project ${entry.slug}`} />
     Name: {entry.data.title}<br />
     Summary: {entry.data.summary}<br />
