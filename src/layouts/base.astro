@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-const ogPath = Astro.url.origin + '/og/' + (Astro.url.pathname.substring(1) || 'index') + '.png';
+const ogPath = Astro.url.origin + '/og/' + (Astro.url.pathname.replace(/^\/?(.*?)\/?$/, '$1') || 'index') + '.png';
 ---
 
 <html lang="en">

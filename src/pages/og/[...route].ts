@@ -16,6 +16,7 @@ const pages: Record<string, PageData> = {
     },
 };
 
+// TODO: fix missing opengraph images for job & project list pages
 for (const entry of jobEntries) {
     pages[`jobs/${entry.slug}`] = {
         title: entry.data.title,
