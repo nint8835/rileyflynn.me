@@ -7,11 +7,6 @@ links:
       url: https://github.com/fogo-sh/grackdb
     - label: Site
       url: https://grackdb.fogo.sh
-
-tags:
-    - go
-    - graphql
-    - website
 ---
 
 # About

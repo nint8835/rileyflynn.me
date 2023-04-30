@@ -1,6 +1,7 @@
 ---
 import { CollectionEntry, getCollection } from 'astro:content';
 import Command from '../../components/command.astro';
+import Link from '../../components/link.astro';
 import Prose from '../../components/prose.astro';
 import Base from '../../layouts/base.astro';
 
@@ -22,9 +23,23 @@ const { Content } = await entry.render();
 
 <Base title={`${entry.data.title} - rileyflynn.me`}>
     <Command command={`kubectl describe project ${entry.slug}`} />
-    <pre class="text-[#FF00FF]">TODO: ADD CONTENT</pre>
+    Name: {entry.data.title}<br />
+    Summary: {entry.data.summary}<br />
 
     <br />
+
+    {
+        entry.data.links.map((link) => (
+            <>
+                <Command command={`kubectl describe service ${entry.slug}-${link.label.toLowerCase()}`} />
+                Name: {link.label}
+                <br />
+                Endpoints: <Link href={link.url} text={link.url} />
+                <br />
+                <br />
+            </>
+        ))
+    }
 
     {
         entry.body && (

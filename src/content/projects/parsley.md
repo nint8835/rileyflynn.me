@@ -7,11 +7,6 @@ links:
       url: https://pkg.go.dev/github.com/nint8835/parsley
     - label: GitHub
       url: https://github.com/nint8835/parsley
-
-tags:
-    - go
-    - discord
-    - library
 ---
 
 # About

@@ -5,11 +5,6 @@ summary: Wrapper for the Minecraft server software, adding basic plugin support.
 links:
     - label: GitHub
       url: https://github.com/Chainmail-Project/Chainmail
-
-tags:
-    - python
-    - minecraft
-    - application
 ---
 
 # About

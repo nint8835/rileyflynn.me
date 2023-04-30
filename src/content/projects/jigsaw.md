@@ -7,10 +7,6 @@ links:
       url: https://jigsaw.readthedocs.io/en/latest
     - label: GitHub
       url: https://github.com/nint8835/jigsaw
-
-tags:
-    - python
-    - library
 ---
 
 # About

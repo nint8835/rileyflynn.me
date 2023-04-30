@@ -5,11 +5,6 @@ summary: An image manipulation focused Discord bot.
 links:
     - label: GitHub
       url: https://github.com/fogo-sh/borik
-
-tags:
-    - go
-    - discord
-    - bot
 ---
 
 # About

@@ -7,11 +7,6 @@ links:
       url: https://github.com/nint8835/iTunesRichPresence
     - label: Site
       url: https://itunesrichpresence.com
-
-tags:
-    - c#
-    - discord
-    - application
 ---
 
 # About

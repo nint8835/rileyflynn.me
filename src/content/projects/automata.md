@@ -5,11 +5,6 @@ summary: Discord bot for the MUN Computer Science Society Discord server.
 links:
     - label: GitHub
       url: https://github.com/MUNComputerScienceSociety/automata
-
-tags:
-    - python
-    - discord
-    - bot
 ---
 
 # About

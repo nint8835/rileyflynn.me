@@ -10,11 +10,11 @@ links:
 
 positions:
     - title: System Administrator & Software Developer
-      startMonth: 2019-01-01
-      endMonth: 2019-04-01
+      startMonth: 2019-01-15
+      endMonth: 2019-04-15
     - title: Backend Software Developer
-      startMonth: 2018-12-01
-      endMonth: 2019-01-10
+      startMonth: 2018-12-15
+      endMonth: 2019-01-15
 ---
 
 # About
