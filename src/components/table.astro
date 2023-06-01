@@ -1,0 +1,40 @@
+---
+import Link from './link.astro';
+
+interface Props {
+    lines: {
+        text: string;
+        link?: string;
+        rel?: string;
+    }[][];
+    includeHeadingLine?: boolean;
+}
+
+const { lines, includeHeadingLine = false } = Astro.props;
+
+const columnWidths = lines.reduce((acc, line) => {
+    line.forEach((column, i) => {
+        acc[i] = Math.max(acc[i] || 0, column.text.length + 1);
+    });
+    return acc;
+}, [] as number[]);
+---
+
+<div class="w-full whitespace-nowrap overflow-auto">
+    {
+        lines.map((line, i) => (
+            <>
+                {line.map((column, j) => (
+                    <>
+                        {column.link ? <Link href={column.link} text={column.text} rel={column.rel} /> : column.text}
+                        <pre class="inline">{' '.repeat(columnWidths[j] - column.text.length)}</pre>
+                    </>
+                ))}
+                <br />
+                {includeHeadingLine && i == 0 ? (
+                    <pre class="inline">{line.map((column, j) => '-'.repeat(column.text.length) + ' '.repeat(columnWidths[j] - column.text.length + 1)).join('')}</pre><br/>
+                ) : null}
+            </>
+        ))
+    }
+</div>

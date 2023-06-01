@@ -1,0 +1,30 @@
+<div
+    class:list={[
+        'prose',
+        // Consistent greys
+        'prose-headings:text-zinc-50',
+        'text-zinc-300',
+        'prose-strong:text-zinc-300',
+        'prose-code:text-zinc-300',
+        // Consistent link styling
+        'prose-a:text-white',
+        'hover:prose-a:text-blue-300',
+        'prose-a:transition-colors',
+        // Style elements to show their markdown code
+        'before:prose-h1:content-["#_"]',
+        'before:prose-h2:content-["##_"]',
+        'before:prose-h3:content-["###_"]',
+        'before:prose-h4:content-["####_"]',
+        'before:prose-h5:content-["#####_"]',
+        'before:prose-h6:content-["######_"]',
+        'before:prose-em:content-["*"]',
+        'after:prose-em:content-["*"]',
+        'before:prose-strong:content-["**"]',
+        'after:prose-strong:content-["**"]',
+        'before:prose-a:content-["["]',
+        'after:prose-a:content-["]"]',
+        'prose-ul:list-["-"]',
+    ]}
+>
+    <slot />
+</div>

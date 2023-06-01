@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+const projects = await getCollection('projects');
+
+import Command from '../../components/command.astro';
+import Table from '../../components/table.astro';
+import Base from '../../layouts/base.astro';
+---
+
+<Base title="Projects - rileyflynn.me" description="A selection of projects I've worked on.">
+    <Command command="kubectl get projects" />
+    <Table
+        lines={[
+            [{ text: 'PROJECT' }, { text: 'DESCRIPTION' }],
+            ...projects.map((project) => [
+                { text: project.data.title, link: `/projects/${project.slug}` },
+                { text: project.data.summary },
+            ]),
+        ]}
+    />
+</Base>
