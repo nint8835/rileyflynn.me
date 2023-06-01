@@ -2,13 +2,48 @@
 import Command from '../components/command.astro';
 import Table from '../components/table.astro';
 import Layout from '../layouts/base.astro';
+
+const links: {
+    text: string;
+    url: string;
+}[] = [
+    {
+        text: 'My other site',
+        url: 'https://bootleg.technology',
+    },
+    {
+        text: 'GitHub',
+        url: 'https://github.com/nint8835',
+    },
+    {
+        text: 'Mastodon',
+        url: 'https://hachyderm.io/@nit',
+    },
+    {
+        text: 'Twitter',
+        url: 'https://twitter.com/BootlegJohn',
+    },
+    {
+        text: 'LinkedIn',
+        url: 'https://www.linkedin.com/in/nint8835/',
+    },
+];
 ---
 
-<Layout title="rileyflynn.me" description="Placeholder description, fix me!">
+<Layout title="rileyflynn.me" description="Cloud Developer from St. John's, Newfoundland.">
     <Command command="kubectl describe user riley" />
-    <pre class="text-[#ff00ff]">
-TODO: add content
-    </pre>
+    Name: Riley Flynn<br />
+    Summary: I'm a Cloud Developer from St. John's, Newfoundland.<br />
+
+    <br />
+
+    <Command command="kubectl get services" />
+    <Table
+        lines={[
+            [{ text: 'NAME' }, { text: 'URL' }],
+            ...links.map((link) => [{ text: link.text }, { text: link.url, link: link.url, rel: 'me' }]),
+        ]}
+    />
 
     <br />
 

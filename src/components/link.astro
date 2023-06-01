@@ -2,9 +2,10 @@
 interface Props {
     text: string;
     href: string;
+    rel?: string;
 }
 
-const { text, href } = Astro.props;
+const { text, href, rel } = Astro.props;
 ---
 
-<a class="text-white underline hover:text-blue-300 transition-colors" href={href}>{text}</a>
+<a class="text-white underline hover:text-blue-300 transition-colors" href={href} rel={rel}>{text}</a>

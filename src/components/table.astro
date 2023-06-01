@@ -5,6 +5,7 @@ interface Props {
     lines: {
         text: string;
         link?: string;
+        rel?: string;
     }[][];
     includeHeadingLine?: boolean;
 }
@@ -25,7 +26,7 @@ const columnWidths = lines.reduce((acc, line) => {
             <>
                 {line.map((column, j) => (
                     <>
-                        {column.link ? <Link href={column.link} text={column.text} /> : column.text}
+                        {column.link ? <Link href={column.link} text={column.text} rel={column.rel} /> : column.text}
                         <pre class="inline">{' '.repeat(columnWidths[j] - column.text.length)}</pre>
                     </>
                 ))}

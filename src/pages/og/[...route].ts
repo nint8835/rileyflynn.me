@@ -12,11 +12,18 @@ type PageData = {
 const pages: Record<string, PageData> = {
     index: {
         title: 'rileyflynn.me',
-        description: 'Placeholder description, fix me!',
+        description: "Cloud Developer from St. John's, Newfoundland.",
+    },
+    projects: {
+        title: 'Projects',
+        description: "A selection of projects I've worked on.",
+    },
+    jobs: {
+        title: 'Jobs',
+        description: "List of the places I've worked.",
     },
 };
 
-// TODO: fix missing opengraph images for job & project list pages
 for (const entry of jobEntries) {
     pages[`jobs/${entry.slug}`] = {
         title: entry.data.title,
