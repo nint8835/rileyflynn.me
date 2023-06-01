@@ -19,7 +19,13 @@ const ogPath = Astro.url.origin + '/og/' + (Astro.url.pathname.replace(/^\/?(.*?
             description={description}
             charset="utf-8"
             openGraph={{ basic: { title: title, type: 'website', image: ogPath } }}
-            twitter={{ creator: '@bootlegjohn', title: title, description: description, image: ogPath }}
+            twitter={{
+                creator: '@bootlegjohn',
+                title: title,
+                description: description,
+                image: ogPath,
+                card: 'summary_large_image',
+            }}
         />
     </head>
     <body class="p-4 bg-zinc-900 text-zinc-300 font-mono">
