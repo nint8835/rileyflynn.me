@@ -38,7 +38,7 @@ for (const entry of projectEntries) {
     };
 }
 
-export const { getStaticPaths, get: GET } = OGImageRoute({
+export const { getStaticPaths, GET } = OGImageRoute({
     param: 'route',
     pages: pages,
 
