@@ -2,7 +2,7 @@
 import Command from '../components/command.astro';
 import Layout from '../layouts/base.astro';
 
-const pageName = Astro.url.pathname.slice(1).replace(/^\/?(.+?)\/?$/, '$1');
+const pageName = Astro.url.pathname.replace(/^\/?(.+?)\/?$/, '$1');
 ---
 
 <Layout title="Page Not Found - rileyflynn.me" description="The requested page could not be found.">
