@@ -1,58 +1,16 @@
 ---
-import Command from '../components/command.astro';
-import Table from '../components/table.astro';
-import Layout from '../layouts/base.astro';
 
-const links: {
-    text: string;
-    url: string;
-}[] = [
-    {
-        text: 'My other site',
-        url: 'https://bootleg.technology',
-    },
-    {
-        text: 'GitHub',
-        url: 'https://github.com/nint8835',
-    },
-    {
-        text: 'Mastodon',
-        url: 'https://hachyderm.io/@nit',
-    },
-    {
-        text: 'Twitter',
-        url: 'https://twitter.com/BootlegJohn',
-    },
-    {
-        text: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/nint8835/',
-    },
-];
 ---
 
-<Layout title="rileyflynn.me" description="Cloud Developer from St. John's, Newfoundland.">
-    <Command command="kubectl describe user riley" />
-    Name: Riley Flynn<br />
-    Summary: I'm a Cloud Developer from St. John's, Newfoundland.<br />
-
-    <br />
-
-    <Command command="kubectl get services" />
-    <Table
-        lines={[
-            [{ text: 'NAME' }, { text: 'URL' }],
-            ...links.map((link) => [{ text: link.text }, { text: link.url, link: link.url, rel: 'me' }]),
-        ]}
-    />
-
-    <br />
-
-    <Command command="kubectl get customresourcedefinitions" />
-    <Table
-        lines={[
-            [{ text: 'NAME' }, { text: 'CREATED AT' }],
-            [{ text: 'jobs.rileyflynn.me', link: '/jobs' }, { text: '2023-04-22T20:00:00Z' }],
-            [{ text: 'projects.rileyflynn.me', link: '/projects' }, { text: '2023-04-22T20:00:00Z' }],
-        ]}
-    />
-</Layout>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Astro</title>
+    </head>
+    <body>
+        <h1>Astro</h1>
+    </body>
+</html>
