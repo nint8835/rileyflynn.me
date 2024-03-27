@@ -1,5 +1,7 @@
 ---
 import '@fontsource-variable/brygada-1918';
+import Background from '../components/home/background/background.astro';
+import Section from '../components/home/section.astro';
 ---
 
 <html lang="en">
@@ -11,25 +13,16 @@ import '@fontsource-variable/brygada-1918';
         <title>rileyflynn.me</title>
     </head>
     <body>
-        <div class="h-screen snap-y snap-mandatory snap-always overflow-auto scroll-smooth">
-            <div class="flex h-screen snap-start flex-row bg-zinc-900 p-4 text-zinc-300 md:p-16">
-                <div class="flex flex-1 items-center">
-                    <div>
-                        <h1 class="font-serif text-8xl font-semibold">Riley Flynn</h1>
-                        <div>Cloud Developer</div>
-                    </div>
-                </div>
-                <div class="hidden flex-1 md:flex"></div>
-            </div>
-            <div class="flex h-screen snap-start flex-row bg-red-900 p-4 text-zinc-300 md:p-16">
-                <div class="flex flex-1 items-center">
-                    <div>
-                        <h1 class="font-serif text-8xl font-semibold">I'm a second div</h1>
-                        <div>Here's some text!</div>
-                    </div>
-                </div>
-                <div class="hidden flex-1 md:flex"></div>
-            </div>
+        <Background />
+        <div class="h-screen snap-y snap-mandatory snap-always overflow-auto scroll-smooth" id="content">
+            <Section>
+                <h1 class="font-serif text-8xl font-semibold">Riley Flynn</h1>
+                <div>Cloud Developer</div>
+            </Section>
+            <Section>
+                <h1 class="font-serif text-8xl font-semibold">I'm a second div</h1>
+                <div>Here's some text!</div>
+            </Section>
         </div>
     </body>
 </html>
