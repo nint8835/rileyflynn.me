@@ -1,0 +1,24 @@
+---
+import '@fontsource/libre-caslon-display';
+import '@fontsource/libre-caslon-text';
+import { SEO } from 'astro-seo';
+
+interface Props {
+    frontmatter?: Props;
+
+    title?: string;
+}
+
+const { title } = Astro.props.frontmatter || Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- TODO: Configure the rest of the SEO fields -->
+        <SEO title={title} titleDefault="rileyflynn.me" titleTemplate="%s - rileyflynn.me" />
+    </head>
+    <body class="bg-zinc-900 font-serif text-zinc-300">
+        <slot />
+    </body>
+</html>

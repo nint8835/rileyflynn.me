@@ -4,7 +4,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                serif: ['"Brygada 1918 Variable"', 'serif'],
+                serif: ['Libre Caslon Text', 'serif'],
+                'serif-display': ['Libre Caslon Display', 'serif'],
             },
         },
     },
