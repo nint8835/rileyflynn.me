@@ -1,14 +1,33 @@
 ---
-
+const navEntries: { label: string; href: string }[] = [
+    {
+        label: 'Projects',
+        href: '/projects/',
+    },
+    {
+        label: 'Work',
+        href: '/work/',
+    },
+    {
+        label: 'Blog',
+        href: '/blog/',
+    },
+    {
+        label: 'About',
+        href: '/about/',
+    },
+];
 ---
 
-<nav class="flex w-full items-center justify-between p-2">
-    <div class="bold text-xl font-bold">Riley Flynn</div>
-    <div class="space-x-4">
-        <a>Home</a>
-        <a>Projects</a>
-        <a>Work</a>
-        <a>Blog</a>
-        <a>About</a>
+<nav class="flex w-full flex-col items-center justify-between p-4 md:flex-row md:p-2">
+    <div class="bold text-xl font-bold"><a href="/">Riley Flynn</a></div>
+    <div class="flex w-full justify-between space-x-4 md:block md:w-fit">
+        {
+            navEntries.map(({ label, href }) => (
+                <a href={href} class:list={[Astro.url.pathname.startsWith(href) && 'font-bold']}>
+                    {label}
+                </a>
+            ))
+        }
     </div>
 </nav>

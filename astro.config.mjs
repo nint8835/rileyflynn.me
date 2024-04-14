@@ -7,4 +7,5 @@ import metaTags from 'astro-meta-tags';
 export default defineConfig({
     integrations: [tailwind(), metaTags()],
     site: process.env.CF_PAGES_URL || 'http://localhost:4321',
+    trailingSlash: 'always',
 });
