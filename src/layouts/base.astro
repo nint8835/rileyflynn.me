@@ -1,7 +1,6 @@
 ---
-import '@fontsource/libre-caslon-display';
-import '@fontsource/libre-caslon-text';
 import { SEO } from 'astro-seo';
+import Fonts from '../components/utils/fonts.astro';
 
 interface Props {
     frontmatter?: Props;
@@ -14,6 +13,7 @@ const { title } = Astro.props.frontmatter || Astro.props;
 
 <html lang="en">
     <head>
+        <Fonts />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- TODO: Configure the rest of the SEO fields -->
         <SEO title={title} titleDefault="rileyflynn.me" titleTemplate="%s - rileyflynn.me" />
