@@ -1,16 +1,8 @@
 ---
-import '@fontsource/libre-caslon-display/latin-400.css';
-import '@fontsource/libre-caslon-text/latin-400.css';
-import '@fontsource/libre-caslon-text/latin-700.css';
-import '@fontsource/libre-caslon-text/latin-italic.css';
+import recursiveLatinFull from '@fontsource-variable/recursive/files/recursive-latin-full-normal.woff2';
+import '@fontsource-variable/recursive/full.css';
 
-import caslonDisplay400 from '@fontsource/libre-caslon-display/files/libre-caslon-display-latin-400-normal.woff2';
-import caslonTextItalic from '@fontsource/libre-caslon-text/files/libre-caslon-text-latin-400-italic.woff2';
-import caslonText400 from '@fontsource/libre-caslon-text/files/libre-caslon-text-latin-400-normal.woff2';
-import caslonText700 from '@fontsource/libre-caslon-text/files/libre-caslon-text-latin-700-normal.woff2';
+const fonts = [recursiveLatinFull];
 ---
 
-<link rel="preload" as="font" href={caslonText400} type="font/woff2" crossorigin />
-<link rel="preload" as="font" href={caslonText700} type="font/woff2" crossorigin />
-<link rel="preload" as="font" href={caslonTextItalic} type="font/woff2" crossorigin />
-<link rel="preload" as="font" href={caslonDisplay400} type="font/woff2" crossorigin />
+{fonts.map((font) => <link rel="preload" as="font" href={font} type="font/woff2" crossorigin />)}
