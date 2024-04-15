@@ -1,5 +1,6 @@
 ---
 import { SEO } from 'astro-seo';
+import Footer from '../components/layout/footer.astro';
 import Navbar from '../components/layout/navbar.astro';
 import Fonts from '../components/utils/fonts.astro';
 
@@ -19,8 +20,11 @@ const { title } = Astro.props.frontmatter || Astro.props;
         <!-- TODO: Configure the rest of the SEO fields -->
         <SEO title={title} titleDefault="rileyflynn.me" titleTemplate="%s - rileyflynn.me" />
     </head>
-    <body class="font-sans-serif bg-zinc-900 text-zinc-300">
+    <body class="flex min-h-screen flex-col bg-zinc-900 font-sans-serif text-zinc-300">
         <Navbar />
-        <slot />
+        <div class="flex-1">
+            <slot />
+        </div>
+        <Footer />
     </body>
 </html>
