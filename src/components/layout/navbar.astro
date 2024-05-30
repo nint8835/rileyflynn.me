@@ -19,12 +19,15 @@ const navEntries: { label: string; href: string }[] = [
 ];
 ---
 
-<nav class="flex w-full flex-col items-center justify-between p-4 md:flex-row md:p-2">
+<nav class="flex w-full flex-col items-center justify-between p-4 md:flex-row md:py-2">
     <div class="bold text-xl font-bold"><a href="/">Riley Flynn</a></div>
     <div class="flex w-full justify-between space-x-4 md:block md:w-fit">
         {
             navEntries.map(({ label, href }) => (
-                <a href={href} class:list={[Astro.url.pathname.startsWith(href) && 'font-bold']}>
+                <a
+                    href={href}
+                    class:list={['transition-all hover:font-bold', Astro.url.pathname.startsWith(href) && 'font-bold']}
+                >
                     {label}
                 </a>
             ))
