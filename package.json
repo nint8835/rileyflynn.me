@@ -12,18 +12,18 @@
     "dependencies": {
         "@astrojs/check": "^0.7.0",
         "@astrojs/tailwind": "^5.1.0",
-        "@fontsource-variable/recursive": "^5.0.17",
+        "@fontsource-variable/recursive": "^5.0.18",
         "@iconify-json/mingcute": "^1.1.17",
-        "astro": "^4.9.1",
+        "astro": "^4.9.2",
         "astro-icon": "^1.1.0",
-        "astro-meta-tags": "^0.2.2",
-        "astro-seo": "^0.8.3",
-        "tailwindcss": "^3.4.1",
-        "typescript": "^5.4.3"
+        "astro-meta-tags": "^0.3.0",
+        "astro-seo": "^0.8.4",
+        "tailwindcss": "^3.4.3",
+        "typescript": "^5.4.5"
     },
     "devDependencies": {
-        "prettier": "^3.2.5",
-        "prettier-plugin-astro": "^0.13.0",
-        "prettier-plugin-tailwindcss": "^0.5.12"
+        "prettier": "^3.3.0",
+        "prettier-plugin-astro": "^0.14.0",
+        "prettier-plugin-tailwindcss": "^0.6.1"
     }
 }
