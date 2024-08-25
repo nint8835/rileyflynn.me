@@ -1,8 +1,6 @@
 ---
 import { SEO } from 'astro-seo';
 import { ViewTransitions } from 'astro:transitions';
-import Footer from '../components/layout/footer.astro';
-import Navbar from '../components/layout/navbar.astro';
 import Fonts from '../components/utils/fonts.astro';
 
 interface Props {
@@ -23,10 +21,8 @@ const { title } = Astro.props.frontmatter || Astro.props;
         <ViewTransitions />
     </head>
     <body class="flex min-h-screen flex-col bg-zinc-900 font-sans-serif text-zinc-300">
-        <Navbar />
         <div class="flex-1">
             <slot />
         </div>
-        <Footer />
     </body>
 </html>
