@@ -13,7 +13,7 @@ import Base from '../../layouts/base.astro';
         lines={[
             [{ text: 'PROJECT' }, { text: 'DESCRIPTION' }],
             ...projects.map((project) => [
-                { text: project.data.title, link: `/projects/${project.slug}` },
+                { text: project.data.title, link: `/projects/${project.id}` },
                 { text: project.data.summary },
             ]),
         ]}

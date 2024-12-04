@@ -1,5 +1,6 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Command from '../../components/command.astro';
 import Prose from '../../components/prose.astro';
 import Table from '../../components/table.astro';
@@ -8,7 +9,7 @@ import Base from '../../layouts/base.astro';
 export async function getStaticPaths() {
     const projectEntries = await getCollection('projects');
     return projectEntries.map((entry) => ({
-        params: { slug: entry.slug },
+        params: { slug: entry.id },
         props: { entry },
     }));
 }
@@ -18,11 +19,11 @@ interface Props {
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <Base title={`${entry.data.title} - rileyflynn.me`} description={entry.data.summary}>
-    <Command command={`kubectl describe project ${entry.slug}`} />
+    <Command command={`kubectl describe project ${entry.id}`} />
     Name: {entry.data.title}<br />
     Summary: {entry.data.summary}<br />
 
@@ -31,7 +32,7 @@ const { Content } = await entry.render();
     {
         entry.data.links && (
             <>
-                <Command command={`kubectl get services -n ${entry.slug}`} />
+                <Command command={`kubectl get services -n ${entry.id}`} />
                 <Table
                     lines={[
                         [{ text: 'NAME' }, { text: 'URL' }],
@@ -46,7 +47,7 @@ const { Content } = await entry.render();
     {
         entry.body && (
             <>
-                <Command command={`kubectl get project ${entry.slug} --output=markdown`} />
+                <Command command={`kubectl get project ${entry.id} --output=markdown`} />
                 <Prose>
                     <Content />
                 </Prose>
