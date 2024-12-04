@@ -25,14 +25,14 @@ const pages: Record<string, PageData> = {
 };
 
 for (const entry of jobEntries) {
-    pages[`jobs/${entry.slug}`] = {
+    pages[`jobs/${entry.id}`] = {
         title: entry.data.title,
         description: entry.data.summary,
     };
 }
 
 for (const entry of projectEntries) {
-    pages[`projects/${entry.slug}`] = {
+    pages[`projects/${entry.id}`] = {
         title: entry.data.title,
         description: entry.data.summary,
     };

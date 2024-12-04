@@ -14,7 +14,7 @@ import { MonthYearDateFormat } from '../../utils/date_formats';
         lines={[
             [{ text: 'COMPANY' }, { text: 'START DATE' }, { text: 'END DATE' }],
             ...jobs.map((job) => [
-                { text: job.data.title, link: `/jobs/${job.slug}` },
+                { text: job.data.title, link: `/jobs/${job.id}` },
                 {
                     text: MonthYearDateFormat.format(job.data.positions[job.data.positions.length - 1].startMonth),
                 },
