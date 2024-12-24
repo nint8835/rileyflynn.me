@@ -9,7 +9,7 @@ import Base from '../../layouts/base.astro';
 export async function getStaticPaths() {
     const projectEntries = await getCollection('projects');
     return projectEntries.map((entry) => ({
-        params: { slug: entry.id },
+        params: { id: entry.id },
         props: { entry },
     }));
 }

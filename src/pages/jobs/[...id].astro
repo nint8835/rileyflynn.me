@@ -10,7 +10,7 @@ import { MonthYearDateFormat } from '../../utils/date_formats';
 export async function getStaticPaths() {
     const jobEntries = await getCollection('jobs');
     return jobEntries.map((entry) => ({
-        params: { slug: entry.id },
+        params: { id: entry.id },
         props: { entry },
     }));
 }
