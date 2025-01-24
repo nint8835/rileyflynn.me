@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@theme {
+    --font-mono: Iosevka, monospace;
+}
