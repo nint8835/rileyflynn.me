@@ -12,7 +12,7 @@ type PageData = {
 const pages: Record<string, PageData> = {
     index: {
         title: 'rileyflynn.me',
-        description: "Cloud Developer from St. John's, Newfoundland.",
+        description: "Cloud Architect from St. John's, Newfoundland.",
     },
     projects: {
         title: 'Projects',

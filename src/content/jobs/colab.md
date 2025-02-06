@@ -7,9 +7,12 @@ links:
       url: https://colabsoftware.com/
 
 positions:
+    - title: Cloud Architect
+      startMonth: 2025-02-15
+      endMonth: null
     - title: Senior Cloud Developer
       startMonth: 2023-04-15
-      endMonth: null
+      endMonth: 2025-02-15
     - title: Senior Software Developer
       startMonth: 2023-01-15
       endMonth: 2023-03-15
