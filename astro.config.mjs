@@ -16,6 +16,7 @@ export default defineConfig({
                 provider: fontProviders.fontsource(),
                 name: 'Iosevka',
                 cssVariable: '--font-iosevka',
+                fallbacks: ['monospace'],
             },
         ],
     },
