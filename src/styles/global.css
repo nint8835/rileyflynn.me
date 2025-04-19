@@ -3,5 +3,5 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-    --font-mono: var(--font-iosevka), monospace;
+    --font-mono: var(--font-monospace), monospace;
 }

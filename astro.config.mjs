@@ -14,9 +14,10 @@ export default defineConfig({
         fonts: [
             {
                 provider: fontProviders.fontsource(),
-                name: 'Iosevka',
-                cssVariable: '--font-iosevka',
+                name: 'Inconsolata',
+                cssVariable: '--font-monospace',
                 fallbacks: ['monospace'],
+                subsets: ['latin'],
             },
         ],
     },
