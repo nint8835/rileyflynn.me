@@ -1,6 +1,6 @@
 ---
-import '@fontsource/iosevka';
 import { SEO } from 'astro-seo';
+import { Font } from 'astro:assets';
 import "../styles/global.css";
 
 interface Props {
@@ -14,6 +14,7 @@ const ogPath = Astro.url.origin + '/og/' + (Astro.url.pathname.replace(/^\/?(.*?
 
 <html lang="en">
     <head>
+        <Font cssVariable='--font-monospace' preload />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <SEO
             title={title}
