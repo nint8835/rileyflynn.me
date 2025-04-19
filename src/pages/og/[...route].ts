@@ -45,5 +45,20 @@ export const { getStaticPaths, GET } = OGImageRoute({
     getImageOptions: (path, page: PageData) => ({
         title: page.title,
         description: page.description,
+        bgGradient: [[24, 24, 27]],
+        font: {
+            title: {
+                color: [250, 250, 250],
+                families: ['Inconsolata'],
+            },
+            description: {
+                color: [212, 212, 216],
+                families: ['Inconsolata'],
+            },
+        },
+        fonts: [
+            'https://api.fontsource.org/v1/fonts/inconsolata/latin-400-normal.ttf',
+            'https://api.fontsource.org/v1/fonts/inconsolata/latin-700-normal.ttf',
+        ],
     }),
 });
