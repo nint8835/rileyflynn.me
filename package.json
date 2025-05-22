@@ -10,14 +10,14 @@
         "astro": "astro"
     },
     "dependencies": {
-        "@astrojs/markdown-remark": "^6.3.1",
+        "@astrojs/markdown-remark": "^6.3.2",
         "@tailwindcss/typography": "^0.5.16",
-        "@tailwindcss/vite": "^4.1.4",
-        "astro": "^5.7.4",
-        "astro-meta-tags": "^0.3.1",
+        "@tailwindcss/vite": "^4.1.7",
+        "astro": "^5.8.0",
+        "astro-meta-tags": "^0.3.2",
         "astro-og-canvas": "^0.7.0",
         "astro-seo": "^0.8.4",
-        "tailwindcss": "^4.1.4"
+        "tailwindcss": "^4.1.7"
     },
     "devDependencies": {
         "prettier": "^3.5.3",
