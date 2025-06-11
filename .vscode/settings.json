@@ -14,5 +14,8 @@
     },
     "files.associations": {
         "*.css": "tailwindcss"
+    },
+    "[mdx]": {
+        "editor.formatOnSave": false
     }
 }

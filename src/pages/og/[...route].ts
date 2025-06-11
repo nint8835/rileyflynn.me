@@ -22,6 +22,10 @@ const pages: Record<string, PageData> = {
         title: 'Jobs',
         description: "List of the places I've worked.",
     },
+    'docker-talk': {
+        title: 'Docker Talk',
+        description: 'Links and resources for my June 2025 talk on Docker for TechNL.',
+    },
 };
 
 for (const entry of jobEntries) {
