@@ -4,8 +4,8 @@ description: Links and resources for my June 2025 TechNL Docker talk.
 ---
 
 import Command from '../components/command.astro';
-import Layout from '../layouts/base.astro';
 import Prose from '../components/prose.astro';
+import Layout from '../layouts/base.astro';
 
 <Layout title="Docker Talk - rileyflynn.me" description="Links and resources for my June 2025 talk on Docker for TechNL.">
     <Command command="kubectl get talk docker --output=markdown" />
@@ -21,14 +21,25 @@ If you've got further questions or want to discuss the content further:
 - My presence elsewhere on the internet can be found on [my site](https://rileyflynn.me).
 
 #### Links and Resources
+
 - [Slides](https://i.bootleg.technology/docker-talk-slides.pdf)
 - [Demo repo](https://github.com/nint8835/docker-talk-demo/)
   - Completed Dockerfile is on the `dockerized` branch.
-- [Build Your Own Docker with Linux Namespaces, cgroups, and chroot: Hands-on Guide](https://akashrajpurohit.com/blog/build-your-own-docker-with-linux-namespaces-cgroups-and-chroot-handson-guide/)
+- [History of PaaS: How Canon almost became a major cloud provider](https://www.porter.run/blog/history-of-paas-how-canon-almost-became-a-major-cloud-provider)
 - [Docker's initial announcement](https://www.youtube.com/watch?v=9xciauwbsuo)
 - Docker installation guides:
   - [Windows and macOS](https://docs.docker.com/get-started/get-docker/)
   - [Linux](https://docs.docker.com/engine/install/)
+- [Dockerfile reference](https://docs.docker.com/reference/dockerfile/)
+- [dive](https://github.com/wagoodman/dive)
+- [Build Your Own Docker with Linux Namespaces, cgroups, and chroot: Hands-on Guide](https://akashrajpurohit.com/blog/build-your-own-docker-with-linux-namespaces-cgroups-and-chroot-handson-guide/)
+- [bootc](https://bootc-dev.github.io/bootc/)
+  - [Fedora Silverblue](https://fedoraproject.org/atomic-desktops/silverblue/)
+  - [Bazzite](https://bazzite.gg/)
+    - [Bazzite's Containerfile](https://github.com/ublue-os/bazzite/blob/main/Containerfile)
+- [OCI Artifacts](https://github.com/opencontainers/artifacts)
+  - [What are OCI Artifacts? - Chainguard Academy](https://edu.chainguard.dev/open-source/oci/what-are-oci-artifacts/)
+
 
 </Prose>
 </Layout>
