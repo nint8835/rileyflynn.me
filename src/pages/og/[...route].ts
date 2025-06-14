@@ -1,3 +1,4 @@
+import { flavors as catppuccinFlavours, type ColorFormat } from '@catppuccin/palette';
 import { OGImageRoute } from 'astro-og-canvas';
 import { getCollection } from 'astro:content';
 
@@ -42,6 +43,10 @@ for (const entry of projectEntries) {
     };
 }
 
+function catppuccinToAstroOGCanvas(colour: ColorFormat): [number, number, number] {
+    return [colour.rgb.r, colour.rgb.g, colour.rgb.b];
+}
+
 export const { getStaticPaths, GET } = OGImageRoute({
     param: 'route',
     pages: pages,
@@ -49,14 +54,14 @@ export const { getStaticPaths, GET } = OGImageRoute({
     getImageOptions: (path, page: PageData) => ({
         title: page.title,
         description: page.description,
-        bgGradient: [[24, 24, 27]],
+        bgGradient: [catppuccinToAstroOGCanvas(catppuccinFlavours.frappe.colors.base)],
         font: {
             title: {
-                color: [250, 250, 250],
+                color: catppuccinToAstroOGCanvas(catppuccinFlavours.frappe.colors.text),
                 families: ['Inconsolata'],
             },
             description: {
-                color: [212, 212, 216],
+                color: catppuccinToAstroOGCanvas(catppuccinFlavours.frappe.colors.subtext0),
                 families: ['Inconsolata'],
             },
         },

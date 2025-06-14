@@ -16,20 +16,20 @@ This database is exposed via a comprehensive, auto-generated GraphQL API, with a
 
 # Related projects
 
--   [GrackDBot](https://github.com/fogo-sh/grackdbot): Discord bot that allows simple querying of GrackDB from within Discord, such as adding context menu entries to look up users to identify either their associated user (for normal users), or associated project (for bots).
+- [GrackDBot](https://github.com/fogo-sh/grackdbot): Discord bot that allows simple querying of GrackDB from within Discord, such as adding context menu entries to look up users to identify either their associated user (for normal users), or associated project (for bots).
 
 # Resources tracked
 
--   Users
--   Discord accounts
--   Discord bots
--   GitHub accounts
--   GitHub organizations
--   GitHub organization memberships
--   Projects
--   Project contributors
--   Project relationships (based off, inspired by, replaces, etc.)
--   Repositories
--   Websites
--   Technologies (languages, libraries, etc.)
--   Technology usages (written in, implements, uses, etc.)
+- Users
+- Discord accounts
+- Discord bots
+- GitHub accounts
+- GitHub organizations
+- GitHub organization memberships
+- Projects
+- Project contributors
+- Project relationships (based off, inspired by, replaces, etc.)
+- Repositories
+- Websites
+- Technologies (languages, libraries, etc.)
+- Technology usages (written in, implements, uses, etc.)

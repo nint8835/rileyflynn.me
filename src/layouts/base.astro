@@ -1,7 +1,7 @@
 ---
 import { SEO } from 'astro-seo';
 import { Font } from 'astro:assets';
-import "../styles/global.css";
+import '../styles/global.css';
 
 interface Props {
     title: string;
@@ -14,7 +14,7 @@ const ogPath = Astro.url.origin + '/og/' + (Astro.url.pathname.replace(/^\/?(.*?
 
 <html lang="en">
     <head>
-        <Font cssVariable='--font-monospace' preload />
+        <Font cssVariable="--font-monospace" preload />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <SEO
             title={title}
@@ -30,7 +30,7 @@ const ogPath = Astro.url.origin + '/og/' + (Astro.url.pathname.replace(/^\/?(.*?
             }}
         />
     </head>
-    <body class="p-4 bg-zinc-900 text-zinc-300 font-mono">
+    <body class="bg-ctp-base text-ctp-text p-4 font-mono">
         <slot />
     </body>
 </html>

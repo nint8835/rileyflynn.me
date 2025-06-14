@@ -24,7 +24,7 @@ Primarily ensured the app stayed online, and resolved a few small bugs as they a
 
 Prior to that, I spent a Christmas break there working on a contract to improve the app. During that time I (among other things):
 
--   Rewrote the site's search functionality to be more reliable and to return more relevant results
--   Discovered and resolved a number of security issues
--   Cleaned and documented all backend code, to help future developers work on the app
--   Added native PDF generation functionality to the app, so users could download PDF reports straight from the app
+- Rewrote the site's search functionality to be more reliable and to return more relevant results
+- Discovered and resolved a number of security issues
+- Cleaned and documented all backend code, to help future developers work on the app
+- Added native PDF generation functionality to the app, so users could download PDF reports straight from the app
