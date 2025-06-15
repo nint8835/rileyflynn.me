@@ -3,9 +3,11 @@ interface Props {
     command: string;
 }
 const { command } = Astro.props;
+const commandParts = command.split(' ');
 ---
 
 <div>
-    <span class="text-green-400 font-black">{'> '}</span>
-    <span class="text-zinc-50">{command}</span>
+    <span class="text-ctp-green font-black">{'> '}</span>
+    <span class="text-ctp-blue">{commandParts[0]}</span>
+    <span class="text-ctp-teal">{commandParts.slice(1).join(' ')}</span>
 </div>

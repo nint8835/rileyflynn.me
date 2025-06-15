@@ -2,6 +2,8 @@
 
 @plugin '@tailwindcss/typography';
 
+@import '@catppuccin/tailwindcss/frappe.css';
+
 @theme {
     --font-mono: var(--font-monospace), monospace;
 }

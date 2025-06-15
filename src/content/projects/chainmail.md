@@ -15,8 +15,8 @@ Chainmail works by running the Minecraft server software as a subprocess, readin
 
 It provides a wide variety of events that plugin authors can act on, as well as a suite of tools to greatly simplify the process of interacting with the server, such as:
 
--   Command parsing
--   Object-oriented APIs for interacting with players
--   Rich message builder, greatly simplifying the process of authoring complex messages which should appear in the chat for users
+- Command parsing
+- Object-oriented APIs for interacting with players
+- Rich message builder, greatly simplifying the process of authoring complex messages which should appear in the chat for users
 
 Plugin support for Chainmail is provided by [Jigsaw](/projects/jigsaw), which was initially a part of Chainmail but was later split into it's own library.

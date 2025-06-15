@@ -20,8 +20,8 @@ Parsley was initially built as [`borik`](/projects/borik)'s command parser, but 
 
 # Bots using Parsley
 
--   [`STollenaar/CopypastaBotV2`](https://github.com/STollenaar/CopypastaBotV2)
--   [`fogo-sh/borik`](https://github.com/fogo-sh/borik)
--   [`nint8835/8-grack`](https://github.com/nint8835/8-grack)
--   [`nint8835/Elkbot`](https://github.com/nint8835/Elkbot)
--   [`nint8835/scribe`](https://github.com/nint8835/scribe)
+- [`STollenaar/CopypastaBotV2`](https://github.com/STollenaar/CopypastaBotV2)
+- [`fogo-sh/borik`](https://github.com/fogo-sh/borik)
+- [`nint8835/8-grack`](https://github.com/nint8835/8-grack)
+- [`nint8835/Elkbot`](https://github.com/nint8835/Elkbot)
+- [`nint8835/scribe`](https://github.com/nint8835/scribe)

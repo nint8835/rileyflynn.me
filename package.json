@@ -12,6 +12,8 @@
     "dependencies": {
         "@astrojs/markdown-remark": "^6.3.2",
         "@astrojs/mdx": "^4.3.0",
+        "@catppuccin/palette": "^2.0.0-beta.1",
+        "@catppuccin/tailwindcss": "^1.0.0-beta.2",
         "@tailwindcss/typography": "^0.5.16",
         "@tailwindcss/vite": "^4.1.7",
         "astro": "^5.8.0",
@@ -22,6 +24,7 @@
     },
     "devDependencies": {
         "prettier": "^3.5.3",
-        "prettier-plugin-astro": "^0.14.1"
+        "prettier-plugin-astro": "^0.14.1",
+        "prettier-plugin-tailwindcss": "^0.6.12"
     }
 }
