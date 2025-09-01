@@ -1,4 +1,5 @@
 ---
+import { flavors as catppuccinFlavours } from '@catppuccin/palette';
 import { SEO } from 'astro-seo';
 import { Font } from 'astro:assets';
 import '../styles/global.css';
@@ -16,6 +17,7 @@ const ogPath = Astro.url.origin + '/og/' + (Astro.url.pathname.replace(/^\/?(.*?
     <head>
         <Font cssVariable="--font-monospace" preload />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content={catppuccinFlavours.frappe.colors.base.hex} />
         <SEO
             title={title}
             description={description}
