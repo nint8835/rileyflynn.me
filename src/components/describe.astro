@@ -1,0 +1,51 @@
+---
+interface Item {
+    label: string;
+    value?: string;
+    children?: Item[];
+}
+
+interface Props {
+    items: Item[];
+    indent?: boolean;
+}
+
+const { items, indent } = Astro.props;
+
+function findMaxLabelLength(currentItem: number): number {
+    const previousWithChildrenIndex = items
+        .slice(0, currentItem)
+        .reverse()
+        .findIndex((item) => item.children && item.children.length > 0);
+    const nextWithChildrenIndex = items
+        .slice(currentItem + 1)
+        .findIndex((item) => item.children && item.children.length > 0);
+
+    const targetItems = items.slice(
+        previousWithChildrenIndex === -1 ? 0 : currentItem - previousWithChildrenIndex,
+        nextWithChildrenIndex === -1 ? items.length : currentItem + nextWithChildrenIndex + 1,
+    );
+
+    return Math.max(...targetItems.map((item) => item.label.length + (item.value || item.children ? 1 : 0)));
+}
+---
+
+<div>
+    {
+        items.map((item: Item, currentIndex) => (
+            <div class:list={[indent && 'ml-[2ch]']}>
+                <b>{item.label + (item.value || item.children ? ':' : '')}</b>
+                {item.value && (
+                    <span
+                        style={{
+                            'margin-left': `${findMaxLabelLength(currentIndex) - item.label.length - (item.value || item.children ? 1 : 0)}ch`,
+                        }}
+                    >
+                        {item.value}
+                    </span>
+                )}
+                {item.children && item.children.length > 0 && <Astro.self items={item.children} indent />}
+            </div>
+        ))
+    }
+</div>

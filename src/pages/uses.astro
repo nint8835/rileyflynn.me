@@ -1,0 +1,138 @@
+---
+import Command from '../components/command.astro';
+import Describe from '../components/describe.astro';
+import Layout from '../layouts/base.astro';
+---
+
+<Layout title="Uses - rileyflynn.me" description="Software, hardware, and services I use.">
+    {/* TODO: Add additional details */}
+    {/* TODO: Add explanations (where relevant) */}
+
+    <Command command="kubectl describe uses devices" />
+    <Describe
+        items={[
+            {
+                label: 'Laptop',
+                value: 'M3 MacBook Air',
+            },
+            {
+                label: 'Phone',
+                value: 'iPhone 15 Pro',
+            },
+            {
+                label: 'Tablet',
+                value: '12.9" M4 iPad Pro',
+            },
+        ]}
+    />
+
+    <Command command="kubectl describe uses peripherals" />
+    <Describe
+        items={[
+            {
+                label: 'Dock',
+                value: 'Caldigit TS3 Plus',
+            },
+            {
+                label: 'Monitors',
+                value: '2x LG DualUp',
+            },
+            {
+                label: 'Mouse',
+                value: 'Logitech MX Master 3S',
+            },
+            {
+                label: 'Trackpad',
+                value: 'Magic Trackpad',
+            },
+            {
+                label: 'Keyboards',
+                children: [
+                    {
+                        label: 'Drop CSTM-80',
+                        children: [
+                            { label: 'Keycaps', value: 'TODO' },
+                            { label: 'Switches', value: 'Gateron Box Black Ink V2' },
+                        ],
+                    },
+                    { label: 'Logitech MX Keys Mini' },
+                    {
+                        label: 'Keychron Q3',
+                        children: [
+                            { label: 'Keycaps', value: 'TODO' },
+                            { label: 'Switches', value: 'Kailh Box Navy' },
+                        ],
+                    },
+                    { label: 'HHKB Professional 2' },
+                ],
+            },
+            {
+                label: 'Webcam',
+                value: 'Logitech C920',
+            },
+            {
+                label: 'Microphone',
+                value: 'Blue Yeti',
+            },
+            {
+                label: 'Headphones',
+                children: [{ label: 'AirPods Pro' }, { label: 'Sony WH1000XM3' }, { label: 'Sennheiser HD 660S' }],
+            },
+            {
+                label: 'Amplifier',
+                value: 'Schiit Magni Heresy',
+            },
+            {
+                label: 'DAC',
+                value: 'Schiit Modi 3+',
+            },
+        ]}
+    />
+    <br />
+
+    <Command command="kubectl describe uses workspace" />
+    <Describe
+        items={[
+            {
+                label: 'Desk',
+                value: '48"x30" Vari Electric Standing Desk',
+            },
+            { label: 'Chair', value: 'Steelcase Gesture' },
+        ]}
+    />
+    <br />
+
+    <Command command="kubectl describe uses software" />
+    <Describe
+        items={[
+            {
+                label: 'Font',
+                value: 'PragmataPro',
+            },
+            {
+                label: 'Colour Scheme',
+                value: 'Catppuccin Frappé',
+            },
+            {
+                label: 'Shell',
+                value: 'Fish',
+            },
+            {
+                label: 'Terminal',
+                value: 'Ghostty',
+            },
+            {
+                label: 'Editor',
+                children: [
+                    { label: 'JetBrains IntelliJ IDEA' },
+                    { label: 'JetBrains Rider' },
+                    { label: 'Visual Studio Code' },
+                ],
+            },
+            {
+                label: 'Browser',
+                value: 'Mozilla Firefox',
+            },
+        ]}
+    />
+</Layout>
