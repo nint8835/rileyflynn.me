@@ -39,69 +39,76 @@ import Layout from '../layouts/base.astro';
                 value: '2x LG DualUp',
             },
             {
-                label: 'Mouse',
-                value: 'Logitech MX Master 3S',
-            },
-            {
-                label: 'Trackpad',
-                value: 'Magic Trackpad',
-            },
-            {
-                label: 'Keyboard',
-                value: 'Logitech MX Keys Mini',
-            },
-            {
-                label: 'Keyboard',
-                value: 'Drop CSTM-80',
-                children: [
-                    { label: 'Keycaps', value: 'GMK Pulse Mitolet' },
-                    { label: 'Switches', value: 'Gateron Box Black Ink V2' },
-                ],
-            },
-            {
-                label: 'Keyboard',
-                value: 'Keychron Q3',
-                children: [
-                    { label: 'Keycaps', value: 'Drop MT3 Dusk' },
-                    { label: 'Switches', value: 'Kailh Box Navy' },
-                ],
-            },
-            {
-                label: 'Keyboard',
-                value: 'HHKB Professional 2',
-                children: [
-                    {
-                        label: 'PCB swapped for a Cipulot EC Pro X & Cipulot EC Pro 2 Hub',
-                    },
-                ],
-            },
-            {
                 label: 'Webcam',
                 value: 'Logitech C920',
             },
             {
-                label: 'Microphone',
-                value: 'Blue Yeti',
+                label: 'Input',
+                children: [
+                    {
+                        label: 'Mouse',
+                        value: 'Logitech MX Master 3S',
+                    },
+                    {
+                        label: 'Trackpad',
+                        value: 'Magic Trackpad',
+                    },
+                    {
+                        label: 'Keyboard',
+                        children: [
+                            {
+                                label: 'Logitech MX Keys Mini',
+                            },
+                            {
+                                label: 'Drop CSTM-80',
+                                children: [
+                                    { label: 'Keycaps', value: 'GMK Pulse Mitolet' },
+                                    { label: 'Switches', value: 'Gateron Box Black Ink V2' },
+                                ],
+                            },
+                            {
+                                label: 'Keychron Q3',
+                                children: [
+                                    { label: 'Keycaps', value: 'Drop MT3 Dusk' },
+                                    { label: 'Switches', value: 'Kailh Box Navy' },
+                                ],
+                            },
+                            {
+                                label: 'HHKB Professional 2',
+                                children: [
+                                    {
+                                        label: 'PCB swapped for a Cipulot EC Pro X & Cipulot EC Pro 2 Hub',
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
             },
             {
-                label: 'Headphones',
-                value: 'AirPods Pro',
-            },
-            {
-                label: 'Headphones',
-                value: 'Sony WH1000XM3',
-            },
-            {
-                label: 'Headphones',
-                value: 'Sennheiser HD 660S',
-            },
-            {
-                label: 'Amplifier',
-                value: 'Schiit Magni Heresy',
-            },
-            {
-                label: 'DAC',
-                value: 'Schiit Modi 3+',
+                label: 'Audio',
+                children: [
+                    {
+                        label: 'Microphone',
+                        value: 'Blue Yeti',
+                    },
+                    {
+                        label: 'Headphones',
+                        children: [
+                            { label: 'AirPods Pro' },
+                            { label: 'Sony WH1000XM3' },
+                            { label: 'Sennheiser HD 660S' },
+                        ],
+                    },
+                    {
+                        label: 'Amplifier',
+                        value: 'Schiit Magni Heresy',
+                    },
+                    {
+                        label: 'DAC',
+                        value: 'Schiit Modi 3+',
+                    },
+                ],
             },
         ]}
     />
@@ -123,6 +130,10 @@ import Layout from '../layouts/base.astro';
     <Describe
         items={[
             {
+                label: 'Browser',
+                value: 'Mozilla Firefox',
+            },
+            {
                 label: 'Font',
                 value: 'PragmataPro',
             },
@@ -140,22 +151,11 @@ import Layout from '../layouts/base.astro';
             },
             {
                 label: 'Editor',
-                value: 'JetBrains IntelliJ IDEA',
-                children: [{ label: 'For Terraform / Kubernetes' }],
-            },
-            {
-                label: 'Editor',
-                value: 'JetBrains Rider',
-                children: [{ label: 'For .NET' }],
-            },
-            {
-                label: 'Editor',
-                value: 'Visual Studio Code',
-                children: [{ label: 'For everything else' }],
-            },
-            {
-                label: 'Browser',
-                value: 'Mozilla Firefox',
+                children: [
+                    { label: 'JetBrains IntelliJ IDEA', value: 'For Terraform & Kubernetes' },
+                    { label: 'JetBrains Rider', value: 'For .NET' },
+                    { label: 'Visual Studio Code', value: 'For everything else' },
+                ],
             },
         ]}
     />

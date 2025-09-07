@@ -14,9 +14,9 @@ interface Props {
 const { items } = Astro.props;
 
 function formatItem(item: Item, indent: number = 0): string {
-    let result = ' '.repeat(indent * 2) + item.label + (item.value || item.children ? ':\t' : '');
+    let result = ' '.repeat(indent * 2) + item.label + (item.value || item.children ? ':' : '');
     if (item.value) {
-        result += item.value;
+        result += '\t' + item.value;
     }
     result += '\n';
     if (item.children) {
