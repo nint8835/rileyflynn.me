@@ -1,11 +1,30 @@
 ---
 import Command from '../components/command.astro';
 import Layout from '../layouts/base.astro';
-
-const pageName = Astro.url.pathname.replace(/^\/?(.+?)\/?$/, '$1');
 ---
 
 <Layout title="Page Not Found - rileyflynn.me" description="The requested page could not be found.">
-    <Command command={`kubectl describe page ${pageName}`} />
-    Error from server (NotFound): page "{pageName}" not found
+    <Command command={`kubectl describe page PAGE_NAME`} />
+    Error from server (NotFound): page "PAGE_NAME" not found
 </Layout>
+
+<script>
+    // https://stackoverflow.com/a/50537862
+    function replaceInText(element: Node, pattern: RegExp, replacement: string) {
+        for (let node of element.childNodes) {
+            switch (node.nodeType) {
+                case Node.ELEMENT_NODE:
+                    replaceInText(node, pattern, replacement);
+                    break;
+                case Node.TEXT_NODE:
+                    if (!node.textContent) break;
+                    node.textContent = node.textContent.replace(pattern, replacement);
+                    break;
+                case Node.DOCUMENT_NODE:
+                    replaceInText(node, pattern, replacement);
+            }
+        }
+    }
+
+    replaceInText(document.body, /PAGE_NAME/g, window.location.pathname.replace(/^\/?(.+?)\/?$/, '$1'));
+</script>
