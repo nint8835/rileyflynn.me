@@ -25,6 +25,8 @@ const links: {
         url: 'https://www.linkedin.com/in/nint8835/',
     },
 ];
+
+const buildTime = new Date().toISOString();
 ---
 
 <Layout title="rileyflynn.me" description="Cloud Architect from St. John's, Newfoundland.">
@@ -52,8 +54,9 @@ const links: {
     <Table
         lines={[
             [{ text: 'NAME' }, { text: 'CREATED AT' }],
-            [{ text: 'jobs.rileyflynn.me', link: '/jobs' }, { text: '2023-04-22T20:00:00Z' }],
-            [{ text: 'projects.rileyflynn.me', link: '/projects' }, { text: '2023-04-22T20:00:00Z' }],
+            [{ text: 'jobs.rileyflynn.me', link: '/jobs' }, { text: buildTime }],
+            [{ text: 'projects.rileyflynn.me', link: '/projects' }, { text: buildTime }],
+            [{ text: 'uses.rileyflynn.me', link: '/uses' }, { text: buildTime }],
         ]}
     />
 </Layout>
