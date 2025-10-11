@@ -10,13 +10,13 @@
         "astro": "astro"
     },
     "dependencies": {
-        "@astrojs/markdown-remark": "^6.3.6",
-        "@astrojs/mdx": "^4.3.4",
+        "@astrojs/markdown-remark": "^6.3.8",
+        "@astrojs/mdx": "^4.3.7",
         "@catppuccin/palette": "^2.0.0-beta.1",
         "@catppuccin/tailwindcss": "^1.0.0",
         "@tailwindcss/typography": "^0.5.16",
         "@tailwindcss/vite": "^4.1.12",
-        "astro": "^5.13.5",
+        "astro": "^5.14.4",
         "astro-meta-tags": "^0.4.0",
         "astro-og-canvas": "^0.7.0",
         "astro-seo": "^0.8.4",
