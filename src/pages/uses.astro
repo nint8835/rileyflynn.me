@@ -44,7 +44,12 @@ import Layout from '../layouts/base.astro';
                 children: [
                     {
                         label: 'Mouse',
+                        value: 'Logitech MX Master 4',
+                    },
+                    {
+                        label: 'Mouse',
                         value: 'Logitech MX Master 3S',
+                        children: [{ label: 'Current office mouse' }],
                     },
                     {
                         label: 'Trackpad',
@@ -75,6 +80,9 @@ import Layout from '../layouts/base.astro';
                                 children: [
                                     {
                                         label: 'PCB swapped for a Cipulot EC Pro X & Cipulot EC Pro 2 Hub',
+                                    },
+                                    {
+                                        label: 'Current office keyboard',
                                     },
                                 ],
                             },
@@ -149,7 +157,7 @@ import Layout from '../layouts/base.astro';
             {
                 label: 'Editor',
                 children: [
-                    { label: 'JetBrains IntelliJ IDEA', value: 'For Terraform & Kubernetes' },
+                    { label: 'JetBrains IntelliJ IDEA', value: 'For Terraform' },
                     { label: 'JetBrains Rider', value: 'For .NET' },
                     { label: 'Visual Studio Code', value: 'For everything else' },
                 ],
