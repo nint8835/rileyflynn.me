@@ -51,7 +51,7 @@ function catppuccinToAstroOGCanvas(colour: ColorFormat): [number, number, number
     return [colour.rgb.r, colour.rgb.g, colour.rgb.b];
 }
 
-export const { getStaticPaths, GET } = OGImageRoute({
+export const { getStaticPaths, GET } = await OGImageRoute({
     param: 'route',
     pages: pages,
 
