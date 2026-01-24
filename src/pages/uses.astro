@@ -79,7 +79,18 @@ import Layout from '../layouts/base.astro';
                                 label: 'HHKB Professional 2',
                                 children: [
                                     {
-                                        label: 'PCB swapped for a Cipulot EC Pro X & Cipulot EC Pro 2 Hub',
+                                        label: 'PCB',
+                                        children: [
+                                            { label: 'Mainboard', value: 'Cipulot EC Pro X' },
+                                            { label: 'Daughterboard', value: 'Cipulot EC Pro 2 Hub' },
+                                        ],
+                                    },
+                                    {
+                                        label: 'Keycaps',
+                                        children: [
+                                            { label: 'Alphas', value: 'URSA Classic' },
+                                            { label: 'Modifiers', value: 'URSA Black' },
+                                        ],
                                     },
                                 ],
                             },
