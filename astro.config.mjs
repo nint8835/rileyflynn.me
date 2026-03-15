@@ -9,15 +9,13 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    experimental: {
-        fonts: [
-            {
-                provider: fontProviders.fontsource(),
-                name: 'Inconsolata',
-                cssVariable: '--font-monospace',
-                fallbacks: ['monospace'],
-                subsets: ['latin'],
-            },
-        ],
-    },
+    fonts: [
+        {
+            provider: fontProviders.fontsource(),
+            name: 'Inconsolata',
+            cssVariable: '--font-monospace',
+            fallbacks: ['monospace'],
+            subsets: ['latin'],
+        },
+    ],
 });
