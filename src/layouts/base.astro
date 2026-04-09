@@ -18,6 +18,7 @@ const ogPath = Astro.url.origin + '/og/' + (Astro.url.pathname.replace(/^\/?(.*?
         <Font cssVariable="--font-monospace" preload />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content={catppuccinFlavours.frappe.colors.base.hex} />
+        <link rel="human-json" href={new URL('.well-known/human.json', Astro.site).pathname} />
         <SEO
             title={title}
             description={description}
