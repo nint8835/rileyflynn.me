@@ -21,7 +21,8 @@ export function GET({}) {
     const vouchTimeString = vouchTime.toISOString().split('T')[0];
 
     const humanJson: HumanJson = {
-        url: (import.meta.env.SITE + import.meta.env.BASE_URL).replace(/\/$/, ''),
+        // TODO: Can this be made non-hardcoded?
+        url: 'https://rileyflynn.me',
         version: '0.1.1',
         vouches: VOUCHED_URLS.map((url) => ({
             url,
