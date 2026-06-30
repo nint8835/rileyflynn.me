@@ -32,7 +32,7 @@ const columnWidths = lines.reduce((acc, line) => {
                 ))}
                 <br />
                 {includeHeadingLine && i == 0 ? (
-                    <pre class="inline">{line.map((column, j) => '-'.repeat(column.text.length) + ' '.repeat(columnWidths[j] - column.text.length + 1)).join('')}</pre><br/>
+                    <pre class="inline">{line.map((column, j) => '-'.repeat(column.text.length) + ' '.repeat(columnWidths[j] - column.text.length)).join('')}</pre><br/>
                 ) : null}
             </>
         ))
