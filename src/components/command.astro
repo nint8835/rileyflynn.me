@@ -8,6 +8,6 @@ const commandParts = command.split(' ');
 
 <div>
     <span class="text-ctp-green font-black">{'> '}</span>
-    <span class="text-ctp-blue">{commandParts[0]}</span>
+    <span class="text-ctp-blue">{commandParts[0] + (commandParts.length > 1 ? ' ' : '')}</span>
     <span class="text-ctp-teal">{commandParts.slice(1).join(' ')}</span>
 </div>
