@@ -27,6 +27,10 @@ const pages: Record<string, PageData> = {
         title: 'Docker Talk',
         description: 'Links and resources for my June 2025 talk on Docker for TechNL.',
     },
+    'slash-pages': {
+        title: 'Slash Pages',
+        description: 'List of my slash pages.',
+    },
     uses: {
         title: 'Uses',
         description: 'Software, hardware, and services I use.',

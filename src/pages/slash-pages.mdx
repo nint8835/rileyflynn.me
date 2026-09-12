@@ -1,0 +1,30 @@
+---
+title: Slash Pages - rileyflynn.me
+description: List of my slash pages.
+---
+
+import Command from '../components/command.astro';
+import Prose from '../components/prose.astro';
+import Table from '../components/table.astro';
+import Layout from '../layouts/base.astro';
+
+export const buildTime = new Date().toISOString();
+
+<Layout title="Slash Pages - rileyflynn.me" description="List of my slash pages.">
+    <Command command="kubectl describe customresourcedefinition slash-pages.rileyflynn.me" />
+    <Prose>
+
+    Taken from [slashpages.net](https://slashpages.net/):
+
+    > Slash pages are common pages you can add to your website, usually with a standard, root-level slug like /now, /about, or /uses. They tend to describe the individual behind the site and are distinguishing characteristics of the IndieWeb.
+
+    </Prose>
+
+    <Command command="kubectl get slash-pages" />
+    <Table
+        lines={[
+            [{ text: 'NAME' }, { text: 'DESCRIPTION' }],
+            [{ text: 'uses', link: '/uses' }, { text: 'Software, hardware, and services I use.' }],
+        ]}
+    />
+</Layout>
