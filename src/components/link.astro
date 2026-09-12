@@ -8,4 +8,6 @@ interface Props {
 const { text, href, rel } = Astro.props;
 ---
 
-<a class="hover:text-ctp-blue underline transition-colors" href={href} rel={rel}>{text}</a>
+<a class="hover:text-ctp-blue underline transition-colors" href={href} rel={rel}>
+    {text}
+</a>

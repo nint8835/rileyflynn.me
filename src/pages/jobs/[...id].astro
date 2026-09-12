@@ -55,29 +55,25 @@ const { Content } = await render(entry);
 
     <br />
 
-    {
-        entry.data.links && (
-            <>
-                <Command command={`kubectl get services -n ${entry.id}`} />
-                <Table
-                    lines={[
-                        [{ text: 'NAME' }, { text: 'URL' }],
-                        ...entry.data.links.map((link) => [{ text: link.label }, { text: link.url, link: link.url }]),
-                    ]}
-                />
-                <br />
-            </>
-        )
-    }
+    {entry.data.links && (
+        <>
+            <Command command={`kubectl get services -n ${entry.id}`} />
+            <Table
+                lines={[
+                    [{ text: 'NAME' }, { text: 'URL' }],
+                    ...entry.data.links.map((link) => [{ text: link.label }, { text: link.url, link: link.url }]),
+                ]}
+            />
+            <br />
+        </>
+    )}
 
-    {
-        entry.body && (
-            <>
-                <Command command={`kubectl get job ${entry.id} --output=markdown`} />
-                <Prose>
-                    <Content />
-                </Prose>
-            </>
-        )
-    }
+    {entry.body && (
+        <>
+            <Command command={`kubectl get job ${entry.id} --output=markdown`} />
+            <Prose>
+                <Content />
+            </Prose>
+        </>
+    )}
 </Base>

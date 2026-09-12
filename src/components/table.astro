@@ -21,20 +21,21 @@ const columnWidths = lines.reduce((acc, line) => {
 ---
 
 <div class="w-full whitespace-nowrap overflow-auto">
-    {
-        lines.map((line, i) => (
-            <>
-                {line.map((column, j) => (
-                    <>
-                        {column.link ? <Link href={column.link} text={column.text} rel={column.rel} /> : column.text}
-                        <pre class="inline">{' '.repeat(columnWidths[j] - column.text.length)}</pre>
-                    </>
-                ))}
-                <br />
-                {includeHeadingLine && i == 0 ? (
-                    <pre class="inline">{line.map((column, j) => '-'.repeat(column.text.length) + ' '.repeat(columnWidths[j] - column.text.length)).join('')}</pre><br/>
-                ) : null}
-            </>
-        ))
-    }
+    {lines.map((line, i) => (
+        <>
+            {line.map((column, j) => (
+                <>
+                    {column.link ? <Link href={column.link} text={column.text} rel={column.rel} /> : column.text}
+                    <pre class="inline">{' '.repeat(columnWidths[j] - column.text.length)}</pre>
+                </>
+            ))}
+            <br />
+            {includeHeadingLine && i == 0 ? (
+                <>
+                    <pre class="inline">{line.map((column, j) => '-'.repeat(column.text.length) + ' '.repeat(columnWidths[j] - column.text.length)).join('')}</pre>
+                    <br />
+                </>
+            ) : null}
+        </>
+    ))}
 </div>
