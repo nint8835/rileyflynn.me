@@ -1,10 +1,13 @@
 ---
+import Back from '../components/back.astro';
 import Command from '../components/command.astro';
 import Describe from '../components/describe.astro';
 import Layout from '../layouts/base.astro';
 ---
 
 <Layout title="Uses - rileyflynn.me" description="Software, hardware, and services I use.">
+    <Back command="kubectl get slash-pages" href="/slash-pages" label="slash pages" />
+
     <Command command="kubectl describe uses devices" />
     <Describe
         items={[

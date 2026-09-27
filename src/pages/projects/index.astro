@@ -2,12 +2,15 @@
 import { getCollection } from 'astro:content';
 const projects = await getCollection('projects');
 
+import Back from '../../components/back.astro';
 import Command from '../../components/command.astro';
 import Table from '../../components/table.astro';
 import Base from '../../layouts/base.astro';
 ---
 
 <Base title="Projects - rileyflynn.me" description="A selection of projects I've worked on.">
+    <Back command="kubectl describe user riley" href="/" label="home" />
+
     <Command command="kubectl get projects" />
     <Table
         lines={[

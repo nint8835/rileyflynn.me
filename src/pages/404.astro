@@ -1,9 +1,12 @@
 ---
+import Back from '../components/back.astro';
 import Command from '../components/command.astro';
 import Layout from '../layouts/base.astro';
 ---
 
 <Layout title="Page Not Found - rileyflynn.me" description="The requested page could not be found.">
+    <Back command="kubectl describe user riley" href="/" label="home" />
+
     <Command command={`kubectl describe page PAGE_NAME`} />
     Error from server (NotFound): page "PAGE_NAME" not found
 </Layout>

@@ -3,6 +3,7 @@ title: Slash Pages - rileyflynn.me
 description: List of my slash pages.
 ---
 
+import Back from '../components/back.astro';
 import Command from '../components/command.astro';
 import Prose from '../components/prose.astro';
 import Table from '../components/table.astro';
@@ -11,6 +12,8 @@ import Layout from '../layouts/base.astro';
 export const buildTime = new Date().toISOString();
 
 <Layout title="Slash Pages - rileyflynn.me" description="List of my slash pages.">
+    <Back command="kubectl describe user riley" href="/" label="home" />
+
     <Command command="kubectl describe customresourcedefinition slash-pages.rileyflynn.me" />
     <Prose>
 

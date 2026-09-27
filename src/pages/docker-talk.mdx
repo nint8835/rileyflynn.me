@@ -3,11 +3,14 @@ title: Docker Talk - rileyflynn.me
 description: Links and resources for my June 2025 TechNL Docker talk.
 ---
 
+import Back from '../components/back.astro';
 import Command from '../components/command.astro';
 import Prose from '../components/prose.astro';
 import Layout from '../layouts/base.astro';
 
 <Layout title="Docker Talk - rileyflynn.me" description="Links and resources for my June 2025 talk on Docker for TechNL.">
+    <Back command="kubectl describe user riley" href="/" label="home" />
+
     <Command command="kubectl get talk docker --output=markdown" />
 <Prose>
     

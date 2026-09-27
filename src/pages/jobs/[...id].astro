@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { getCollection, render } from 'astro:content';
+import Back from '../../components/back.astro';
 import Command from '../../components/command.astro';
 import Describe from '../../components/describe.astro';
 import Prose from '../../components/prose.astro';
@@ -25,6 +26,8 @@ const { Content } = await render(entry);
 ---
 
 <Base title={`${entry.data.title} - rileyflynn.me`} description={`Details about my work at ${entry.data.title}.`}>
+    <Back command="kubectl get jobs" href="/jobs" label="jobs" />
+
     <Command command={`kubectl describe job ${entry.id}`} />
     <Describe
         items={[

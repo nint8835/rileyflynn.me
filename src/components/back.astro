@@ -1,0 +1,23 @@
+---
+import Command from './command.astro';
+
+interface Props {
+    command: string;
+    href: string;
+    label: string;
+}
+
+const { command, href, label } = Astro.props;
+---
+
+<nav aria-label="Back navigation" class="mb-4">
+    <Command command={command} />
+    <div class="pl-[2ch]">
+        <a class="hover:text-ctp-blue inline-flex items-center gap-1 transition-colors" href={href} rel="up">
+            <span aria-hidden="true" class="relative -top-px">
+                ←
+            </span>
+            <span class="underline">{`back to ${label}`}</span>
+        </a>
+    </div>
+</nav>
