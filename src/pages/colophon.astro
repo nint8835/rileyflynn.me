@@ -1,0 +1,69 @@
+---
+import Back from '../components/back.astro';
+import Command from '../components/command.astro';
+import Describe from '../components/describe.astro';
+import Layout from '../layouts/base.astro';
+---
+
+<Layout title="Colophon - rileyflynn.me" description="The tech that powers this website.">
+    <Back command="kubectl get slash-pages" href="/slash-pages" label="slash pages" />
+
+    <Command command="kubectl describe colophon tech" />
+    <Describe
+        items={[
+            { label: 'Generator', value: 'Astro' },
+            {
+                label: 'Languages',
+                children: [
+                    { label: 'Astro', value: 'Site structure & advanced content' },
+                    { label: 'Markdown / MDX', value: 'Simple content' },
+                    { label: 'TypeScript', value: 'Site logic' },
+                ],
+            },
+            {
+                label: 'Other Libraries',
+                children: [
+                    { label: 'astro-meta-tags', value: 'Previewing meta tags while developing' },
+                    { label: 'astro-og-canvas', value: 'Generating Open Graph images' },
+                    { label: 'astro-seo', value: 'Managing SEO headers' },
+                    {
+                        label: 'Prettier',
+                        value: 'Code formatting',
+                        children: [
+                            { label: 'prettier-plugin-astro', value: 'Astro support for Prettier' },
+                            { label: 'prettier-plugin-tailwindcss', value: 'Tailwind CSS support for Prettier' },
+                        ],
+                    },
+                ],
+            },
+        ]}
+    />
+    <br />
+
+    <Command command="kubectl describe colophon design" />
+    <Describe
+        items={[
+            {
+                label: 'Styling',
+                value: 'Tailwind CSS',
+                children: [
+                    { label: '@catppuccin/tailwindcss', value: 'Catppuccin colour scheme' },
+                    { label: '@tailwindcss/typography', value: 'Styling for Markdown content' },
+                ],
+            },
+            { label: 'Font', value: 'Inconsolata' },
+            { label: 'Colour Scheme', value: 'Catppuccin Frappé' },
+        ]}
+    />
+    <br />
+
+    <Command command="kubectl describe colophon hosting" />
+    <Describe
+        items={[
+            { label: 'DNS', value: 'Cloudflare' },
+            { label: 'Domain Registrar', value: 'Porkbun' },
+            { label: 'Source Control', value: 'GitHub' },
+            { label: 'Web Hosting', value: 'Cloudflare Pages' },
+        ]}
+    />
+</Layout>

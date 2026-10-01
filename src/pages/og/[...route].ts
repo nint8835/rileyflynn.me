@@ -35,6 +35,10 @@ const pages: Record<string, PageData> = {
         title: 'Uses',
         description: 'Software, hardware, and services I use.',
     },
+    colophon: {
+        title: 'Colophon',
+        description: 'The tech that powers this website.',
+    },
 };
 
 for (const entry of jobEntries) {
