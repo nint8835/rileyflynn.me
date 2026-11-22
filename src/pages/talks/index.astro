@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import { MonthYearDateFormat } from '../../utils/date_formats';
+const talks = await getCollection('talks');
+
+import Back from '../../components/back.astro';
+import Command from '../../components/command.astro';
+import Table from '../../components/table.astro';
+import Base from '../../layouts/base.astro';
+---
+
+<Base title="Talks - rileyflynn.me" description="List of the talks I've given.">
+    <Back command="kubectl describe user riley" href="/" label="home" />
+
+    <Command command="kubectl get talks" />
+    <Table
+        lines={[
+            [{ text: 'TALK' }, { text: 'DESCRIPTION' }, { text: 'DATE' }],
+            ...talks.map((talk) => [
+                { text: talk.data.title, link: `/talks/${talk.id}` },
+                { text: talk.data.description },
+                { text: MonthYearDateFormat.format(talk.data.date) },
+            ]),
+        ]}
+    />
+</Base>

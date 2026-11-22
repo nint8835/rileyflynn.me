@@ -1,19 +1,9 @@
 ---
-title: Docker Talk - rileyflynn.me
+title: TechNL - Intro to Containers (Docker)
 description: Links and resources for my June 2025 TechNL Docker talk.
+date: 2025-06-12
 ---
 
-import Back from '../components/back.astro';
-import Command from '../components/command.astro';
-import Prose from '../components/prose.astro';
-import Layout from '../layouts/base.astro';
-
-<Layout title="Docker Talk - rileyflynn.me" description="Links and resources for my June 2025 talk on Docker for TechNL.">
-    <Back command="kubectl describe user riley" href="/" label="home" />
-
-    <Command command="kubectl get talk docker --output=markdown" />
-<Prose>
-    
 Thank you for attending my talk! I hope regardless of your prior experience with Docker, you learned something from it.
 
 If you've got further questions or want to discuss the content further:
@@ -42,6 +32,3 @@ If you've got further questions or want to discuss the content further:
         - [Bazzite's Containerfile](https://github.com/ublue-os/bazzite/blob/main/Containerfile)
 - [OCI Artifacts](https://github.com/opencontainers/artifacts)
     - [What are OCI Artifacts? - Chainguard Academy](https://edu.chainguard.dev/open-source/oci/what-are-oci-artifacts/)
-
-</Prose>
-</Layout>

@@ -1,0 +1,58 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection, render } from 'astro:content';
+import Back from '../../components/back.astro';
+import Command from '../../components/command.astro';
+import Describe from '../../components/describe.astro';
+import Prose from '../../components/prose.astro';
+import Base from '../../layouts/base.astro';
+import { FullDateFormat } from '../../utils/date_formats';
+
+export async function getStaticPaths() {
+    const talkEntries = await getCollection('talks');
+    return talkEntries.map((entry) => ({
+        params: { id: entry.id },
+        props: { entry },
+    }));
+}
+
+interface Props {
+    entry: CollectionEntry<'talks'>;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Base title={`${entry.data.title} - rileyflynn.me`} description={entry.data.description}>
+    <Back command="kubectl get talks" href="/talks" label="talks" />
+
+    <Command command={`kubectl describe talk ${entry.id}`} />
+    <Describe
+        items={[
+            {
+                label: 'Title',
+                value: entry.data.title,
+            },
+            {
+                label: 'Description',
+                value: entry.data.description,
+            },
+            {
+                label: 'Date',
+                value: FullDateFormat.format(entry.data.date),
+            },
+        ]}
+    />
+
+    <br />
+
+    {entry.body && (
+        <>
+            <Command command={`kubectl get talk ${entry.id} --output=markdown`} />
+            <Prose>
+                <Content />
+            </Prose>
+        </>
+    )}
+</Base>

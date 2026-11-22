@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 
 const jobEntries = await getCollection('jobs');
 const projectEntries = await getCollection('projects');
+const talkEntries = await getCollection('talks');
 
 type PageData = {
     title: string;
@@ -23,9 +24,9 @@ const pages: Record<string, PageData> = {
         title: 'Jobs',
         description: "List of the places I've worked.",
     },
-    'docker-talk': {
-        title: 'Docker Talk',
-        description: 'Links and resources for my June 2025 talk on Docker for TechNL.',
+    talks: {
+        title: 'Talks',
+        description: "List of the talks I've given.",
     },
     'slash-pages': {
         title: 'Slash Pages',
@@ -52,6 +53,13 @@ for (const entry of projectEntries) {
     pages[`projects/${entry.id}`] = {
         title: entry.data.title,
         description: entry.data.summary,
+    };
+}
+
+for (const entry of talkEntries) {
+    pages[`talks/${entry.id}`] = {
+        title: entry.data.title,
+        description: entry.data.description,
     };
 }
 
