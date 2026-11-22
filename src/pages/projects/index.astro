@@ -6,9 +6,13 @@ import Back from '../../components/back.astro';
 import Command from '../../components/command.astro';
 import Table from '../../components/table.astro';
 import Base from '../../layouts/base.astro';
+export const metadata = {
+    title: 'Projects - rileyflynn.me',
+    description: "A selection of projects I've worked on.",
+};
 ---
 
-<Base title="Projects - rileyflynn.me" description="A selection of projects I've worked on.">
+<Base {...metadata}>
     <Back command="kubectl describe user riley" href="/" label="home" />
 
     <Command command="kubectl get projects" />

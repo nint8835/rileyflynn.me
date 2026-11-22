@@ -27,9 +27,13 @@ const links: {
 ];
 
 const buildTime = new Date().toISOString();
+export const metadata = {
+    title: 'rileyflynn.me',
+    description: "Cloud Architect from St. John's, Newfoundland.",
+};
 ---
 
-<Layout title="rileyflynn.me" description="Cloud Architect from St. John's, Newfoundland.">
+<Layout {...metadata}>
     <Command command="kubectl describe user riley" />
     <Describe
         items={[
