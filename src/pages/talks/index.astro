@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import { markdownToHtml } from 'satteri';
+import Back from '../../components/back.astro';
+import Command from '../../components/command.astro';
+import Prose from '../../components/prose.astro';
+import Table from '../../components/table.astro';
+import Base from '../../layouts/base.astro';
+import { MonthYearDateFormat } from '../../utils/date_formats';
+
+export const metadata = {
+    title: 'Talks - rileyflynn.me',
+    description: "List of the talks I've given.",
+};
+
+const talks = await getCollection('talks');
+
+// TODO: Probably easier to make this a mdx file or create a component for automatically-rendering inline markdown
+const cta = `I'm always happy to share my knowledge and experience. If you have an opportunity that you think I'd be a good
+fit for, please feel free to reach out to me at \`riley@rileyflynn.me\` or via
+[LinkedIn](https://www.linkedin.com/in/nint8835/).`;
+const renderedCta = markdownToHtml(cta).html;
+---
+
+<Base {...metadata}>
+    <Back command="kubectl describe user riley" href="/" label="home" />
+
+    <Command command="kubectl describe customresourcedefinition talks.rileyflynn.me" />
+    <Prose set:html={renderedCta} />
+
+    <br />
+
+    <Command command="kubectl get talks" />
+    <Table
+        lines={[
+            [{ text: 'TALK' }, { text: 'DESCRIPTION' }, { text: 'DATE' }],
+            ...talks.map((talk) => [
+                { text: talk.data.title, link: `/talks/${talk.id}` },
+                { text: talk.data.description },
+                { text: MonthYearDateFormat.format(talk.data.date) },
+            ]),
+        ]}
+    />
+</Base>

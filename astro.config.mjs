@@ -22,4 +22,7 @@ export default defineConfig({
             subsets: ['latin'],
         },
     ],
+    redirects: {
+        '/docker-talk': '/talks/technl-docker',
+    },
 });

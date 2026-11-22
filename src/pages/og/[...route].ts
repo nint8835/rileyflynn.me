@@ -2,57 +2,37 @@ import { flavors as catppuccinFlavours, type ColorFormat } from '@catppuccin/pal
 import { OGImageRoute } from 'astro-og-canvas';
 import { getCollection } from 'astro:content';
 
-const jobEntries = await getCollection('jobs');
-const projectEntries = await getCollection('projects');
-
 type PageData = {
     title: string;
     description: string;
 };
 
-const pages: Record<string, PageData> = {
-    index: {
-        title: 'rileyflynn.me',
-        description: "Cloud Architect from St. John's, Newfoundland.",
-    },
-    projects: {
-        title: 'Projects',
-        description: "A selection of projects I've worked on.",
-    },
-    jobs: {
-        title: 'Jobs',
-        description: "List of the places I've worked.",
-    },
-    'docker-talk': {
-        title: 'Docker Talk',
-        description: 'Links and resources for my June 2025 talk on Docker for TechNL.',
-    },
-    'slash-pages': {
-        title: 'Slash Pages',
-        description: 'List of my slash pages.',
-    },
-    uses: {
-        title: 'Uses',
-        description: 'Software, hardware, and services I use.',
-    },
-    colophon: {
-        title: 'Colophon',
-        description: 'The tech that powers this website.',
-    },
-};
+const pageModules = import.meta.glob<{ metadata?: PageData; frontmatter?: Partial<PageData> }>(
+    '/src/pages/**/*.{astro,md,mdx}',
+);
+const pages: Record<string, PageData> = {};
 
-for (const entry of jobEntries) {
-    pages[`jobs/${entry.id}`] = {
-        title: entry.data.title,
-        description: entry.data.summary,
-    };
+for (const [file, load] of Object.entries(pageModules)) {
+    if (file.includes('[')) continue;
+
+    const { metadata, frontmatter } = await load();
+    const { title, description } = metadata ?? frontmatter ?? {};
+    if (typeof title !== 'string' || typeof description !== 'string') continue;
+
+    const route = file
+        .slice('/src/pages/'.length)
+        .replace(/\.[^.]+$/, '')
+        .replace(/\/index$/, '');
+    pages[route] = { title: title.replace(/ - rileyflynn\.me$/, ''), description };
 }
 
-for (const entry of projectEntries) {
-    pages[`projects/${entry.id}`] = {
-        title: entry.data.title,
-        description: entry.data.summary,
-    };
+for (const collection of ['jobs', 'projects', 'talks'] as const) {
+    for (const { id, data } of await getCollection(collection)) {
+        pages[`${collection}/${id}`] = {
+            title: data.title,
+            description: 'summary' in data ? data.summary : data.description,
+        };
+    }
 }
 
 function catppuccinToAstroOGCanvas(colour: ColorFormat): [number, number, number] {
@@ -60,10 +40,10 @@ function catppuccinToAstroOGCanvas(colour: ColorFormat): [number, number, number
 }
 
 export const { getStaticPaths, GET } = await OGImageRoute({
-    param: 'route',
-    pages: pages,
+    pages,
+    getSlug: (path) => `${path}.png`,
 
-    getImageOptions: (path, page: PageData) => ({
+    getImageOptions: (_path, page: PageData) => ({
         title: page.title,
         description: page.description,
         bgGradient: [catppuccinToAstroOGCanvas(catppuccinFlavours.frappe.colors.base)],

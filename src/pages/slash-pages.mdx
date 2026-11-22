@@ -11,7 +11,7 @@ import Layout from '../layouts/base.astro';
 
 export const buildTime = new Date().toISOString();
 
-<Layout title="Slash Pages - rileyflynn.me" description="List of my slash pages.">
+<Layout {...frontmatter}>
     <Back command="kubectl describe user riley" href="/" label="home" />
 
     <Command command="kubectl describe customresourcedefinition slash-pages.rileyflynn.me" />
@@ -31,4 +31,5 @@ export const buildTime = new Date().toISOString();
             [{ text: 'uses', link: '/uses' }, { text: 'Software, hardware, and services I use.' }],
         ]}
     />
+
 </Layout>

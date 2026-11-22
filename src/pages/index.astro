@@ -4,6 +4,11 @@ import Describe from '../components/describe.astro';
 import Table from '../components/table.astro';
 import Layout from '../layouts/base.astro';
 
+export const metadata = {
+    title: 'rileyflynn.me',
+    description: "Cloud Architect from St. John's, Newfoundland.",
+};
+
 const links: {
     text: string;
     url: string;
@@ -29,7 +34,7 @@ const links: {
 const buildTime = new Date().toISOString();
 ---
 
-<Layout title="rileyflynn.me" description="Cloud Architect from St. John's, Newfoundland.">
+<Layout {...metadata}>
     <Command command="kubectl describe user riley" />
     <Describe
         items={[
@@ -57,6 +62,7 @@ const buildTime = new Date().toISOString();
             [{ text: 'jobs.rileyflynn.me', link: '/jobs' }, { text: buildTime }],
             [{ text: 'projects.rileyflynn.me', link: '/projects' }, { text: buildTime }],
             [{ text: 'slash-pages.rileyflynn.me', link: '/slash-pages' }, { text: buildTime }],
+            [{ text: 'talks.rileyflynn.me', link: '/talks' }, { text: buildTime }],
         ]}
     />
 </Layout>

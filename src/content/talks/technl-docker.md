@@ -1,32 +1,15 @@
 ---
-title: Docker Talk - rileyflynn.me
-description: Links and resources for my June 2025 TechNL Docker talk.
+title: TechNL - Intro to Containers (Docker)
+description: An intro to Docker's history, concepts, and usage.
+date: 2025-06-12
 ---
 
-import Back from '../components/back.astro';
-import Command from '../components/command.astro';
-import Prose from '../components/prose.astro';
-import Layout from '../layouts/base.astro';
-
-<Layout title="Docker Talk - rileyflynn.me" description="Links and resources for my June 2025 talk on Docker for TechNL.">
-    <Back command="kubectl describe user riley" href="/" label="home" />
-
-    <Command command="kubectl get talk docker --output=markdown" />
-<Prose>
-    
-Thank you for attending my talk! I hope regardless of your prior experience with Docker, you learned something from it.
-
-If you've got further questions or want to discuss the content further:
-
-- I'll be heading to the CTS-NL meetup at [Jumping Bean on Elizabeth Avenue](https://maps.app.goo.gl/kYZtadT5uXdfazm86) after the talk, feel free to join me there.
-    - Can't make it this week? The meetup occurs every Thursday, 7 to 9 PM, and I'm there most weeks.
-- Join the [CTS-NL Discord](http://discord.ctsnl.ca).
-- My presence elsewhere on the internet can be found on [my site](https://rileyflynn.me).
+> Heard the term “container” thrown around and not sure what it means? Been using Docker but curious about what’s actually going on under the hood? Or just wondering how we got here in the first place? This talk will walk you through the rise of Docker, from the state of the industry that led to its creation to the concepts it introduced. We’ll explore how containers work behind the scenes, and wrap it all up with a live demo taking an existing app and turning it into a working container.
 
 #### Links and Resources
 
 - [Slides](https://i.bootleg.technology/docker-talk-slides.pdf)
-- [Demo repo](https://github.com/nint8835/docker-talk-demo/)
+- [Demo repo](https://github.com/nint8835-archive/docker-talk-demo/)
     - Completed Dockerfile is on the `dockerized` branch.
 - [History of PaaS: How Canon almost became a major cloud provider](https://www.porter.run/blog/history-of-paas-how-canon-almost-became-a-major-cloud-provider)
 - [Docker's initial announcement](https://www.youtube.com/watch?v=9xciauwbsuo)
@@ -42,6 +25,3 @@ If you've got further questions or want to discuss the content further:
         - [Bazzite's Containerfile](https://github.com/ublue-os/bazzite/blob/main/Containerfile)
 - [OCI Artifacts](https://github.com/opencontainers/artifacts)
     - [What are OCI Artifacts? - Chainguard Academy](https://edu.chainguard.dev/open-source/oci/what-are-oci-artifacts/)
-
-</Prose>
-</Layout>

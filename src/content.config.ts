@@ -36,7 +36,17 @@ const projectsCollection = defineCollection({
     }),
 });
 
+const talksCollection = defineCollection({
+    loader: glob({ pattern: '**\/[^_]*.md', base: './src/content/talks' }),
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        date: z.date(),
+    }),
+});
+
 export const collections = {
     jobs: jobsCollection,
     projects: projectsCollection,
+    talks: talksCollection,
 };
