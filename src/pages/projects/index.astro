@@ -1,15 +1,16 @@
 ---
 import { getCollection } from 'astro:content';
-const projects = await getCollection('projects');
-
 import Back from '../../components/back.astro';
 import Command from '../../components/command.astro';
 import Table from '../../components/table.astro';
 import Base from '../../layouts/base.astro';
+
 export const metadata = {
     title: 'Projects - rileyflynn.me',
     description: "A selection of projects I've worked on.",
 };
+
+const projects = await getCollection('projects');
 ---
 
 <Base {...metadata}>

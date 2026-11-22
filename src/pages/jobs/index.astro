@@ -1,16 +1,17 @@
 ---
 import { getCollection } from 'astro:content';
-const jobs = await getCollection('jobs');
-
 import Back from '../../components/back.astro';
 import Command from '../../components/command.astro';
 import Table from '../../components/table.astro';
 import Base from '../../layouts/base.astro';
 import { MonthYearDateFormat } from '../../utils/date_formats';
+
 export const metadata = {
     title: 'Jobs - rileyflynn.me',
     description: "List of the places I've worked.",
 };
+
+const jobs = await getCollection('jobs');
 ---
 
 <Base {...metadata}>
